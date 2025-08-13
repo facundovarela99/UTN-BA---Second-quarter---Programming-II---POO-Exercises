@@ -1,0 +1,7 @@
+export * from "./doc"
+export * from "./documento"
+export * from "./escrito"
+export * from "./interface-IDocumentable"
+export * from "./ley"
+export * from "./listaDocument"
+export * from "./sistemaGestion"

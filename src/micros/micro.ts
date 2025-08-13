@@ -90,7 +90,7 @@ export class Micro {
             if (!this.pasajeros.includes(empleado)) {
                 if (empleado.subirAlMicro(this)) {
                     (this.pasajeros.length === 0) && (this._primerPasajero = empleado);
-                    console.log(`El empleado ${empleado.nombre} ${empleado.apellido} subió al micro.`)
+                    console.log(`\nEl empleado ${empleado.nombre} ${empleado.apellido} subió al micro ${this.numeroMicro}.`)
                     this.lugaresLibres -= 1;
                     (this.lugaresLibres === 0) && (this._hayLugar = false);
                 } else {

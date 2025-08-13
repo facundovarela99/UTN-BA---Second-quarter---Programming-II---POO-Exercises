@@ -14,21 +14,4 @@ export class Claustrofobico extends Empleado{
 
 }
 
-            // if (micro.lugaresLibres > 0) {
-            //     if (micro.asientosOcupados < micro.cantidadAsientos) {
-            //         micro.pasajerosSentados.push(this)
-            //         micro.asientosOcupados++;
-            //         micro.pasajeros.push(this);
-            //         return true
-            //     } else if (micro.barrasOcupadas < micro.cantidadBarras){
-            //         micro.pasajerosParados.push(this)
-            //         micro.barrasOcupadas++;
-            //         micro.pasajeros.push(this);
-            //         return true
-            //     } 
-            //     return false
-            // } else{
-            //     console.log('Ya no hay lugares disponibles.');
-            //     return false
-            // }
         
