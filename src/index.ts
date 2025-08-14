@@ -1,9 +1,9 @@
-// import { Person } from "./personas";
-// import { Vehiculo } from "./vehiculo";
+import { Person } from "./personas";
+import { Vehiculo } from "./vehiculo";
 import { Articulo } from "./articulo";
 import { Cine } from "./cine";
 import { Fruta } from "./fruta";
-// import { Ninja } from "./ninja";
+import { Ninja } from "./ninja";
 
 function main(): void {
     // console.log("----------PERSONA---------");
@@ -13,17 +13,19 @@ function main(): void {
     // console.log(myVariable.getLastname());
 
 
-    // const myCar = new Vehiculo('Ford', 'Falcon', '12345');
     // console.log("----------MI AUTO---------");
+    // const myCar = new Vehiculo('Ford', 'Falcon', '12345');
     // console.log(myCar.marca);
     // console.log(myCar.modelo);
 
+    // console.log("----------ARTICULO---------")
     // const articuloUno = new Articulo('Holanda', 'Trece');
     // articuloUno.setMarca('Techo');
     // articuloUno.setModelo('Rueda');
     // console.log(articuloUno.getMarca());
     // console.log(articuloUno.getModelo());
 
+    // console.log("----------CINE---------");
     // const cine = new Cine('Rocky', '20HS');
     // const cine2 = new Cine('Saw', '23HS');
     // console.log("Cartelera 1: " + cine.obtenerCartelera());
@@ -33,6 +35,7 @@ function main(): void {
     // console.log("Cartelera 1: " + cine.obtenerCartelera());
     // console.log("Cartelera 2: " + cine2.obtenerCartelera());
 
+    // console.log("----------FRUTA---------");
     // const manzanaRojaChica =  new Fruta('Rojo', '100g', true);
     // const manzanaRojaGrande =  new Fruta('Rojo', '200g', true);
     // console.log(manzanaRojaChica.esComestible());
@@ -42,8 +45,7 @@ function main(): void {
     // console.log(ninja1.getArma());
     // ninja1.setArma('Cuchillo');
     // console.log(ninja1.getArma());
-    const cine1 =  new Cine('Rocky', '23HS');
-    console.log(cine1.getPelicula());
+
 }
 
 main();

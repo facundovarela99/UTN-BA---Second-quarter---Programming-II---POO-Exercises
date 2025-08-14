@@ -1,9 +1,46 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const personas_1 = require("./personas");
+const vehiculo_1 = require("./vehiculo");
+const articulo_1 = require("./articulo");
 const cine_1 = require("./cine");
+const fruta_1 = require("./fruta");
+const ninja_1 = require("./ninja");
 function main() {
-    const cine1 = new cine_1.Cine('Rocky', '23HS');
-    console.log(cine1.getPelicula);
+    console.log("----------PERSONA---------");
+    const myVariable = new personas_1.Person('Al', 'Goritmo');
+    myVariable.setName('Pedro alfonso');
+    console.log(myVariable.getName());
+    console.log(myVariable.getLastname());
+    console.log("----------MI AUTO---------");
+    const myCar = new vehiculo_1.Vehiculo('Ford', 'Falcon', '12345');
+    console.log(myCar.marca);
+    console.log(myCar.modelo);
+    console.log("----------ARTICULO---------");
+    const articuloUno = new articulo_1.Articulo('Holanda', 'Trece');
+    articuloUno.setMarca('Techo');
+    articuloUno.setModelo('Rueda');
+    console.log(articuloUno.getMarca());
+    console.log(articuloUno.getModelo());
+    console.log("----------CINE---------");
+    const cine = new cine_1.Cine('Rocky', '20HS');
+    const cine2 = new cine_1.Cine('Saw', '23HS');
+    console.log("Cartelera 1: " + cine.obtenerCartelera());
+    console.log("Cartelera 2: " + cine2.obtenerCartelera());
+    cine.setPelicula("Rocky 2");
+    cine.setHorario('21HS');
+    console.log("Cartelera 1: " + cine.obtenerCartelera());
+    console.log("Cartelera 2: " + cine2.obtenerCartelera());
+    console.log("----------FRUTA---------");
+    const manzanaRojaChica = new fruta_1.Fruta('Rojo', '100g', true);
+    const manzanaRojaGrande = new fruta_1.Fruta('Rojo', '200g', true);
+    console.log(manzanaRojaChica.esComestible());
+    console.log(manzanaRojaGrande.esComestible());
+    const ninja1 = new ninja_1.Ninja('Judo', 'Cuerpo', 100, 30);
+    console.log(ninja1.getArteMarcial());
+    console.log(ninja1.getArma());
+    ninja1.setArma('Cuchillo');
+    console.log(ninja1.getArma());
 }
 main();
 //# sourceMappingURL=index.js.map
