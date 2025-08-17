@@ -1,31 +1,41 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Person = void 0;
-class Person {
-    name;
-    lastname;
-    constructor(name, lastname) {
-        this.name = name;
-        this.lastname = lastname;
+exports.Persona = void 0;
+class Persona {
+    nombre;
+    apellido;
+    fecha_nacimiento;
+    edad;
+    constructor(nombre, apellido, fecha_nacimiento) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fecha_nacimiento = fecha_nacimiento;
     }
-    getName() {
-        return this.name;
+    presentarse() {
+        console.log(`Soy una persona y mi nombre es ${this.Nombre} ${this.Apellido}`);
     }
-    setName(name) {
-        this.name = name;
+    get Nombre() {
+        return this.nombre;
     }
-    getLastname() {
-        return this.lastname;
+    get Apellido() {
+        return this.apellido;
     }
-    setLastname(lastname) {
-        this.lastname = lastname;
+    get NombreCompleto() {
+        return `${this.nombre} ${this.apellido}`;
     }
-    sayHi() {
-        console.log(`Hello.\nmy name is ${this.getName()} and my lastname is ${this.getLastname()}`);
+    get fechaNacimiento() {
+        return this.fecha_nacimiento;
     }
-    getFullName() {
-        return `${this.getName}, ${this.getLastname()}`;
+    getEdad(fecha_actual) {
+        this.edad = ((fecha_actual - this.fechaNacimiento).toString()).substring(0, 2);
+        console.log(`Tengo ${this.edad} años`);
+    }
+    NuevoNombre(nuevoNombre) {
+        this.nombre = nuevoNombre;
+    }
+    NuevoApellido(nuevoApellido) {
+        this.apellido = nuevoApellido;
     }
 }
-exports.Person = Person;
+exports.Persona = Persona;
 //# sourceMappingURL=personas.js.map

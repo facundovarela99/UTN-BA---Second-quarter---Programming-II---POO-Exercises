@@ -1,52 +1,54 @@
-import { Person } from "./personas";
-import { Vehiculo } from "./vehiculo";
-import { Articulo } from "./articulo";
-import { Cine } from "./cine";
-import { Fruta } from "./fruta";
-import { Ninja } from "./ninja";
+import { Persona } from "./personas";
+import { Robot, sistemaDeTraccion } from "./robot";
+
 
 function main(): void {
-    // console.log("----------PERSONA---------");
-    // const myVariable = new Person('Al', 'Goritmo');
-    // myVariable.setName('Pedro alfonso');
-    // console.log(myVariable.getName())
-    // console.log(myVariable.getLastname());
 
+    class Visitante extends Persona{
+        public id_visitante: string;
+        private dni: number;
+        constructor(nombre: string, apellido: string, fecha_nacimiento: number, id_visitante: string, dni: number){
+            super(nombre, apellido, fecha_nacimiento);
+            this.id_visitante = id_visitante;
+            this.dni = dni;
+        }
 
-    // console.log("----------MI AUTO---------");
-    // const myCar = new Vehiculo('Ford', 'Falcon', '12345');
-    // console.log(myCar.marca);
-    // console.log(myCar.modelo);
+        public get DNI(){
+            return this.dni;
+        }
 
-    // console.log("----------ARTICULO---------")
-    // const articuloUno = new Articulo('Holanda', 'Trece');
-    // articuloUno.setMarca('Techo');
-    // articuloUno.setModelo('Rueda');
-    // console.log(articuloUno.getMarca());
-    // console.log(articuloUno.getModelo());
+        public presentarse(){
+            console.log(`Hola, soy el visitante ${this.Nombre} ${this.Apellido}. Mi ID es ${this.id_visitante}`);
+        }   
+    }
 
-    // console.log("----------CINE---------");
-    // const cine = new Cine('Rocky', '20HS');
-    // const cine2 = new Cine('Saw', '23HS');
-    // console.log("Cartelera 1: " + cine.obtenerCartelera());
-    // console.log("Cartelera 2: " + cine2.obtenerCartelera());
-    // cine.setPelicula("Rocky 2");
-    // cine.setHorario('21HS');
-    // console.log("Cartelera 1: " + cine.obtenerCartelera());
-    // console.log("Cartelera 2: " + cine2.obtenerCartelera());
+    class Guardia extends Persona{
+        private nro_legajo: number;
+        constructor(nombre: string, apellido: string, fecha_nacimiento: number, nro_legajo: number){
+            super(nombre, apellido, fecha_nacimiento);
+            this.nro_legajo = nro_legajo;
+        }
 
-    // console.log("----------FRUTA---------");
-    // const manzanaRojaChica =  new Fruta('Rojo', '100g', true);
-    // const manzanaRojaGrande =  new Fruta('Rojo', '200g', true);
-    // console.log(manzanaRojaChica.esComestible());
-    // console.log(manzanaRojaGrande.esComestible());
-    // const ninja1 = new Ninja('Judo', 'Cuerpo', 100, 30);
-    // console.log(ninja1.getArteMarcial());
-    // console.log(ninja1.getArma());
-    // ninja1.setArma('Cuchillo');
-    // console.log(ninja1.getArma());
+        public controlarDocumento(nombreCompleto: string, dni: number){
+            console.log(`Adelante ${nombreCompleto} con DNI ${dni}`);
+        }
 
-}
+        public presentarse(){
+            console.log(`Hola, mi nombre es ${this.Nombre} ${this.Apellido} y soy el guardia. Mi número de legajo es ${this.nro_legajo}`);
+        }
+    }
+
+    const sistema_traccion_oruga = new sistemaDeTraccion('Oruga');
+    const sistema_traccion_rueda_caucho = new sistemaDeTraccion('Rueda de caucho');
+
+    const robot1 = new Robot('KT-2020-P', 10, sistema_traccion_oruga);
+    console.log(`Número de serie del robot 1: ${robot1.NroSerie}. Potencia de tracción final: ${robot1.potenciaTraccionFinal(sistema_traccion_oruga.TipoTraccion)}`);
+    robot1.getSistemaTraccion(sistema_traccion_oruga.TipoTraccion);
+
+    const robot2 = new Robot('KT-2020-B', 10, sistema_traccion_rueda_caucho);
+    console.log(`Número de serie: ${robot2.NroSerie}. Potencia de tracción final: ${robot2.potenciaTraccionFinal(sistema_traccion_rueda_caucho.TipoTraccion)}`);
+    robot2.getSistemaTraccion(sistema_traccion_rueda_caucho.TipoTraccion);
+
+}   
 
 main();
-
