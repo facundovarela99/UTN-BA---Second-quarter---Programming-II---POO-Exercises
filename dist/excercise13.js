@@ -52,4 +52,4 @@ class sistemaDeTraccion {
     }
 }
 exports.sistemaDeTraccion = sistemaDeTraccion;
-//# sourceMappingURL=robot.js.map
+//# sourceMappingURL=excercise13.js.map

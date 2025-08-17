@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const personas_1 = require("./personas");
-const robot_1 = require("./robot");
+const excercise14_1 = require("./excercise14");
 function main() {
     class Visitante extends personas_1.Persona {
         id_visitante;
@@ -31,14 +31,19 @@ function main() {
             console.log(`Hola, mi nombre es ${this.Nombre} ${this.Apellido} y soy el guardia. Mi número de legajo es ${this.nro_legajo}`);
         }
     }
-    const sistema_traccion_oruga = new robot_1.sistemaDeTraccion('Oruga');
-    const sistema_traccion_rueda_caucho = new robot_1.sistemaDeTraccion('Rueda de caucho');
-    const robot1 = new robot_1.Robot('KT-2020-P', 10, sistema_traccion_oruga);
-    console.log(`Número de serie del robot 1: ${robot1.NroSerie}. Potencia de tracción final: ${robot1.potenciaTraccionFinal(sistema_traccion_oruga.TipoTraccion)}`);
-    robot1.getSistemaTraccion(sistema_traccion_oruga.TipoTraccion);
-    const robot2 = new robot_1.Robot('KT-2020-B', 10, sistema_traccion_rueda_caucho);
-    console.log(`Número de serie: ${robot2.NroSerie}. Potencia de tracción final: ${robot2.potenciaTraccionFinal(sistema_traccion_rueda_caucho.TipoTraccion)}`);
-    robot2.getSistemaTraccion(sistema_traccion_rueda_caucho.TipoTraccion);
+    const sensorInfrarrojo1 = new excercise14_1.Herramienta('Sensor infrarrojo', 250);
+    const Taser = new excercise14_1.Herramienta('Taser', 300);
+    const brazoRobotico = new excercise14_1.Herramienta('Brazo robótico', 500);
+    const dron1 = new excercise14_1.Dron(100, 100, 0, 0, []);
+    console.log(dron1.getAlturaFinal());
+    console.log(dron1.getVelocidadFinal());
+    console.log("Peso total: " + dron1.getPesoTotal());
+    dron1.agregarHerramienta(sensorInfrarrojo1);
+    dron1.agregarHerramienta(Taser);
+    dron1.agregarHerramienta(brazoRobotico);
+    console.log("Peso total: " + dron1.getPesoTotal());
+    console.log(dron1.getAlturaFinal());
+    console.log(dron1.getVelocidadFinal());
 }
 main();
 //# sourceMappingURL=index.js.map
