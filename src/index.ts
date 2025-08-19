@@ -3,6 +3,7 @@ import { Robot, sistemaDeTraccion } from "./excercise13";
 import { Dron, Herramienta } from "./excercise14";
 import { Barco } from "./excercise15";
 import { Vehiculo, Elemento } from "./excercise16";
+import { Scanner, Objeto } from "./excercise17";
 
 
 function main(): void {
@@ -288,7 +289,14 @@ function main(): void {
     // auto1.cargarElemento(bicicleta1);
     // auto1.listarElementos();
 
-    
+    //EXCERCISE 17
+
+    const scanner1 = new Scanner();
+    const celular1 = new Objeto('Simple', 'Metal', 84, []);
+    const valija1 = new Objeto('Contenedor', 'Plastico', 73444, [celular1])
+    scanner1.escaneo(celular1);
+    scanner1.escaneo(valija1);
+
 
 }
 

@@ -4,6 +4,7 @@ const personas_1 = require("./personas");
 const excercise14_1 = require("./excercise14");
 const excercise15_1 = require("./excercise15");
 const excercise16_1 = require("./excercise16");
+const excercise17_1 = require("./excercise17");
 function main() {
     class Visitante extends personas_1.Persona {
         id_visitante;
@@ -91,13 +92,6 @@ function main() {
             return this.poseeGrua;
         }
     }
-    const acorazado1 = new Acorazado('Alta', 'Muy alta', 'Media', 'Muy pesado', 'Acorazado', 'El Escudo', 300, '30 pasajeros');
-    const acorazado2 = new Acorazado('Muy alta', 'Muy alta', 'Alta', 'Muy pesado', 'Acorazado', 'Caparazón', 230, '25 pasajeros');
-    const destructor1 = new Destructor('Alta', 'Alta', 'Media/baja', 'Alta', 'Alta', 'Destructor', 'Destructor Uno', 350, '20 pasajeros');
-    const destructor2 = new Destructor('Muy alta', 'Muy alta', 'Baja', 'Media', 'Media', 'Destructor', 'Destructor Dos', 400, '15 pasajeros');
-    const barcoHospital = new excercise15_1.Barco('Hospital', 'Sibelancia', 350, '70 pasajeros', 'Muy alta', 'Alta');
-    const laGaucha = new Lancha('Fuera de borda', 'Alta', true, 'Lancha', 'La Gaucha', 200, '8 pasajeros', 'Alta', 'Media/baja');
-    const elGaucho = new Lancha('Fuera de borda', 'Alta', true, 'Lancha', 'El Gaucho', 200, '8 pasajeros', 'Alta', 'Media/baja');
     class Comoda extends excercise16_1.Elemento {
         superficie;
         cantidadCajones;
@@ -188,22 +182,11 @@ function main() {
             return this.cantidadCambios;
         }
     }
-    const auto1 = new excercise16_1.Vehiculo('Auto', 0, [], 5);
-    const camioneta1 = new excercise16_1.Vehiculo('Camioneta', 0, [], 10);
-    const Comoda1 = new Comoda('de melamina madera', 6, 'Comoda', '2m X 50cm', 1);
-    const Lavarropas1 = new Lavarropas(1400, 9, 1000, 'Lavarropas TURBO MAX 2000', '60X50', 2);
-    const televisor1 = new Televisor(500, 'LCD', false, 'Televisor LCD Philco', '30 pulgadas', 3);
-    const heladera1 = new Heladera(2000, true, 'Heladera PHILCO', '2m x 50cm', 4);
-    const bicicleta1 = new Bicicleta(29, false, 21, 'Bicicleta rodado 29 MaxPower', '60cm x 1.80cm', 5);
-    camioneta1.getCapacidadCarga();
-    camioneta1.cargarElemento(Comoda1);
-    camioneta1.cargarElemento(Lavarropas1);
-    camioneta1.cargarElemento(heladera1);
-    camioneta1.listarElementos();
-    auto1.getCapacidadCarga();
-    auto1.cargarElemento(televisor1);
-    auto1.cargarElemento(bicicleta1);
-    auto1.listarElementos();
+    const scanner1 = new excercise17_1.Scanner();
+    const celular1 = new excercise17_1.Objeto('Simple', 'Metal', 84, []);
+    const valija1 = new excercise17_1.Objeto('Contenedor', 'Plastico', 73444, [celular1]);
+    scanner1.escaneo(celular1);
+    scanner1.escaneo(valija1);
 }
 main();
 //# sourceMappingURL=index.js.map
