@@ -47,6 +47,12 @@ class Dron {
             return `Altura total: ${this.velocidad}. El dron no pierde altura`;
         }
     }
+    getHerramientas() {
+        console.log('Herramientas: ');
+        for (let i = 0; i < this.herramientas.length; i++) {
+            console.log(this.herramientas[i]);
+        }
+    }
 }
 exports.Dron = Dron;
 class Herramienta {
