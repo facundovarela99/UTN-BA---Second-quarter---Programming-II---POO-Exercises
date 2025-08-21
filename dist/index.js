@@ -183,10 +183,14 @@ function main() {
         }
     }
     const scanner1 = new excercise17_1.Scanner();
-    const celular1 = new excercise17_1.Objeto('Simple', 'Metal', 84, []);
-    const valija1 = new excercise17_1.Objeto('Contenedor', 'Plastico', 73444, [celular1]);
-    scanner1.escaneo(celular1);
-    scanner1.escaneo(valija1);
+    const portafolios1 = new excercise17_1.Objeto('Contenido', 'Portafolio', 'Cuero', 5, []);
+    const peine1 = new excercise17_1.Objeto('Contenido', 'Peine', 'Plastico', 0.30, []);
+    const gasa1 = new excercise17_1.Objeto('Contenido', 'Gasa', 'Tela', 2, []);
+    const aguaOxigenada1 = new excercise17_1.Objeto('Simple', 'Botella de agua oxigenada', 'Plastico', 3, []);
+    const botiquin1 = new excercise17_1.Objeto('Sambuchito', 'Botiquin de primeros auxilios', 'Plastico', 8, [gasa1, aguaOxigenada1]);
+    const bolsa1 = new excercise17_1.Objeto('Contenedor', 'Bolsa', 'Cuero', 12, [peine1, botiquin1]);
+    scanner1.escaneo(portafolios1);
+    scanner1.escaneo(bolsa1);
 }
 main();
 //# sourceMappingURL=index.js.map

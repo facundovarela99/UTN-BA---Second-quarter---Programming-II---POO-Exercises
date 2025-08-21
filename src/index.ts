@@ -292,10 +292,15 @@ function main(): void {
     //EXCERCISE 17
 
     const scanner1 = new Scanner();
-    const celular1 = new Objeto('Simple', 'Metal', 84, []);
-    const valija1 = new Objeto('Contenedor', 'Plastico', 73444, [celular1])
-    scanner1.escaneo(celular1);
-    scanner1.escaneo(valija1);
+    const portafolios1 = new Objeto('Contenido', 'Portafolio', 'Cuero', 5, []);
+    const peine1 = new Objeto('Contenido', 'Peine', 'Plastico', 0.30, []);
+    const gasa1 = new Objeto('Contenido', 'Gasa', 'Tela', 2, []);
+    const aguaOxigenada1 = new Objeto('Simple', 'Botella de agua oxigenada', 'Plastico', 3, []);
+    const botiquin1 = new Objeto('Sambuchito', 'Botiquin de primeros auxilios', 'Plastico', 8, [gasa1, aguaOxigenada1]);
+    const bolsa1 = new Objeto('Contenedor', 'Bolsa', 'Cuero', 12, [peine1, botiquin1]);
+
+    scanner1.escaneo(portafolios1);
+    scanner1.escaneo(bolsa1);
 
 
 }
