@@ -27,22 +27,80 @@
 // luego recuperarlas para mostrar por pantalla las cualidades.
 
 
+export class ListaFormularios{
+    private _formulariosDeAlta: Array<Formulario>;
+    constructor(formulariosDeAlta: []){
+        this._formulariosDeAlta = formulariosDeAlta = [];
+    }
+
+    
+    public darDeAlta(formulario: Formulario){
+        this._formulariosDeAlta.push(formulario)
+    }
+
+    public getFormulariosDeAlta(){
+        this._formulariosDeAlta.forEach(formulario => {
+            console.log(formulario.getInmueble())
+            console.log(formulario.getContacto())
+        });
+    }
+}
+
+export class Formulario{
+    private inmueble?: Inmueble;
+    private contacto?: Contacto;
+    private listoParaAlta: boolean;
+    private dadoDeAlta: boolean;
+
+    constructor(inmueble: Inmueble, contacto: Contacto, listoParaAlta: boolean = false, dadoDeAlta: boolean = false){
+        this.inmueble = inmueble;
+        this.contacto = contacto;
+        this.listoParaAlta = listoParaAlta;
+        this.dadoDeAlta = dadoDeAlta
+    }
+
+    public getInmueble(){
+        return this.inmueble;
+    }
+
+    public getContacto(){
+        return this.contacto;
+    }
+
+    public ingresarDatosInmueble(datosInmueble: Inmueble){
+        this.inmueble = datosInmueble;
+    }
+
+    public ingresarDatosContacto(datosContacto: Contacto){
+        this.contacto = datosContacto;
+    }
+
+    public listoParaDarAlta(){
+        if (this.inmueble && this.contacto){
+            this.listoParaAlta = true;
+            return 'El formulario se encuentra listo para su alta.'
+        } else {
+            return 'El formulario no se encuentra listo para su alta.'
+        }
+    }
+}
+
 export class Inmueble{
-    private provincia?: string;
-    private ciudad?: string;
-    private barrio?: string;
-    private nombreCalle?: string;
-    private altura?: number;
-    private codigoPostal?: number;
-    private perteneceBarrioPrivado?: boolean;
-    private conexionSuministroGas?: boolean;
-    private emplazamientoInfraCloacal?: boolean;
+    private provincia: string;
+    private ciudad: string;
+    private barrio: string;
+    private nombreCalle: string;
+    private altura: number;
+    private codigoPostal: number;
+    private perteneceBarrioPrivado: boolean;
+    private conexionSuministroGas: boolean;
+    private emplazamientoInfraCloacal: boolean;
     private cantCampos = 9;
     private cantCamposCompletos = 0;
-    private camposCompletos?: boolean;
-    private observaciones?: string;
+    private camposCompletos: boolean;
+    private observaciones: string;
 
-    constructor(provincia?: string, ciudad?: string, barrio?: string, nombreCalle?: string, altura?: number, codigoPostal?: number, perteneceBarrioPrivado?: boolean, conexionSuministroGas?:boolean, emplazamientoInfraCloacal?: boolean, camposCompletos?: boolean, observaciones?: string){
+    constructor(provincia: string = "", ciudad: string = "", barrio: string ="", nombreCalle: string = "", altura: number = 0, codigoPostal: number = 0, perteneceBarrioPrivado: boolean =false, conexionSuministroGas:boolean = false, emplazamientoInfraCloacal: boolean = false, camposCompletos: boolean = false, observaciones: string = ""){
         this.provincia = provincia;
         this.ciudad = ciudad;
         this.barrio = barrio;
@@ -67,19 +125,38 @@ export class Inmueble{
     public getEmplazamientoInfraCloacal(){return this.emplazamientoInfraCloacal};
     public getCamposCompletos(){return this.camposCompletos};
 
+    public setProvincia(provincia:string){this.provincia = provincia};
+    public setCiudad(ciudad:string){this.ciudad = ciudad};
+    public setBarrio(barrio:string){this.barrio = barrio};
+    public setNombreCalle(nombreCalle:string){this.nombreCalle = nombreCalle};
+    public setAltura(altura:number){this.altura = altura};
+    public setCodigoPostal(codigoPostal:number){this.codigoPostal = codigoPostal};
+    public setPerteneceBarrioPrivado(pertenece:boolean){this.perteneceBarrioPrivado = pertenece};
+    public setConexionSumGas(tieneConexion:boolean){this.conexionSuministroGas = tieneConexion};
+    public setEmplazInfraCloacal(tieneEmplazamiento:boolean){this.emplazamientoInfraCloacal = tieneEmplazamiento};
+
+    public listoParaAlta(){
+        if (this.cantCamposCompletos === this.cantCampos) {
+            this.camposCompletos = true;
+        } else {
+            return "Campos incompletos.";
+        }
+    }
 }
 
+
+
 export class Contacto{
-    private nombre?: string;
-    private apellido?: string;
-    private telefono?: number;
-    private correo?: string;
+    private nombre: string;
+    private apellido: string;
+    private telefono: number;
+    private correo: string;
     private cantCampos = 4;
     private cantCamposCompletos = 0;
-    private camposCompletos?: boolean;
-    private obvervaciones?: string;
+    private camposCompletos: boolean;
+    private obvervaciones: string;
 
-    constructor(nombre?: string, apellido?: string, telefono?: number, correo?: string, camposCompletos?: boolean, observaciones?: string){
+    constructor(nombre: string = "", apellido: string = "", telefono: number = 0, correo: string = "", camposCompletos: boolean = false, observaciones: string = ""){
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
@@ -95,4 +172,12 @@ export class Contacto{
     public getCamposCompletos(){return this.camposCompletos};
     public getObservaciones(){return this.obvervaciones};
 
+
+    public listoParaAlta(){
+        if (this.cantCamposCompletos === this.cantCampos) {
+            this.camposCompletos = true;
+        } else {
+            return "Campos incompletos.";
+        }
+    }
 }
