@@ -35,28 +35,42 @@ export class ListaFormularios{
 
     
     public darDeAlta(formulario: Formulario){
-        this._formulariosDeAlta.push(formulario)
+        if (formulario.listoParaDarAlta()) {
+            this._formulariosDeAlta.push(formulario);
+            console.log('Formulario dado de alta exitosamente.');
+        }
     }
 
     public getFormulariosDeAlta(){
-        this._formulariosDeAlta.forEach(formulario => {
-            console.log(formulario.getInmueble())
-            console.log(formulario.getContacto())
-        });
+        if (this._formulariosDeAlta.length > 0) {            
+            this._formulariosDeAlta.forEach(formulario => {
+                console.log(`${formulario.getIDnumber()}`);
+                console.log(`${formulario.getInmueble()}`);
+                console.log(formulario.getContacto());
+            });
+        } else {
+            console.log('No se encuentran formularios dados de alta.')
+        }
     }
 }
 
 export class Formulario{
+    private formulario_id: number;
     private inmueble?: Inmueble;
     private contacto?: Contacto;
     private listoParaAlta: boolean;
     private dadoDeAlta: boolean;
 
-    constructor(inmueble: Inmueble, contacto: Contacto, listoParaAlta: boolean = false, dadoDeAlta: boolean = false){
+    constructor(formulario_id: number, inmueble: Inmueble | undefined, contacto: Contacto | undefined, listoParaAlta: boolean = false, dadoDeAlta: boolean = false){
+        this.formulario_id = formulario_id;
         this.inmueble = inmueble;
         this.contacto = contacto;
         this.listoParaAlta = listoParaAlta;
         this.dadoDeAlta = dadoDeAlta
+    }
+
+    public getIDnumber(){
+        return this.formulario_id;
     }
 
     public getInmueble(){
@@ -77,10 +91,13 @@ export class Formulario{
 
     public listoParaDarAlta(){
         if (this.inmueble && this.contacto){
+            console.log(`El formulario ${this.formulario_id} se encuentra listo para su alta.`);
             this.listoParaAlta = true;
-            return 'El formulario se encuentra listo para su alta.'
+            return true
         } else {
-            return 'El formulario no se encuentra listo para su alta.'
+            console.log(`El formulario ${this.formulario_id} no se encuentra listo para su alta.`)
+            this.listoParaAlta = false;
+            return false
         }
     }
 }

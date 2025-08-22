@@ -329,14 +329,26 @@ function main(): void {
             this.poseePileta = poseePileta;
         }
     }
-
+    
+    const listaFormulario = new ListaFormularios([]);
+    
     const departamento1 = new Departamento(2, 'B', false, 'Buenos Aires', 'Caba', 'Recoleta', 'Laprida', 1234, 7500, false, true, true, true);
     const contacto1 = new Contacto('Facundo', 'Varela', 12345678, 'facundo@example.com', true, "");
-    const formulario1 = new Formulario(departamento1, contacto1, true, false);
-    const listaFormulario = new ListaFormularios([]);
-    console.log(formulario1.listoParaDarAlta());
+
+    const departamento2 = new Departamento(1, 'A', true, 'Misiones', 'Ciudad 1', 'Las Flores', 'Floresta', 456, 8752, true, true, true, false);
+    const contacto2 = new Contacto('Fernando', '', 0, '', false, '');
+
+    const formulario1 = new Formulario(1, departamento1, contacto1, true, false);
+    const formulario2 = new Formulario(2, undefined, undefined, false, false);
+
+    // formulario2.ingresarDatosContacto(contacto2);
+    // formulario2.listoParaDarAlta();
+
+    formulario1.listoParaDarAlta();
     listaFormulario.darDeAlta(formulario1);
     listaFormulario.getFormulariosDeAlta();
+    // listaFormulario.darDeAlta(formulario2);
+    // listaFormulario.getFormulariosDeAlta();
     
 
 }
