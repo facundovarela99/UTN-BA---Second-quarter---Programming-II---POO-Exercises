@@ -1,3 +1,6 @@
+import { Person } from "./excercise1";
+import { Vehicle } from "./excercise2";
+import { Article } from "./excercise3";
 import { Persona } from "./personas";
 import { Robot, sistemaDeTraccion } from "./excercise13";
 import { Dron, Herramienta } from "./excercise14";
@@ -9,42 +12,64 @@ import { ListaFormularios, Formulario, Inmueble, Contacto } from "./excercise18"
 
 function main(): void {
 
-    class Visitante extends Persona {
-        public id_visitante: string;
-        private dni: number;
-        constructor(nombre: string, apellido: string, fecha_nacimiento: number, id_visitante: string, dni: number) {
-            super(nombre, apellido, fecha_nacimiento);
-            this.id_visitante = id_visitante;
-            this.dni = dni;
-        }
+    //Excercise 1:
+    // const person1 = new Person('Facundo', 'Varela');
+    // console.log(`Name: ${person1.name}`);
+    // console.log(`Last name: ${person1.lastName}`);
 
-        public get DNI() {
-            return this.dni;
-        }
+    //Excercise 2:
+    // console.log('Vehicles:\n')
+    // const vehicle1 = new Vehicle('Ford', 'Mustang', '125asd');
+    // const vehicle2 = new Vehicle('Chevrolet', 'Prisma', 12345);
 
-        public presentarse() {
-            console.log(`Hola, soy el visitante ${this.Nombre} ${this.Apellido}. Mi ID es ${this.id_visitante}`);
-        }
-    }
+    // console.log(`Vehicle 1:\nBrand: ${vehicle1.brand}\nModel: ${vehicle1.model}\nPatent number: ${vehicle1.patentNumber}\n`)
+    // console.log(`Vehicle 2:\nBrand: ${vehicle2.brand}\nModel: ${vehicle2.model}\nPatent number: ${vehicle2.patentNumber}\n`)
 
-    class Guardia extends Persona {
-        private nro_legajo: number;
-        constructor(nombre: string, apellido: string, fecha_nacimiento: number, nro_legajo: number) {
-            super(nombre, apellido, fecha_nacimiento);
-            this.nro_legajo = nro_legajo;
-        }
+    //Excercise 3:
+    console.log('Articles:\n')
+    const article1 = new Article('Powershell', 'Model 1');
+    const article2 = new Article('Command Prompt', 'Model 2');
 
-        public controlarDocumento(nombreCompleto: string, dni: number) {
-            console.log(`Adelante ${nombreCompleto} con DNI ${dni}`);
-        }
-
-        public presentarse() {
-            console.log(`Hola, mi nombre es ${this.Nombre} ${this.Apellido} y soy el guardia. Mi número de legajo es ${this.nro_legajo}`);
-        }
-    }
+    console.log(`Article 1: ${article1.brand} ${article1.model}`);
+    console.log(`Article 2: ${article2.brand} ${article2.model}`);
 
 
-    //EXCERCISE 14):
+    // class Visitante extends Persona {
+    //     public id_visitante: string;
+    //     private dni: number;
+    //     constructor(nombre: string, apellido: string, fecha_nacimiento: number, id_visitante: string, dni: number) {
+    //         super(nombre, apellido, fecha_nacimiento);
+    //         this.id_visitante = id_visitante;
+    //         this.dni = dni;
+    //     }
+
+    //     public get DNI() {
+    //         return this.dni;
+    //     }
+
+    //     public presentarse() {
+    //         console.log(`Hola, soy el visitante ${this.Nombre} ${this.Apellido}. Mi ID es ${this.id_visitante}`);
+    //     }
+    // }
+
+    // class Guardia extends Persona {
+    //     private nro_legajo: number;
+    //     constructor(nombre: string, apellido: string, fecha_nacimiento: number, nro_legajo: number) {
+    //         super(nombre, apellido, fecha_nacimiento);
+    //         this.nro_legajo = nro_legajo;
+    //     }
+
+    //     public controlarDocumento(nombreCompleto: string, dni: number) {
+    //         console.log(`Adelante ${nombreCompleto} con DNI ${dni}`);
+    //     }
+
+    //     public presentarse() {
+    //         console.log(`Hola, mi nombre es ${this.Nombre} ${this.Apellido} y soy el guardia. Mi número de legajo es ${this.nro_legajo}`);
+    //     }
+    // }
+
+
+    // EXCERCISE 14):
     // const sensorInfrarrojo1 = new Herramienta('Sensor infrarrojo', 250);
     // const Taser = new Herramienta('Taser', 300);
     // const brazoRobotico = new Herramienta('Brazo robótico', 500);
@@ -65,75 +90,75 @@ function main(): void {
     // console.log(dron1.getAlturaFinal());
     // console.log(dron1.getVelocidadFinal());
 
-    //EXCERCISE 15):
-    class Acorazado extends Barco{
-        private solidez: string;
-        private blindaje: string;
+    // EXCERCISE 15):
+    // class Acorazado extends Barco{
+    //     private solidez: string;
+    //     private blindaje: string;
     
-        constructor(flotabilidad: string, solidez: string, establilidad: string, blindaje: string, tipo_navio: string, nombre: string, velocidad: number, capacidad_carga: string){
-            super(tipo_navio, nombre, velocidad, capacidad_carga, flotabilidad, establilidad);
-            this.solidez = solidez;
-            this.blindaje = blindaje;
-        }
+    //     constructor(flotabilidad: string, solidez: string, establilidad: string, blindaje: string, tipo_navio: string, nombre: string, velocidad: number, capacidad_carga: string){
+    //         super(tipo_navio, nombre, velocidad, capacidad_carga, flotabilidad, establilidad);
+    //         this.solidez = solidez;
+    //         this.blindaje = blindaje;
+    //     }
 
-        public getSolidez(){
-            return this.solidez;
-        }
+    //     public getSolidez(){
+    //         return this.solidez;
+    //     }
 
-        public getBlindaje(){
-            return this.blindaje;
-        }
-    }
+    //     public getBlindaje(){
+    //         return this.blindaje;
+    //     }
+    // }
 
-    class Destructor extends Barco{
-        private potenciaDeFuego: string;
-        private maniobrabilidad: string;
-        private solidez: string;
+    // class Destructor extends Barco{
+    //     private potenciaDeFuego: string;
+    //     private maniobrabilidad: string;
+    //     private solidez: string;
 
-        constructor(potencia_fuego: string, maniobrabilidad: string, solidez: string, flotabilidad: string, establilidad: string, tipo_navio: string, nombre: string, velocidad: number, capacidad_carga: string){
-            super(tipo_navio, nombre, velocidad, capacidad_carga, flotabilidad, establilidad);
-            this.potenciaDeFuego = potencia_fuego;
-            this.maniobrabilidad = maniobrabilidad;
-            this.solidez = solidez;
-        }
+    //     constructor(potencia_fuego: string, maniobrabilidad: string, solidez: string, flotabilidad: string, establilidad: string, tipo_navio: string, nombre: string, velocidad: number, capacidad_carga: string){
+    //         super(tipo_navio, nombre, velocidad, capacidad_carga, flotabilidad, establilidad);
+    //         this.potenciaDeFuego = potencia_fuego;
+    //         this.maniobrabilidad = maniobrabilidad;
+    //         this.solidez = solidez;
+    //     }
 
-        public getPotenciaDeFuego(){
-            return this.potenciaDeFuego;
-        }
+    //     public getPotenciaDeFuego(){
+    //         return this.potenciaDeFuego;
+    //     }
 
-        public getManiobrabilidad(){
-            return this.maniobrabilidad;
-        }
+    //     public getManiobrabilidad(){
+    //         return this.maniobrabilidad;
+    //     }
 
-        public getSolidez(){
-            return this.solidez;
-        }
-    }
+    //     public getSolidez(){
+    //         return this.solidez;
+    //     }
+    // }
 
-    class Lancha extends Barco{
-        private motor: string;
-        private maniobrabilidad: string;
-        private poseeGrua: boolean;
+    // class Lancha extends Barco{
+    //     private motor: string;
+    //     private maniobrabilidad: string;
+    //     private poseeGrua: boolean;
 
-        constructor(motor: string, maniobrabilidad: string, poseeGrua: boolean, tipo_navio: string, nombre: string, velocidad: number, capacidad_carga: string, flotabilidad: string, estabilidad: string){
-            super(tipo_navio, nombre, velocidad, capacidad_carga, flotabilidad, estabilidad);
-            this.motor = motor;
-            this.maniobrabilidad =  maniobrabilidad;
-            this.poseeGrua = poseeGrua;
-        }
+    //     constructor(motor: string, maniobrabilidad: string, poseeGrua: boolean, tipo_navio: string, nombre: string, velocidad: number, capacidad_carga: string, flotabilidad: string, estabilidad: string){
+    //         super(tipo_navio, nombre, velocidad, capacidad_carga, flotabilidad, estabilidad);
+    //         this.motor = motor;
+    //         this.maniobrabilidad =  maniobrabilidad;
+    //         this.poseeGrua = poseeGrua;
+    //     }
 
-        public getMotor(){
-            return this.motor;
-        }
+    //     public getMotor(){
+    //         return this.motor;
+    //     }
 
-        public getManiobrabilidad(){
-            return this.maniobrabilidad;
-        }
+    //     public getManiobrabilidad(){
+    //         return this.maniobrabilidad;
+    //     }
 
-        public getGrua(){
-            return this.poseeGrua;
-        }
-    }
+    //     public getGrua(){
+    //         return this.poseeGrua;
+    //     }
+    // }
     
     // const acorazado1 =  new Acorazado('Alta', 'Muy alta', 'Media', 'Muy pesado', 'Acorazado', 'El Escudo', 300, '30 pasajeros');
     // const acorazado2 = new Acorazado('Muy alta', 'Muy alta', 'Alta', 'Muy pesado', 'Acorazado', 'Caparazón', 230, '25 pasajeros');
@@ -156,7 +181,7 @@ function main(): void {
     // console.log(acorazado1.getTipoNavio());
     // console.log(acorazado1.getVelocidad());
 
-    //EXCERCISE 16
+    // EXCERCISE 16
     // class Comoda extends Elemento{
     //     private superficie: string;
     //     private cantidadCajones: number;
@@ -290,7 +315,7 @@ function main(): void {
     // auto1.cargarElemento(bicicleta1);
     // auto1.listarElementos();
 
-    //EXCERCISE 17
+    // EXCERCISE 17
     // Hacer pruebas con una Mamushka de madera de varios niveles, un portafolios vacío de cuero,
     // un botiquín de plástico que contiene gasa y agua oxigenada, una bolsa de cuero que contenga un
     // peine y un botiquín.
@@ -306,47 +331,47 @@ function main(): void {
     // scanner1.escaneo(portafolios1);
     // scanner1.escaneo(bolsa1);
 
-    class Departamento extends Inmueble{
-        private piso: number;
-        private letraDpto: string;
-        private admiteMascotas: boolean;
+    // class Departamento extends Inmueble{
+    //     private piso: number;
+    //     private letraDpto: string;
+    //     private admiteMascotas: boolean;
 
-        constructor(piso: number = 0, letraDpto: string = "", admiteMascotas: boolean = false, provincia: string = "", ciudad: string = "", barrio: string ="", nombreCalle: string = "", altura: number = 0, codigoPostal: number = 0, perteneceBarrioPrivado: boolean =false, conexionSuministroGas:boolean = false, emplazamientoInfraCloacal: boolean = false, camposCompletos: boolean = false, observaciones: string = ""){
-            super(provincia, ciudad, barrio, nombreCalle, altura, codigoPostal, perteneceBarrioPrivado, conexionSuministroGas, emplazamientoInfraCloacal, camposCompletos, observaciones);
-            this.piso = piso;
-            this.letraDpto = letraDpto;
-            this.admiteMascotas = admiteMascotas;
-        }
-    }
+    //     constructor(piso: number = 0, letraDpto: string = "", admiteMascotas: boolean = false, provincia: string = "", ciudad: string = "", barrio: string ="", nombreCalle: string = "", altura: number = 0, codigoPostal: number = 0, perteneceBarrioPrivado: boolean =false, conexionSuministroGas:boolean = false, emplazamientoInfraCloacal: boolean = false, camposCompletos: boolean = false, observaciones: string = ""){
+    //         super(provincia, ciudad, barrio, nombreCalle, altura, codigoPostal, perteneceBarrioPrivado, conexionSuministroGas, emplazamientoInfraCloacal, camposCompletos, observaciones);
+    //         this.piso = piso;
+    //         this.letraDpto = letraDpto;
+    //         this.admiteMascotas = admiteMascotas;
+    //     }
+    // }
 
-    class Casa extends Inmueble{
-        private poseeQuincho: boolean;
-        private poseePileta: boolean;
+    // class Casa extends Inmueble{
+    //     private poseeQuincho: boolean;
+    //     private poseePileta: boolean;
 
-        constructor(poseeQuincho: boolean = false, poseePileta: boolean = false, provincia: string = "", ciudad: string = "", barrio: string ="", nombreCalle: string = "", altura: number = 0, codigoPostal: number = 0, perteneceBarrioPrivado: boolean =false, conexionSuministroGas:boolean = false, emplazamientoInfraCloacal: boolean = false, camposCompletos: boolean = false, observaciones: string = ""){
-            super(provincia, ciudad, barrio, nombreCalle, altura, codigoPostal, perteneceBarrioPrivado, conexionSuministroGas, emplazamientoInfraCloacal, camposCompletos, observaciones);
-            this.poseeQuincho = poseeQuincho;
-            this.poseePileta = poseePileta;
-        }
-    }
+    //     constructor(poseeQuincho: boolean = false, poseePileta: boolean = false, provincia: string = "", ciudad: string = "", barrio: string ="", nombreCalle: string = "", altura: number = 0, codigoPostal: number = 0, perteneceBarrioPrivado: boolean =false, conexionSuministroGas:boolean = false, emplazamientoInfraCloacal: boolean = false, camposCompletos: boolean = false, observaciones: string = ""){
+    //         super(provincia, ciudad, barrio, nombreCalle, altura, codigoPostal, perteneceBarrioPrivado, conexionSuministroGas, emplazamientoInfraCloacal, camposCompletos, observaciones);
+    //         this.poseeQuincho = poseeQuincho;
+    //         this.poseePileta = poseePileta;
+    //     }
+    // }
     
-    const listaFormulario = new ListaFormularios([]);
+    // const listaFormulario = new ListaFormularios([]);
     
-    const departamento1 = new Departamento(2, 'B', false, 'Buenos Aires', 'Caba', 'Recoleta', 'Laprida', 1234, 7500, false, true, true, true);
-    const contacto1 = new Contacto('Facundo', 'Varela', 12345678, 'facundo@example.com', true, "");
+    // const departamento1 = new Departamento(2, 'B', false, 'Buenos Aires', 'Caba', 'Recoleta', 'Laprida', 1234, 7500, false, true, true, true);
+    // const contacto1 = new Contacto('Facundo', 'Varela', 12345678, 'facundo@example.com', true, "");
 
-    const departamento2 = new Departamento(1, 'A', true, 'Misiones', 'Ciudad 1', 'Las Flores', 'Floresta', 456, 8752, true, true, true, false);
-    const contacto2 = new Contacto('Fernando', '', 0, '', false, '');
+    // const departamento2 = new Departamento(1, 'A', true, 'Misiones', 'Ciudad 1', 'Las Flores', 'Floresta', 456, 8752, true, true, true, false);
+    // const contacto2 = new Contacto('Fernando', '', 0, '', false, '');
 
-    const formulario1 = new Formulario(1, departamento1, contacto1, true, false);
-    const formulario2 = new Formulario(2, undefined, undefined, false, false);
+    // const formulario1 = new Formulario(1, departamento1, contacto1, true, false);
+    // const formulario2 = new Formulario(2, undefined, undefined, false, false);
 
     // formulario2.ingresarDatosContacto(contacto2);
     // formulario2.listoParaDarAlta();
 
-    formulario1.listoParaDarAlta();
-    listaFormulario.darDeAlta(formulario1);
-    listaFormulario.getFormulariosDeAlta();
+    // formulario1.listoParaDarAlta();
+    // listaFormulario.darDeAlta(formulario1);
+    // listaFormulario.getFormulariosDeAlta();
     // listaFormulario.darDeAlta(formulario2);
     // listaFormulario.getFormulariosDeAlta();
     
