@@ -4,6 +4,7 @@ import { Dron, Herramienta } from "./excercise14";
 import { Barco } from "./excercise15";
 import { Vehiculo, Elemento } from "./excercise16";
 import { Scanner, Objeto } from "./excercise17";
+import { ListaFormularios, Formulario, Inmueble, Contacto } from "./excercise18";
 
 
 function main(): void {
@@ -44,9 +45,9 @@ function main(): void {
 
 
     //EXCERCISE 14):
-    const sensorInfrarrojo1 = new Herramienta('Sensor infrarrojo', 250);
-    const Taser = new Herramienta('Taser', 300);
-    const brazoRobotico = new Herramienta('Brazo robótico', 500);
+    // const sensorInfrarrojo1 = new Herramienta('Sensor infrarrojo', 250);
+    // const Taser = new Herramienta('Taser', 300);
+    // const brazoRobotico = new Herramienta('Brazo robótico', 500);
 
     // const dron1 = new Dron(100, 100, 0, 0, []);
 
@@ -156,117 +157,117 @@ function main(): void {
     // console.log(acorazado1.getVelocidad());
 
     //EXCERCISE 16
-    class Comoda extends Elemento{
-        private superficie: string;
-        private cantidadCajones: number;
+    // class Comoda extends Elemento{
+    //     private superficie: string;
+    //     private cantidadCajones: number;
         
-        constructor(superficie: string, cantidadCajones: number, descripcion: string, dimensiones: string, id: number){
-            super(id, descripcion, dimensiones);
-            this.superficie = superficie;
-            this.cantidadCajones = cantidadCajones;
-        }
+    //     constructor(superficie: string, cantidadCajones: number, descripcion: string, dimensiones: string, id: number){
+    //         super(id, descripcion, dimensiones);
+    //         this.superficie = superficie;
+    //         this.cantidadCajones = cantidadCajones;
+    //     }
 
-        public getSuperficie(){
-            return this.superficie;
-        }
+    //     public getSuperficie(){
+    //         return this.superficie;
+    //     }
 
-        public getCantCajones(){
-            return this.cantidadCajones;
-        }
-    }
+    //     public getCantCajones(){
+    //         return this.cantidadCajones;
+    //     }
+    // }
 
-    class Heladera extends Elemento{
-        private voltaje: number;
-        private poseeFreezer: boolean;
-        constructor(voltaje: number, poseeFreezer: boolean, descripcion: string, dimensiones: string, id: number){
-            super(id, descripcion, dimensiones);
-            this.voltaje = voltaje;
-            this.poseeFreezer = poseeFreezer;
-        }
+    // class Heladera extends Elemento{
+    //     private voltaje: number;
+    //     private poseeFreezer: boolean;
+    //     constructor(voltaje: number, poseeFreezer: boolean, descripcion: string, dimensiones: string, id: number){
+    //         super(id, descripcion, dimensiones);
+    //         this.voltaje = voltaje;
+    //         this.poseeFreezer = poseeFreezer;
+    //     }
 
-        public getVoltaje(){
-            return this.voltaje;
-        }
+    //     public getVoltaje(){
+    //         return this.voltaje;
+    //     }
 
-        public PoseeFreezer(){
-            return this.poseeFreezer;
-        }
-    }
+    //     public PoseeFreezer(){
+    //         return this.poseeFreezer;
+    //     }
+    // }
 
-    class Lavarropas extends Elemento{
-        private voltaje: number;
-        private carga: number;
-        private revoluciones: number;
+    // class Lavarropas extends Elemento{
+    //     private voltaje: number;
+    //     private carga: number;
+    //     private revoluciones: number;
 
-        constructor(voltaje: number, carga: number, revoluciones: number, descripcion: string, dimensiones: string, id: number){
-            super(id, descripcion, dimensiones);
-            this.voltaje = voltaje;
-            this.carga = carga;
-            this.revoluciones = revoluciones;
-        }
+    //     constructor(voltaje: number, carga: number, revoluciones: number, descripcion: string, dimensiones: string, id: number){
+    //         super(id, descripcion, dimensiones);
+    //         this.voltaje = voltaje;
+    //         this.carga = carga;
+    //         this.revoluciones = revoluciones;
+    //     }
 
-        public getVoltaje(){
-            return this.voltaje;
-        }
+    //     public getVoltaje(){
+    //         return this.voltaje;
+    //     }
 
-        public getCarga(){
-            return this.carga;
-        }
+    //     public getCarga(){
+    //         return this.carga;
+    //     }
 
-        public getRevoluciones(){
-            return this.revoluciones;
-        }
-    }
+    //     public getRevoluciones(){
+    //         return this.revoluciones;
+    //     }
+    // }
 
-    class Televisor extends Elemento{
-        private voltaje: number;
-        private tipo: string;
-        private esSmart: boolean;
+    // class Televisor extends Elemento{
+    //     private voltaje: number;
+    //     private tipo: string;
+    //     private esSmart: boolean;
         
-        constructor(voltaje: number, tipo: string, esSmart: boolean, descripcion: string, dimensiones: string, id: number){
-            super(id, descripcion, dimensiones);
-            this.voltaje = voltaje;
-            this.tipo = tipo;
-            this.esSmart = esSmart;
-        }
+    //     constructor(voltaje: number, tipo: string, esSmart: boolean, descripcion: string, dimensiones: string, id: number){
+    //         super(id, descripcion, dimensiones);
+    //         this.voltaje = voltaje;
+    //         this.tipo = tipo;
+    //         this.esSmart = esSmart;
+    //     }
 
-        public getVoltaje(){
-            return this.voltaje;
-        }
+    //     public getVoltaje(){
+    //         return this.voltaje;
+    //     }
 
-        public getTipo(){
-            return this.tipo;
-        }
+    //     public getTipo(){
+    //         return this.tipo;
+    //     }
 
-        public EsSmart(){
-            return this.esSmart;
-        }
-    }
+    //     public EsSmart(){
+    //         return this.esSmart;
+    //     }
+    // }
 
-    class Bicicleta extends Elemento{
-        private tamanioRodado: number;
-        private esElectrica: boolean;
-        private cantidadCambios: number;
+    // class Bicicleta extends Elemento{
+    //     private tamanioRodado: number;
+    //     private esElectrica: boolean;
+    //     private cantidadCambios: number;
 
-        constructor(tamanioRodado: number, esElectrica: boolean, cantidadCambios: number, descripcion: string, dimensiones: string, id: number){
-            super(id, descripcion, dimensiones);
-            this.tamanioRodado = tamanioRodado;
-            this.esElectrica = esElectrica;
-            this.cantidadCambios = cantidadCambios;
-        }
+    //     constructor(tamanioRodado: number, esElectrica: boolean, cantidadCambios: number, descripcion: string, dimensiones: string, id: number){
+    //         super(id, descripcion, dimensiones);
+    //         this.tamanioRodado = tamanioRodado;
+    //         this.esElectrica = esElectrica;
+    //         this.cantidadCambios = cantidadCambios;
+    //     }
 
-        public getTamanioRodado(){
-            return this.tamanioRodado;
-        }
+    //     public getTamanioRodado(){
+    //         return this.tamanioRodado;
+    //     }
 
-        public getEsElectrica(){
-            return this.esElectrica;
-        }
+    //     public getEsElectrica(){
+    //         return this.esElectrica;
+    //     }
 
-        public getCantCambios(){
-            return this.cantidadCambios;
-        }
-    }
+    //     public getCantCambios(){
+    //         return this.cantidadCambios;
+    //     }
+    // }
 
     // const auto1 = new Vehiculo('Auto', 0, [], 5);
     // const camioneta1 = new Vehiculo('Camioneta', 0, [], 10);
@@ -290,32 +291,66 @@ function main(): void {
     // auto1.listarElementos();
 
     //EXCERCISE 17
+    // Hacer pruebas con una Mamushka de madera de varios niveles, un portafolios vacío de cuero,
+    // un botiquín de plástico que contiene gasa y agua oxigenada, una bolsa de cuero que contenga un
+    // peine y un botiquín.
 
-    const scanner1 = new Scanner();
-    const portafolios1 = new Objeto('Contenido', 'Portafolio', 'Cuero', 5, []);
-    const peine1 = new Objeto('Contenido', 'Peine', 'Plastico', 0.30, []);
-    const gasa1 = new Objeto('Contenido', 'Gasa', 'Tela', 2, []);
-    const aguaOxigenada1 = new Objeto('Simple', 'Botella de agua oxigenada', 'Plastico', 3, []);
-    const botiquin1 = new Objeto('Sambuchito', 'Botiquin de primeros auxilios', 'Plastico', 8, [gasa1, aguaOxigenada1]);
-    const bolsa1 = new Objeto('Contenedor', 'Bolsa', 'Cuero', 12, [peine1, botiquin1]);
+    // const scanner1 = new Scanner();
+    // const portafolios1 = new Objeto('Contenido', 'Portafolio', 'Cuero', 5, []);
+    // const peine1 = new Objeto('Contenido', 'Peine', 'Plastico', 0.30, []);
+    // const gasa1 = new Objeto('Contenido', 'Gasa', 'Tela', 2, []);
+    // const aguaOxigenada1 = new Objeto('Simple', 'Botella de agua oxigenada', 'Plastico', 3, []);
+    // const botiquin1 = new Objeto('Sambuchito', 'Botiquin de primeros auxilios', 'Plastico', 8, [gasa1, aguaOxigenada1]);
+    // const bolsa1 = new Objeto('Contenedor', 'Bolsa', 'Cuero', 12, [peine1, botiquin1]);
 
-    scanner1.escaneo(portafolios1);
-    scanner1.escaneo(bolsa1);
+    // scanner1.escaneo(portafolios1);
+    // scanner1.escaneo(bolsa1);
 
+    class Departamento extends Inmueble{
+        private piso: number;
+        private letraDpto: string;
+        private admiteMascotas: boolean;
+
+        constructor(piso: number = 0, letraDpto: string = "", admiteMascotas: boolean = false, provincia: string = "", ciudad: string = "", barrio: string ="", nombreCalle: string = "", altura: number = 0, codigoPostal: number = 0, perteneceBarrioPrivado: boolean =false, conexionSuministroGas:boolean = false, emplazamientoInfraCloacal: boolean = false, camposCompletos: boolean = false, observaciones: string = ""){
+            super(provincia, ciudad, barrio, nombreCalle, altura, codigoPostal, perteneceBarrioPrivado, conexionSuministroGas, emplazamientoInfraCloacal, camposCompletos, observaciones);
+            this.piso = piso;
+            this.letraDpto = letraDpto;
+            this.admiteMascotas = admiteMascotas;
+        }
+    }
+
+    class Casa extends Inmueble{
+        private poseeQuincho: boolean;
+        private poseePileta: boolean;
+
+        constructor(poseeQuincho: boolean = false, poseePileta: boolean = false, provincia: string = "", ciudad: string = "", barrio: string ="", nombreCalle: string = "", altura: number = 0, codigoPostal: number = 0, perteneceBarrioPrivado: boolean =false, conexionSuministroGas:boolean = false, emplazamientoInfraCloacal: boolean = false, camposCompletos: boolean = false, observaciones: string = ""){
+            super(provincia, ciudad, barrio, nombreCalle, altura, codigoPostal, perteneceBarrioPrivado, conexionSuministroGas, emplazamientoInfraCloacal, camposCompletos, observaciones);
+            this.poseeQuincho = poseeQuincho;
+            this.poseePileta = poseePileta;
+        }
+    }
+    
+    const listaFormulario = new ListaFormularios([]);
+    
+    const departamento1 = new Departamento(2, 'B', false, 'Buenos Aires', 'Caba', 'Recoleta', 'Laprida', 1234, 7500, false, true, true, true);
+    const contacto1 = new Contacto('Facundo', 'Varela', 12345678, 'facundo@example.com', true, "");
+
+    const departamento2 = new Departamento(1, 'A', true, 'Misiones', 'Ciudad 1', 'Las Flores', 'Floresta', 456, 8752, true, true, true, false);
+    const contacto2 = new Contacto('Fernando', '', 0, '', false, '');
+
+    const formulario1 = new Formulario(1, departamento1, contacto1, true, false);
+    const formulario2 = new Formulario(2, undefined, undefined, false, false);
+
+    // formulario2.ingresarDatosContacto(contacto2);
+    // formulario2.listoParaDarAlta();
+
+    formulario1.listoParaDarAlta();
+    listaFormulario.darDeAlta(formulario1);
+    listaFormulario.getFormulariosDeAlta();
+    // listaFormulario.darDeAlta(formulario2);
+    // listaFormulario.getFormulariosDeAlta();
+    
 
 }
 
 main();
-
-//Excercise 13th code:{
-//         const sistema_traccion_oruga = new sistemaDeTraccion('Oruga');
-//         const sistema_traccion_rueda_caucho = new sistemaDeTraccion('Rueda de caucho');
-
-//         const robot1 = new Robot('KT-2020-P', 10, sistema_traccion_oruga);
-//         console.log(`Número de serie del robot 1: ${robot1.NroSerie}. Potencia de tracción final: ${robot1.potenciaTraccionFinal(sistema_traccion_oruga.TipoTraccion)}`);
-//     robot1.getSistemaTraccion(sistema_traccion_oruga.TipoTraccion);
-
-//     const robot2 = new Robot('KT-2020-B', 10, sistema_traccion_rueda_caucho);
-//     console.log(`Número de serie: ${robot2.NroSerie}. Potencia de tracción final: ${robot2.potenciaTraccionFinal(sistema_traccion_rueda_caucho.TipoTraccion)}`);
-//     robot2.getSistemaTraccion(sistema_traccion_rueda_caucho.TipoTraccion);
-// }
