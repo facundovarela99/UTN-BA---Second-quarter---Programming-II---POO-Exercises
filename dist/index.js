@@ -1,11 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const excercise6_1 = require("./excercise6");
+const excercise8_12_1 = require("./excercise8-12");
 function main() {
-    const apple = new excercise6_1.Fruit('Red', 150, true);
-    const apple2 = new excercise6_1.Fruit('Green', 175);
-    const orange = new excercise6_1.Fruit('Orange');
-    console.log(orange.weight);
+    const guard1 = new excercise8_12_1.Guard('Facundo', 'Varela');
+    const visitor1 = new excercise8_12_1.Visitor('Gonzalo', 'Varela', 123456789);
+    const visitor2 = new excercise8_12_1.Visitor('Federico', 'Varela', 34562189);
+    console.log(guard1.introduceHimself());
+    console.log(visitor1.introduceHimself());
+    console.log(guard1.checkDNI(visitor1.introduceHimself(), visitor1.dniNumber));
 }
 main();
 //# sourceMappingURL=index.js.map

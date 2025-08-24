@@ -1,9 +1,10 @@
-import { Person } from "./excercise1";
+// import { Person } from "./excercise1";
 import { Vehicle } from "./excercise2";
 import { Article } from "./excercise3";
 import { Cinema } from "./excercise4";
 import { Fruit } from "./excercise6";
-import { Persona } from "./personas";
+import { Ninja } from "./excercise7";
+import { Person, Guard, Visitor } from "./excercise8-12";
 import { Robot, sistemaDeTraccion } from "./excercise13";
 import { Dron, Herramienta } from "./excercise14";
 import { Barco } from "./excercise15";
@@ -14,20 +15,19 @@ import { ListaFormularios, Formulario, Inmueble, Contacto } from "./excercise18"
 
 function main(): void {
 
-    //Excercise 1:
+    /*Excercise 1:*/
     // const person1 = new Person('Facundo', 'Varela');
     // console.log(`Name: ${person1.name}`);
     // console.log(`Last name: ${person1.lastName}`);
 
-    //Excercise 2:
+    /*Excercise 2:*/
     // console.log('Vehicles:\n')
     // const vehicle1 = new Vehicle('Ford', 'Mustang', '125asd');
     // const vehicle2 = new Vehicle('Chevrolet', 'Prisma', 12345);
-
     // console.log(`Vehicle 1:\nBrand: ${vehicle1.brand}\nModel: ${vehicle1.model}\nPatent number: ${vehicle1.patentNumber}\n`)
     // console.log(`Vehicle 2:\nBrand: ${vehicle2.brand}\nModel: ${vehicle2.model}\nPatent number: ${vehicle2.patentNumber}\n`)
 
-    //Excercise 3:
+    /*Excercise 3:*/
     // console.log('Articles:\n')
     // const article1 = new Article('Powershell', 'Model 1');
     // const article2 = new Article('Command Prompt', 'Model 2');
@@ -35,7 +35,7 @@ function main(): void {
     // console.log(`Article 1: ${article1.brand} ${article1.model}`);
     // console.log(`Article 2: ${article2.brand} ${article2.model}`);
 
-    //Excercise 4/5:
+    /*Excercise 4/5:*/
     // const cinema1 = new Cinema('Friday the 13th', '23:00hs p.m');
     // const cinema2 = new Cinema('Spider-man', '17:00hs p.m');
     // console.log(`Movie: ${cinema1.movie} - Schedule: ${cinema1.schedule}`)
@@ -43,7 +43,7 @@ function main(): void {
     // cinema1.schedule = '13:00hs a.m';
     // console.log(`New movie: ${cinema1.movie} - Schedule: ${cinema1.schedule}`)
 
-    //Excercise 6:
+    /*Excercise 6:*/
     // const apple = new Fruit('Red', 150, true);
     // const apple2 = new Fruit('Green', 175);
     // const orange = new Fruit('Orange');
@@ -51,43 +51,27 @@ function main(): void {
     // orange.weight = 250;
     // console.log(`Orange weight: ${orange.weight}. its eadible: ${orange.itsEadible()}`);
     
+    /* Excercise 7: */
 
-    // class Visitante extends Persona {
-    //     public id_visitante: string;
-    //     private dni: number;
-    //     constructor(nombre: string, apellido: string, fecha_nacimiento: number, id_visitante: string, dni: number) {
-    //         super(nombre, apellido, fecha_nacimiento);
-    //         this.id_visitante = id_visitante;
-    //         this.dni = dni;
-    //     }
+    // const Scorpion = new Ninja('Ninjitsu', 'Katana', 100);
+    // const SubZero = new Ninja('Shotokan', 'Freeze arms', 100);
+    // console.log(Scorpion.hop(5));
+    // console.log(Scorpion.attack());
 
-    //     public get DNI() {
-    //         return this.dni;
-    //     }
+    /* Excercise 8-12: */
 
-    //     public presentarse() {
-    //         console.log(`Hola, soy el visitante ${this.Nombre} ${this.Apellido}. Mi ID es ${this.id_visitante}`);
-    //     }
-    // }
+    // const guard1 = new Guard('Facundo', 'Varela');
+    // const visitor1 = new Visitor('Gonzalo', 'Varela', 123456789);
+    // const visitor2 = new Visitor('Federico', 'Varela', 34562189);
 
-    // class Guardia extends Persona {
-    //     private nro_legajo: number;
-    //     constructor(nombre: string, apellido: string, fecha_nacimiento: number, nro_legajo: number) {
-    //         super(nombre, apellido, fecha_nacimiento);
-    //         this.nro_legajo = nro_legajo;
-    //     }
+    // console.log(guard1.introduceHimself()+"\n"); //Guard introduceHimself() function overwrite Person introduceHimself() function
+    // console.log(visitor1.introduceHimself()+"\n"); 
+    // console.log(guard1.checkDNI(visitor1.introduceHimself(), visitor1.dniNumber));
 
-    //     public controlarDocumento(nombreCompleto: string, dni: number) {
-    //         console.log(`Adelante ${nombreCompleto} con DNI ${dni}`);
-    //     }
-
-    //     public presentarse() {
-    //         console.log(`Hola, mi nombre es ${this.Nombre} ${this.Apellido} y soy el guardia. Mi número de legajo es ${this.nro_legajo}`);
-    //     }
-    // }
+    
 
 
-    // EXCERCISE 14):
+    /* EXCERCISE 14): */
     // const sensorInfrarrojo1 = new Herramienta('Sensor infrarrojo', 250);
     // const Taser = new Herramienta('Taser', 300);
     // const brazoRobotico = new Herramienta('Brazo robótico', 500);
