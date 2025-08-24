@@ -1,0 +1,82 @@
+<mxfile host="65bd71144e">
+    <diagram id="eHcvX8x1Sncu39slZ1ae" name="Page-1">
+        <mxGraphModel dx="2068" dy="1804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px; white-space-collapse: preserve;&quot;&gt;&lt;div style=&quot;color: rgb(204, 204, 204); line-height: 19px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;//13. The Kokumo Laboratory Technologis is developing the explorer robot prototype whose traction system &amp;nbsp;can be personalized so that it adapts better to the terrain.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// The robot called KT-2020 has the following characteristics:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// ● Serial number: KT-2020-P&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// ● Base traction power (BTP): 10 HP&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// ● Traction type: anyone of the two options developed.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// The traction systems are:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #cccccc;&quot;&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// ● Rubber wheel: ideal for urban environments. it&#39;s use takes away 1 hp to the BTP and allows to ride until 100km; when it runs out, it must be replaced&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #cccccc;&quot;&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// ● Catterpillar: all kind of terrain, it allows the robot to advance until 400km beforer require to be replaced and it&#39;s use takes away 3 hp to the BTP. It&#39;s has temperature sensors Meke-M0&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// Analyze, design and diagram the relations and implement the code.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// Create instances of each class and assign the robot differents tractions systems,&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;//trying to show the following data among the differents asignations:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// Serial number, final traction power, traction type-of, how much can the robot advance and the data about any additional feature that it has.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="-505" y="-170" width="1520" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="class Robot" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-150" y="160" width="330" height="420" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="-private basePower&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Traction&lt;/span&gt;: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="4">
+                    <mxGeometry x="-10" y="50" width="220" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="-private serialNumber: string;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="4">
+                    <mxGeometry x="-10" y="30" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="-private traction: typeTraction: TractionSystem;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="4">
+                    <mxGeometry x="-10" y="120" width="270" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="+public get serialNumber: string;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="4">
+                    <mxGeometry y="190" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="+public get baseTractionPower: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="4">
+                    <mxGeometry y="240" width="240" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="+public get basePowerTraction(): number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="4">
+                    <mxGeometry x="-5" y="290" width="250" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="" style="endArrow=none;html=1;" edge="1" parent="4">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint y="160" as="sourcePoint"/>
+                        <mxPoint x="330" y="160" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="45" value="+public get typeTraction: TractionSystem();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="4">
+                    <mxGeometry y="330" width="250" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="-private _finalPowerTraction?: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="4">
+                    <mxGeometry x="-10" y="90" width="230" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="+public advance(hpUsed: number);" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="4">
+                    <mxGeometry x="-5" y="375" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="class TractionSystem" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="160" width="270" height="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="-private name: string;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="14">
+                    <mxGeometry y="40" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="+public hpUse(name: string);" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="14">
+                    <mxGeometry y="230" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="-private sensors: boolean;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="14">
+                    <mxGeometry y="70" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="" style="endArrow=none;html=1;" edge="1" parent="14">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint y="130" as="sourcePoint"/>
+                        <mxPoint x="270" y="130" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="+public get name();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="14">
+                    <mxGeometry y="160" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="+public get sensors();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="14">
+                    <mxGeometry y="195" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="" style="endArrow=classic;html=1;entryX=-0.01;entryY=0.644;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="190" y="260.15" as="sourcePoint"/>
+                        <mxPoint x="308.60000000000036" y="259.4699999999999" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="Has a" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="220" y="220" width="50" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

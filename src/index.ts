@@ -5,7 +5,7 @@ import { Cinema } from "./excercise4";
 import { Fruit } from "./excercise6";
 import { Ninja } from "./excercise7";
 import { Person, Guard, Visitor } from "./excercise8-12";
-import { Robot, sistemaDeTraccion } from "./excercise13";
+import { Robot, TractionSystem } from "./excercise13";
 import { Dron, Herramienta } from "./excercise14";
 import { Barco } from "./excercise15";
 import { Vehiculo, Elemento } from "./excercise16";
@@ -68,6 +68,26 @@ function main(): void {
     // console.log(visitor1.introduceHimself()+"\n"); 
     // console.log(guard1.checkDNI(visitor1.introduceHimself(), visitor1.dniNumber));
 
+    /* EXCERCISE 13): */
+
+    // procurando mostrar por pantalla los siguientes datos entre las distintas asignaciones:
+// Número de serie, potencia de tracción final, tipo de tracción, cuanto puede avanzar y
+// datos sobre cualquier característica adicional que posea.
+
+    const rubberWheelTractionSystem1 = new TractionSystem('Rubber Wheel', false, 10);
+    const CatterpillarTractionSystem1 = new TractionSystem('Catterpillar', true, 10);
+    const robot1 = new Robot('KT-2020-P', 10, rubberWheelTractionSystem1);
+    const robot2 = new Robot('KT-2020-Q', 10, CatterpillarTractionSystem1);
+
+    console.log('Robot 1:\n');
+    console.log(`Serial number: ${robot1.serialNumber+"\n"}`);
+    console.log(`Traction system: ${robot1.typeTraction.name}`);
+    console.log(`Base power traction: ${robot1.basePowerTraction}. ${robot1.advance(robot1.typeTraction.HpUse(robot1.typeTraction.name))}`)
+
+    console.log('Robot 2:\n');
+    console.log(robot2.serialNumber+"\n");
+    console.log(robot2.typeTraction.name);
+    console.log(`Base power traction: ${robot2.basePowerTraction}. ${robot2.advance(robot1.typeTraction.HpUse(robot2.typeTraction.name))}`)
     
 
 
