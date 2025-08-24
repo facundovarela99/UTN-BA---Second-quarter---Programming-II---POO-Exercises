@@ -2,6 +2,7 @@ import { Person } from "./excercise1";
 import { Vehicle } from "./excercise2";
 import { Article } from "./excercise3";
 import { Cinema } from "./excercise4";
+import { Fruit } from "./excercise6";
 import { Persona } from "./personas";
 import { Robot, sistemaDeTraccion } from "./excercise13";
 import { Dron, Herramienta } from "./excercise14";
@@ -34,14 +35,22 @@ function main(): void {
     // console.log(`Article 1: ${article1.brand} ${article1.model}`);
     // console.log(`Article 2: ${article2.brand} ${article2.model}`);
 
-    //Excercise 4:
+    //Excercise 4/5:
     // const cinema1 = new Cinema('Friday the 13th', '23:00hs p.m');
+    // const cinema2 = new Cinema('Spider-man', '17:00hs p.m');
     // console.log(`Movie: ${cinema1.movie} - Schedule: ${cinema1.schedule}`)
     // cinema1.movie = 'Jason vs Freddy Krueger';
     // cinema1.schedule = '13:00hs a.m';
     // console.log(`New movie: ${cinema1.movie} - Schedule: ${cinema1.schedule}`)
 
+    //Excercise 6:
+    // const apple = new Fruit('Red', 150, true);
+    // const apple2 = new Fruit('Green', 175);
+    // const orange = new Fruit('Orange');
 
+    // orange.weight = 250;
+    // console.log(`Orange weight: ${orange.weight}. its eadible: ${orange.itsEadible()}`);
+    
 
     // class Visitante extends Persona {
     //     public id_visitante: string;
