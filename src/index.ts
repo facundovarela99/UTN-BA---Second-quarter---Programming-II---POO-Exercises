@@ -1,6 +1,7 @@
 import { Person } from "./excercise1";
 import { Vehicle } from "./excercise2";
 import { Article } from "./excercise3";
+import { Cinema } from "./excercise4";
 import { Persona } from "./personas";
 import { Robot, sistemaDeTraccion } from "./excercise13";
 import { Dron, Herramienta } from "./excercise14";
@@ -26,12 +27,20 @@ function main(): void {
     // console.log(`Vehicle 2:\nBrand: ${vehicle2.brand}\nModel: ${vehicle2.model}\nPatent number: ${vehicle2.patentNumber}\n`)
 
     //Excercise 3:
-    console.log('Articles:\n')
-    const article1 = new Article('Powershell', 'Model 1');
-    const article2 = new Article('Command Prompt', 'Model 2');
+    // console.log('Articles:\n')
+    // const article1 = new Article('Powershell', 'Model 1');
+    // const article2 = new Article('Command Prompt', 'Model 2');
 
-    console.log(`Article 1: ${article1.brand} ${article1.model}`);
-    console.log(`Article 2: ${article2.brand} ${article2.model}`);
+    // console.log(`Article 1: ${article1.brand} ${article1.model}`);
+    // console.log(`Article 2: ${article2.brand} ${article2.model}`);
+
+    //Excercise 4:
+    // const cinema1 = new Cinema('Friday the 13th', '23:00hs p.m');
+    // console.log(`Movie: ${cinema1.movie} - Schedule: ${cinema1.schedule}`)
+    // cinema1.movie = 'Jason vs Freddy Krueger';
+    // cinema1.schedule = '13:00hs a.m';
+    // console.log(`New movie: ${cinema1.movie} - Schedule: ${cinema1.schedule}`)
+
 
 
     // class Visitante extends Persona {
