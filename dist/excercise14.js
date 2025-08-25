@@ -1,73 +1,73 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Herramienta = exports.Dron = void 0;
+exports.Tool = exports.Dron = void 0;
 class Dron {
-    velocidad;
-    altura;
-    peso_total;
-    cantidad_herramientas;
-    herramientas;
-    constructor(velocidad = 100, altura = 100, peso_total = 0, cantidad_herramientas = 0, herramientas = []) {
-        this.velocidad = velocidad;
-        this.altura = altura;
-        this.peso_total = 0;
-        this.cantidad_herramientas = cantidad_herramientas;
-        this.herramientas = [];
+    _velocity;
+    _height;
+    _totalWeight;
+    _numberOfTools;
+    _tools;
+    constructor(velocity = 100, height = 100, totalWeight = 0, numberOfTools = 0, tools = []) {
+        this._velocity = velocity;
+        this._height = height;
+        this._totalWeight = 0;
+        this._numberOfTools = numberOfTools;
+        this._tools = [];
     }
-    agregarHerramienta(herramienta) {
-        this.herramientas.push(herramienta);
-        this.cantidad_herramientas++;
-        this.peso_total += herramienta.getPesoHerramienta();
-        console.log(`${herramienta.getTipoHerramienta()} agregado`);
+    addTool(tool) {
+        this._tools.push(tool);
+        this._numberOfTools++;
+        this._totalWeight += tool.toolWeight;
+        console.log(`${tool.toolType} added`);
     }
-    getPesoTotal() {
-        return this.peso_total;
+    getTotalWeight() {
+        return this._totalWeight;
     }
-    getVelocidadFinal() {
-        if (this.peso_total > 200) {
-            let pesoExcedido = this.peso_total - 200;
-            let vecesExcedidas = pesoExcedido / 50;
-            let PorcentajeVelocidadFinalPerdida = vecesExcedidas * 2;
-            let velocidadFinalPerdida = this.velocidad - PorcentajeVelocidadFinalPerdida;
-            return `Velocidad final: ${velocidadFinalPerdida}. Porcentaje estimado perdido: ${PorcentajeVelocidadFinalPerdida}%`;
+    getFinalVelocity() {
+        if (this._totalWeight > 200) {
+            let weightExceeded = this._totalWeight - 200;
+            let timesExceeded = weightExceeded / 50;
+            let percentageOfFinalSpeedLost = timesExceeded * 2;
+            let finalLostSpeed = this._velocity - percentageOfFinalSpeedLost;
+            return `Final velocity: ${finalLostSpeed}. Estimated percentage lost: ${percentageOfFinalSpeedLost}%`;
         }
         else {
-            return `Velocidad total: ${this.velocidad}. El dron no pierde velocidad`;
+            return `Final velocity: ${this._velocity}. The dron doesn't lose velocity`;
         }
     }
-    getAlturaFinal() {
-        if (this.peso_total > 200) {
-            let pesoExcedido = this.peso_total - 200;
-            let vecesExcedidas = pesoExcedido / 50;
-            let porcentajeAlturaFinalPerdida = vecesExcedidas * 5;
-            let alturaFinalPerdida = this.altura - porcentajeAlturaFinalPerdida;
-            return `Altura final: ${alturaFinalPerdida}. Porcentaje estimado perdido: ${porcentajeAlturaFinalPerdida}%`;
+    getFinalHeight() {
+        if (this._totalWeight > 200) {
+            let weightExceeded = this._totalWeight - 200;
+            let timesExceeded = weightExceeded / 50;
+            let percentageOfFinalHeightLost = timesExceeded * 5;
+            let finalLostHeight = this._height - percentageOfFinalHeightLost;
+            return `Final height: ${finalLostHeight}. Estimated percentage lost: ${percentageOfFinalHeightLost}%`;
         }
         else {
-            return `Altura total: ${this.velocidad}. El dron no pierde altura`;
+            return `Final height: ${this._velocity}. The dron doesn't lose height`;
         }
     }
-    getHerramientas() {
-        console.log('Herramientas: ');
-        for (let i = 0; i < this.herramientas.length; i++) {
-            console.log(this.herramientas[i]);
-        }
+    getTools() {
+        console.log('Tools: ');
+        this._tools.forEach(tool => {
+            console.log(tool);
+        });
     }
 }
 exports.Dron = Dron;
-class Herramienta {
-    tipo_herramienta;
-    peso;
-    constructor(tipo_herramienta, peso) {
-        this.tipo_herramienta = tipo_herramienta;
-        this.peso = peso;
+class Tool {
+    _toolType;
+    _weight;
+    constructor(toolType, weight) {
+        this._toolType = toolType;
+        this._weight = weight;
     }
-    getTipoHerramienta() {
-        return this.tipo_herramienta;
+    get toolType() {
+        return this._toolType;
     }
-    getPesoHerramienta() {
-        return this.peso;
+    get toolWeight() {
+        return this._weight;
     }
 }
-exports.Herramienta = Herramienta;
+exports.Tool = Tool;
 //# sourceMappingURL=excercise14.js.map

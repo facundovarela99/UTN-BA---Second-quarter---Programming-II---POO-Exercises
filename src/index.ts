@@ -6,7 +6,7 @@ import { Fruit } from "./excercise6";
 import { Ninja } from "./excercise7";
 import { Person, Guard, Visitor } from "./excercise8-12";
 import { Robot, TractionSystem } from "./excercise13";
-import { Dron, Herramienta } from "./excercise14";
+import { Dron, Tool } from "./excercise14";
 import { Barco } from "./excercise15";
 import { Vehiculo, Elemento } from "./excercise16";
 import { Scanner, Objeto } from "./excercise17";
@@ -69,48 +69,44 @@ function main(): void {
     // console.log(guard1.checkDNI(visitor1.introduceHimself(), visitor1.dniNumber));
 
     /* EXCERCISE 13): */
+    // const rubberWheelTractionSystem1 = new TractionSystem('Rubber Wheel', false, 10);
+    // const CatterpillarTractionSystem1 = new TractionSystem('Catterpillar', true, 10);
+    // const robot1 = new Robot('KT-2020-P', 10, rubberWheelTractionSystem1);
+    // const robot2 = new Robot('KT-2020-Q', 10, CatterpillarTractionSystem1);
 
-    // procurando mostrar por pantalla los siguientes datos entre las distintas asignaciones:
-// Número de serie, potencia de tracción final, tipo de tracción, cuanto puede avanzar y
-// datos sobre cualquier característica adicional que posea.
+    // console.log('Robot 1:\n');
+    // console.log(`Serial number: ${robot1.serialNumber+"\n"}`);
+    // console.log(`Traction system: ${robot1.typeTraction.name}`);
+    // console.log(`Base power traction: ${robot1.basePowerTraction}. ${robot1.advance(robot1.typeTraction.HpUse(robot1.typeTraction.name))}`)
 
-    const rubberWheelTractionSystem1 = new TractionSystem('Rubber Wheel', false, 10);
-    const CatterpillarTractionSystem1 = new TractionSystem('Catterpillar', true, 10);
-    const robot1 = new Robot('KT-2020-P', 10, rubberWheelTractionSystem1);
-    const robot2 = new Robot('KT-2020-Q', 10, CatterpillarTractionSystem1);
-
-    console.log('Robot 1:\n');
-    console.log(`Serial number: ${robot1.serialNumber+"\n"}`);
-    console.log(`Traction system: ${robot1.typeTraction.name}`);
-    console.log(`Base power traction: ${robot1.basePowerTraction}. ${robot1.advance(robot1.typeTraction.HpUse(robot1.typeTraction.name))}`)
-
-    console.log('Robot 2:\n');
-    console.log(robot2.serialNumber+"\n");
-    console.log(robot2.typeTraction.name);
-    console.log(`Base power traction: ${robot2.basePowerTraction}. ${robot2.advance(robot1.typeTraction.HpUse(robot2.typeTraction.name))}`)
+    // console.log('Robot 2:\n');
+    // console.log(robot2.serialNumber+"\n");
+    // console.log(robot2.typeTraction.name);
+    // console.log(`Base power traction: ${robot2.basePowerTraction}. ${robot2.advance(robot1.typeTraction.HpUse(robot2.typeTraction.name))}`)
     
 
 
+
     /* EXCERCISE 14): */
-    // const sensorInfrarrojo1 = new Herramienta('Sensor infrarrojo', 250);
-    // const Taser = new Herramienta('Taser', 300);
-    // const brazoRobotico = new Herramienta('Brazo robótico', 500);
+    const infraredSensor1 = new Tool('Infrared sensor', 250);
+    const Taser1 = new Tool('Taser', 300);
+    const roboticArm1 = new Tool('Robotic Arm', 500);
 
-    // const dron1 = new Dron(100, 100, 0, 0, []);
+    const dron1 = new Dron(100, 100, 0, 0, []);
 
-    // console.log(dron1.getAlturaFinal());
-    // console.log(dron1.getVelocidadFinal());
+    console.log(dron1.getFinalHeight());
+    console.log(dron1.getFinalVelocity());
 
-    // console.log("Peso total: " + dron1.getPesoTotal());
+    console.log("Total weight: " + dron1.getTotalWeight());
 
-    // dron1.agregarHerramienta(sensorInfrarrojo1);
-    // dron1.agregarHerramienta(Taser);
-    // dron1.agregarHerramienta(brazoRobotico);
+    dron1.addTool(infraredSensor1);
+    dron1.addTool(Taser1);
+    dron1.addTool(roboticArm1);
 
-    // console.log("Peso total: " + dron1.getPesoTotal());
+    console.log("Total weight: " + dron1.getTotalWeight());
 
-    // console.log(dron1.getAlturaFinal());
-    // console.log(dron1.getVelocidadFinal());
+    console.log(dron1.getFinalHeight());
+    console.log(dron1.getFinalVelocity());
 
     // EXCERCISE 15):
     // class Acorazado extends Barco{

@@ -1,96 +1,93 @@
-// 14. Una empresa de seguridad que se dedica a la vigilancia mediante el empleo de drones, ha
-// desarrollado un sistema de montaje que permitirá que los drones puedan cargar, además de la
-// cámara de vigilancia, una herramienta accionable a distancia.
-// Actualmente el sistema de anclaje admite:
-// ● Sensor infrarrojo: pesa 250 gramos
-// ● Taser: pesa 300 gramos
-// ● Brazo robótico: pesa 500 gramos
+//  14. A security company that is dedicated to surveillance thorugh the use of drones, has been developed a mounting system that allow the drones to charge an actionable tool besides the surveillance camera
+//  Currently, the anchorage systems allows:
+// ● infrared sensor: it weighs 250gr
+// ● Taser: it weighs 300 gr
+// ● Robotic arm: it weighs 500 gr
 
-// El dron puede soportar hasta 200 gramos sin sufrir penalizaciones de velocidad (5 mts/s) ni
-// altura (100 mts); luego, por cada 50 gramos extras, el dron reduce su velocidad en 2% y
-// la altura en 5%.
+//The dron can hold 200gr until suffer velocity (5 mts/s) and height (100 mts) penalizations; then, by every 50 extra gr, the dron reduce its velocity at 2 % and height at 5 %
 
-// Analizar, diseñar, diagramar las relaciones e implementar el código.
-// Crear instancias de cada una de las clases y asignarle al dron las distintas herramientas,
-// procurando mostrar por pantalla los siguientes datos entre las distintas asignaciones:
-// velocidad, altura y tipo de herramienta que lleva
+//Analyze, design, diagram relationships and implement code.
+//Create instances of each of the classes and assign the drone the different tools,
+//trying to display the following data on the screen between the different assignments:
+//speed, height and type of tool carried
+
 
 
 export class Dron {
-    private velocidad: number;
-    private altura: number;
-    private peso_total: number;
-    private cantidad_herramientas: number;
-    private herramientas: Array<Herramienta>;
+    private _velocity: number;
+    private _height: number;
+    private _totalWeight: number;
+    private _numberOfTools: number;
+    private _tools: Array<Tool>;
 
-    constructor(velocidad: number = 100, altura: number = 100, peso_total: number = 0, cantidad_herramientas: number = 0, herramientas = []) {
-        this.velocidad = velocidad;
-        this.altura = altura;
-        this.peso_total = 0;
-        this.cantidad_herramientas = cantidad_herramientas;
-        this.herramientas = [];
+    constructor(velocity: number = 100, height: number = 100, totalWeight: number = 0, numberOfTools: number = 0, tools = []) {
+        this._velocity = velocity;
+        this._height = height;
+        this._totalWeight = 0;
+        this._numberOfTools = numberOfTools;
+        this._tools = [];
     }
 
-    public agregarHerramienta(herramienta: Herramienta) {
-        this.herramientas.push(herramienta);
-        this.cantidad_herramientas++;
-        this.peso_total += herramienta.getPesoHerramienta();
-        console.log(`${herramienta.getTipoHerramienta()} agregado`);
+    public addTool(tool: Tool) {
+        this._tools.push(tool);
+        this._numberOfTools++;
+        this._totalWeight += tool.toolWeight;
+        console.log(`${tool.toolType} added`);
     }
 
-    public getPesoTotal(){
-        return this.peso_total;
+    public getTotalWeight(){
+        return this._totalWeight;
     }
 
-    public getVelocidadFinal() {
-        if (this.peso_total > 200) {
-            let pesoExcedido = this.peso_total - 200;
-            let vecesExcedidas = pesoExcedido / 50;
-            let PorcentajeVelocidadFinalPerdida = vecesExcedidas * 2;
-            let velocidadFinalPerdida = this.velocidad - PorcentajeVelocidadFinalPerdida;
-            return `Velocidad final: ${velocidadFinalPerdida}. Porcentaje estimado perdido: ${PorcentajeVelocidadFinalPerdida}%`;
+    public getFinalVelocity() {
+        if (this._totalWeight > 200) {
+            let weightExceeded = this._totalWeight - 200;
+            let timesExceeded = weightExceeded / 50;
+            let percentageOfFinalSpeedLost = timesExceeded * 2;
+            let finalLostSpeed = this._velocity - percentageOfFinalSpeedLost;
+            return `Final velocity: ${finalLostSpeed}. Estimated percentage lost: ${percentageOfFinalSpeedLost}%`;
         } else {
-            return `Velocidad total: ${this.velocidad}. El dron no pierde velocidad`;
+            return `Final velocity: ${this._velocity}. The dron doesn't lose velocity`;
         }
     }
 
-    public getAlturaFinal() {
-        if (this.peso_total > 200) {
-            let pesoExcedido = this.peso_total - 200;
-            let vecesExcedidas = pesoExcedido / 50;
-            let porcentajeAlturaFinalPerdida = vecesExcedidas * 5;
-            let alturaFinalPerdida = this.altura - porcentajeAlturaFinalPerdida;
-            return `Altura final: ${alturaFinalPerdida}. Porcentaje estimado perdido: ${porcentajeAlturaFinalPerdida}%`;
+    public getFinalHeight() {
+        if (this._totalWeight > 200) {
+            let weightExceeded = this._totalWeight - 200;
+            let timesExceeded = weightExceeded / 50;
+            let percentageOfFinalHeightLost = timesExceeded * 5;
+            let finalLostHeight = this._height - percentageOfFinalHeightLost;
+            return `Final height: ${finalLostHeight}. Estimated percentage lost: ${percentageOfFinalHeightLost}%`;
         } else {
-            return `Altura total: ${this.velocidad}. El dron no pierde altura`;
+            return `Final height: ${this._velocity}. The dron doesn't lose height`;
         }
     }
 
-    public getHerramientas(){
-        console.log('Herramientas: ')
-        for (let i = 0; i < this.herramientas.length; i++) {
-            console.log(this.herramientas[i])
-        }
+    public getTools(){
+        console.log('Tools: ')
+        this._tools.forEach(tool =>{
+            console.log(tool);
+        })
     }
 
 }
 
 
-export class Herramienta {
-    private tipo_herramienta: string;
-    private peso: number;
+export class Tool {
+    private _toolType: string;
+    private _weight: number;
 
-    constructor(tipo_herramienta: string, peso: number) {
-        this.tipo_herramienta = tipo_herramienta;
-        this.peso = peso;
+    constructor(toolType: string, weight: number) {
+        this._toolType = toolType;
+        this._weight = weight;
     }
 
-    public getTipoHerramienta() {
-        return this.tipo_herramienta;
+    public get toolType() {
+        return this._toolType;
     }
 
-    public getPesoHerramienta() {
-        return this.peso;
+    public get toolWeight() {
+        return this._weight;
     }
 
 }
