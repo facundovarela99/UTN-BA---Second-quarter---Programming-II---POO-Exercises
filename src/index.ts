@@ -1,6 +1,6 @@
 // import { Person } from "./excercise1";
 import { Vehicle } from "./excercise2";
-import { Article } from "./excercise3";
+// import { Article } from "./excercise3";
 import { Cinema } from "./excercise4";
 import { Fruit } from "./excercise6";
 import { Ninja } from "./excercise7";
@@ -11,6 +11,7 @@ import { Barco } from "./excercise15";
 import { Vehiculo, Elemento } from "./excercise16";
 import { Scanner, Objeto } from "./excercise17";
 import { ListaFormularios, Formulario, Inmueble, Contacto } from "./excercise18";
+import { RegisterSystem ,Article, PriceList } from "./excercise19";
 
 
 function main(): void {
@@ -88,27 +89,27 @@ function main(): void {
 
 
     /* EXCERCISE 14): */
-    const infraredSensor1 = new Tool('Infrared sensor', 250);
-    const Taser1 = new Tool('Taser', 300);
-    const roboticArm1 = new Tool('Robotic Arm', 500);
+    // const infraredSensor1 = new Tool('Infrared sensor', 250);
+    // const Taser1 = new Tool('Taser', 300);
+    // const roboticArm1 = new Tool('Robotic Arm', 500);
 
-    const dron1 = new Dron(100, 100, 0, 0, []);
+    // const dron1 = new Dron(100, 100, 0, 0, []);
 
-    console.log(dron1.getFinalHeight());
-    console.log(dron1.getFinalVelocity());
+    // console.log(dron1.getFinalHeight());
+    // console.log(dron1.getFinalVelocity());
 
-    console.log("Total weight: " + dron1.getTotalWeight());
+    // console.log("Total weight: " + dron1.getTotalWeight());
 
-    dron1.addTool(infraredSensor1);
-    dron1.addTool(Taser1);
-    dron1.addTool(roboticArm1);
+    // dron1.addTool(infraredSensor1);
+    // dron1.addTool(Taser1);
+    // dron1.addTool(roboticArm1);
 
-    console.log("Total weight: " + dron1.getTotalWeight());
+    // console.log("Total weight: " + dron1.getTotalWeight());
 
-    console.log(dron1.getFinalHeight());
-    console.log(dron1.getFinalVelocity());
+    // console.log(dron1.getFinalHeight());
+    // console.log(dron1.getFinalVelocity());
 
-    // EXCERCISE 15):
+    /* EXCERCISE 15): */
     // class Acorazado extends Barco{
     //     private solidez: string;
     //     private blindaje: string;
@@ -199,7 +200,7 @@ function main(): void {
     // console.log(acorazado1.getTipoNavio());
     // console.log(acorazado1.getVelocidad());
 
-    // EXCERCISE 16
+    /* EXCERCISE 16): */
     // class Comoda extends Elemento{
     //     private superficie: string;
     //     private cantidadCajones: number;
@@ -333,7 +334,7 @@ function main(): void {
     // auto1.cargarElemento(bicicleta1);
     // auto1.listarElementos();
 
-    // EXCERCISE 17
+    /* EXCERCISE 17): */
     // Hacer pruebas con una Mamushka de madera de varios niveles, un portafolios vacío de cuero,
     // un botiquín de plástico que contiene gasa y agua oxigenada, una bolsa de cuero que contenga un
     // peine y un botiquín.
@@ -393,6 +394,26 @@ function main(): void {
     // listaFormulario.darDeAlta(formulario2);
     // listaFormulario.getFormulariosDeAlta();
     
+    /* EXCERCISE 19): */
+
+    const RegisterSystemV1 = new RegisterSystem();
+    const dresser1 = new Article();
+    const closet1 = new Article();
+    const nightStand1 = new Article();
+    const table1 = new Article();
+
+    const WholeSaleList1 = new PriceList();
+
+    RegisterSystemV1.registerNewArticle(dresser1, 'Dresser', 1000, 1200, 1100, 'Brown');
+    RegisterSystemV1.registerNewArticle(closet1, 'Closet', 1200, 1500, 1400, 'Brown and White');
+    RegisterSystemV1.registerNewArticle(nightStand1, 'Night Stand', 500, 850, 750, 'Brown and black');
+    RegisterSystemV1.registerNewArticle(table1, 'Table', 300, 600, 450, 'Brown, Black and white');
+    RegisterSystemV1.registerNewList(WholeSaleList1, 'Whole Sale List 1', '2025-12-31', false);
+
+    RegisterSystemV1.addArticleCreatedToList(WholeSaleList1, dresser1);
+    RegisterSystemV1.addArticleCreatedToList(WholeSaleList1, closet1);
+    RegisterSystemV1.addArticleCreatedToList(WholeSaleList1, nightStand1);
+    RegisterSystemV1.showArticlesInList(WholeSaleList1);
 
 }
 
