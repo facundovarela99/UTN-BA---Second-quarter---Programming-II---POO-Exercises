@@ -11,7 +11,7 @@ import { Barco } from "./excercise15";
 import { Vehiculo, Elemento } from "./excercise16";
 import { Scanner, Objeto } from "./excercise17";
 import { ListaFormularios, Formulario, Inmueble, Contacto } from "./excercise18";
-import { RegisterSystem ,Article, PriceList } from "./excercise19";
+import { RegisterSystem ,Article, PriceList } from "./excercise19-20";
 
 
 function main(): void {
@@ -404,16 +404,18 @@ function main(): void {
 
     const WholeSaleList1 = new PriceList();
 
-    RegisterSystemV1.registerNewArticle(dresser1, 'Dresser', 1000, 1200, 1100, 'Brown');
-    RegisterSystemV1.registerNewArticle(closet1, 'Closet', 1200, 1500, 1400, 'Brown and White');
-    RegisterSystemV1.registerNewArticle(nightStand1, 'Night Stand', 500, 850, 750, 'Brown and black');
-    RegisterSystemV1.registerNewArticle(table1, 'Table', 300, 600, 450, 'Brown, Black and white');
+    RegisterSystemV1.registerNewArticle(dresser1, 'Dresser', 1000, 1500, 1000, 'Browasdasdsaddddddddddddddddddddddddddddddddddddn');
+    RegisterSystemV1.registerNewArticle(closet1, 'Closet', 1200, 1500, 900, 'Brown and White');
+    RegisterSystemV1.registerNewArticle(nightStand1, 'Night Stand', 500, 850, 100, 'Brown and black');
+    RegisterSystemV1.registerNewArticle(table1, 'Table', 300, 600, 200, 'Brown, Black and white');
     RegisterSystemV1.registerNewList(WholeSaleList1, 'Whole Sale List 1', '2025-12-31', false);
 
     RegisterSystemV1.addArticleCreatedToList(WholeSaleList1, dresser1);
     RegisterSystemV1.addArticleCreatedToList(WholeSaleList1, closet1);
     RegisterSystemV1.addArticleCreatedToList(WholeSaleList1, nightStand1);
+    RegisterSystemV1.addArticleCreatedToList(WholeSaleList1, table1);
     RegisterSystemV1.showArticlesInList(WholeSaleList1);
+    RegisterSystemV1.showArticlesNumber(WholeSaleList1);
 
 }
 

@@ -3,11 +3,35 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PriceList = exports.Article = exports.RegisterSystem = void 0;
 class RegisterSystem {
     registerNewArticle(newArticle, newName, newProductionCost, newSaleCost, newWholeCost, newObservation) {
-        newArticle.name = newName;
+        if (newName.length > 15) {
+            console.log(`The name "${newName}" is invalid. it must not exceed 15 characters.`);
+            newArticle.name = '';
+        }
+        else {
+            newArticle.name = newName;
+        }
         newArticle.productionCost = newProductionCost;
-        newArticle.saleCost = newSaleCost;
-        newArticle.wholeCost = newWholeCost;
-        newArticle.observation = newObservation;
+        if (newSaleCost <= 0 || newWholeCost <= 0) {
+            console.log(`Invalid $${newSaleCost} or $${newWholeCost} amount. The amount must exceed 0.`);
+        }
+        else if (newWholeCost <= (newSaleCost - (newSaleCost * 0.3))) {
+            newArticle.saleCost = newSaleCost;
+            newArticle.wholeCost = newSaleCost - (newSaleCost * 0.15);
+            console.log("entra en el elif " + newArticle.saleCost);
+            console.log("entra en el elif " + newArticle.wholeCost);
+        }
+        else {
+            newArticle.wholeCost = newWholeCost;
+            console.log("NO entra en el elif " + newArticle.saleCost);
+            console.log("NO entra en el elif " + newArticle.wholeCost);
+        }
+        if (newObservation.length > 30) {
+            console.log('Invalid observation. The observation must not exceed 30 characters.');
+            newArticle.observation = '';
+        }
+        else {
+            newArticle.observation = newObservation;
+        }
     }
     registerNewList(newList, newName, newValidityDeadline, newIdentificationMarker) {
         newList.name = newName;
@@ -15,7 +39,12 @@ class RegisterSystem {
         newList.identificationMarker = newIdentificationMarker;
     }
     addArticleCreatedToList(list, articleCreated) {
-        list.addArticleToList(articleCreated);
+        if (articleCreated.name === '' || articleCreated.saleCost === undefined || articleCreated.observation === '') {
+            console.log(`The article cannot be registered in the list.`);
+        }
+        else {
+            list.addArticleToList(articleCreated);
+        }
     }
     showArticlesInList(list) {
         let toShowList = list.getArticleList();
@@ -32,6 +61,9 @@ class RegisterSystem {
         else {
             console.log("There aren't articles in the list.");
         }
+    }
+    showArticlesNumber(list) {
+        console.log(list.getArticleList().length);
     }
 }
 exports.RegisterSystem = RegisterSystem;
@@ -117,4 +149,4 @@ class PriceList {
     }
 }
 exports.PriceList = PriceList;
-//# sourceMappingURL=excercise19.js.map
+//# sourceMappingURL=excercise19-20.js.map
