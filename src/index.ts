@@ -12,6 +12,7 @@ import { Vehiculo, Elemento } from "./excercise16";
 import { Scanner, Objeto } from "./excercise17";
 import { ListaFormularios, Formulario, Inmueble, Contacto } from "./excercise18";
 import { RegisterSystem ,Article, PriceList } from "./excercise19-20";
+import Client from "./excercise21";
 
 
 function main(): void {
