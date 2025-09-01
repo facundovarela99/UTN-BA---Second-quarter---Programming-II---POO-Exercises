@@ -6,13 +6,15 @@ import { Fruit } from "./excercise6";
 import { Ninja } from "./excercise7";
 import { Person, Guard, Visitor } from "./excercise8-12";
 import { Robot, TractionSystem } from "./excercise13";
-import { Dron, Tool } from "./excercise14";
+import { Dron } from "./guide14/dron";
+import { Tool } from "./guide14/tool";
+// import { Dron, Tool } from "./guide14/tool";
 import { Barco } from "./excercise15";
 import { Vehiculo, Elemento } from "./excercise16";
 import { Scanner, Objeto } from "./excercise17";
-import { ListaFormularios, Formulario, Inmueble, Contacto } from "./excercise18";
+// import { ListaFormularios, Formulario, Inmueble, Contacto } from "./excercise18";
 import { RegisterSystem ,Article, PriceList } from "./excercise19-20";
-import Client from "./excercise21";
+// import Client from "./excercise21";
 
 
 function main(): void {
@@ -90,25 +92,26 @@ function main(): void {
 
 
     /* EXCERCISE 14): */
-    // const infraredSensor1 = new Tool('Infrared sensor', 250);
-    // const Taser1 = new Tool('Taser', 300);
-    // const roboticArm1 = new Tool('Robotic Arm', 500);
+    const infraredSensor1 = new Tool('Infrared sensor', 250, 'Detect high temperatures');
+    const Taser1 = new Tool('Taser', 300, 'Electrocute hostiles');
+    const roboticArm1 = new Tool('Robotic Arm', 500, 'Grab heavy gear');
 
-    // const dron1 = new Dron(100, 100, 0, 0, []);
+    const dron1 = new Dron(100, 100, 0, 0, []);
 
-    // console.log(dron1.getFinalHeight());
-    // console.log(dron1.getFinalVelocity());
+    console.log(dron1.getFinalHeight());
+    console.log(dron1.getFinalVelocity());
 
-    // console.log("Total weight: " + dron1.getTotalWeight());
+    console.log("Total weight: " + dron1.getTotalWeight());
 
-    // dron1.addTool(infraredSensor1);
-    // dron1.addTool(Taser1);
-    // dron1.addTool(roboticArm1);
+    dron1.addTool(infraredSensor1);
+    dron1.addTool(Taser1);
+    dron1.addTool(roboticArm1);
 
-    // console.log("Total weight: " + dron1.getTotalWeight());
+    console.log("Total weight: " + dron1.getTotalWeight());
 
-    // console.log(dron1.getFinalHeight());
-    // console.log(dron1.getFinalVelocity());
+    console.log(dron1.getFinalHeight());
+    console.log(dron1.getFinalVelocity());
+    console.log(dron1.getToolAction(Taser1));
 
     /* EXCERCISE 15): */
     // class Acorazado extends Barco{
@@ -397,26 +400,26 @@ function main(): void {
     
     /* EXCERCISE 19): */
 
-    const RegisterSystemV1 = new RegisterSystem();
-    const dresser1 = new Article();
-    const closet1 = new Article();
-    const nightStand1 = new Article();
-    const table1 = new Article();
+    // const RegisterSystemV1 = new RegisterSystem();
+    // const dresser1 = new Article();
+    // const closet1 = new Article();
+    // const nightStand1 = new Article();
+    // const table1 = new Article();
 
-    const WholeSaleList1 = new PriceList();
+    // const WholeSaleList1 = new PriceList();
 
-    RegisterSystemV1.registerNewArticle(dresser1, 'Dresser', 1000, 1500, 1000, 'Browasdasdsaddddddddddddddddddddddddddddddddddddn');
-    RegisterSystemV1.registerNewArticle(closet1, 'Closet', 1200, 1500, 900, 'Brown and White');
-    RegisterSystemV1.registerNewArticle(nightStand1, 'Night Stand', 500, 850, 100, 'Brown and black');
-    RegisterSystemV1.registerNewArticle(table1, 'Table', 300, 600, 200, 'Brown, Black and white');
-    RegisterSystemV1.registerNewList(WholeSaleList1, 'Whole Sale List 1', '2025-12-31', false);
+    // RegisterSystemV1.registerNewArticle(dresser1, 'Dresser', 1000, 1500, 1000, 'Browasdasdsaddddddddddddddddddddddddddddddddddddn');
+    // RegisterSystemV1.registerNewArticle(closet1, 'Closet', 1200, 1500, 900, 'Brown and White');
+    // RegisterSystemV1.registerNewArticle(nightStand1, 'Night Stand', 500, 850, 100, 'Brown and black');
+    // RegisterSystemV1.registerNewArticle(table1, 'Table', 300, 600, 200, 'Brown, Black and white');
+    // RegisterSystemV1.registerNewList(WholeSaleList1, 'Whole Sale List 1', '2025-12-31', false);
 
-    RegisterSystemV1.addArticleCreatedToList(WholeSaleList1, dresser1);
-    RegisterSystemV1.addArticleCreatedToList(WholeSaleList1, closet1);
-    RegisterSystemV1.addArticleCreatedToList(WholeSaleList1, nightStand1);
-    RegisterSystemV1.addArticleCreatedToList(WholeSaleList1, table1);
-    RegisterSystemV1.showArticlesInList(WholeSaleList1);
-    RegisterSystemV1.showArticlesNumber(WholeSaleList1);
+    // RegisterSystemV1.addArticleCreatedToList(WholeSaleList1, dresser1);
+    // RegisterSystemV1.addArticleCreatedToList(WholeSaleList1, closet1);
+    // RegisterSystemV1.addArticleCreatedToList(WholeSaleList1, nightStand1);
+    // RegisterSystemV1.addArticleCreatedToList(WholeSaleList1, table1);
+    // RegisterSystemV1.showArticlesInList(WholeSaleList1);
+    // RegisterSystemV1.showArticlesNumber(WholeSaleList1);
 
 }
 

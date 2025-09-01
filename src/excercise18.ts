@@ -27,23 +27,29 @@
 // luego recuperarlas para mostrar por pantalla las cualidades.
 
 
-export class ListaFormularios{
-    private _formulariosDeAlta: Array<Formulario>;
-    constructor(formulariosDeAlta: []){
-        this._formulariosDeAlta = formulariosDeAlta = [];
+interface DadorDeAlta {
+    darDeAlta(formulario: Formulario): void;
+}
+
+export class Sistema implements DadorDeAlta {
+    private _formulariosParaAlta: Array<Formulario>;
+    constructor(formulariosDeAlta: []) {
+        this._formulariosParaAlta = formulariosDeAlta = [];
     }
 
-    
-    public darDeAlta(formulario: Formulario){
-        if (formulario.listoParaDarAlta()) {
-            this._formulariosDeAlta.push(formulario);
+
+    public darDeAlta(formulario: Formulario) {
+        if (formulario.getEstado()) {
+            this._formulariosParaAlta.push(formulario);
             console.log('Formulario dado de alta exitosamente.');
+        } else {
+            console.log('El formulario no se encuentra listo para ser dado de alta.');
         }
     }
 
-    public getFormulariosDeAlta(){
-        if (this._formulariosDeAlta.length > 0) {            
-            this._formulariosDeAlta.forEach(formulario => {
+    public getFormulariosDeAlta() {
+        if (this._formulariosParaAlta.length > 0) {
+            this._formulariosParaAlta.forEach(formulario => {
                 console.log(`${formulario.getIDnumber()}`);
                 console.log(`${formulario.getInmueble()}`);
                 console.log(formulario.getContacto());
@@ -54,14 +60,14 @@ export class ListaFormularios{
     }
 }
 
-export class Formulario{
+export class Formulario {
     private formulario_id: number;
     private inmueble?: Inmueble;
     private contacto?: Contacto;
     private listoParaAlta: boolean;
     private dadoDeAlta: boolean;
 
-    constructor(formulario_id: number, inmueble: Inmueble | undefined, contacto: Contacto | undefined, listoParaAlta: boolean = false, dadoDeAlta: boolean = false){
+    constructor(formulario_id: number, inmueble: Inmueble | undefined, contacto: Contacto | undefined, listoParaAlta: boolean = false, dadoDeAlta: boolean = false) {
         this.formulario_id = formulario_id;
         this.inmueble = inmueble;
         this.contacto = contacto;
@@ -69,40 +75,42 @@ export class Formulario{
         this.dadoDeAlta = dadoDeAlta
     }
 
-    public getIDnumber(){
+    public getIDnumber() {
         return this.formulario_id;
     }
 
-    public getInmueble(){
+    public getInmueble() {
         return this.inmueble;
     }
 
-    public getContacto(){
+    public getContacto() {
         return this.contacto;
     }
 
-    public ingresarDatosInmueble(datosInmueble: Inmueble){
+    public getEstado() {
+        return this.listoParaAlta;
+    }
+
+    public ingresarDatosInmueble(datosInmueble: Inmueble) {
         this.inmueble = datosInmueble;
     }
 
-    public ingresarDatosContacto(datosContacto: Contacto){
+    public ingresarDatosContacto(datosContacto: Contacto) {
         this.contacto = datosContacto;
     }
 
-    public listoParaDarAlta(){
-        if (this.inmueble && this.contacto){
+    public listoParaDarAlta() {
+        if (this.inmueble && this.contacto) {
             console.log(`El formulario ${this.formulario_id} se encuentra listo para su alta.`);
             this.listoParaAlta = true;
-            return true
         } else {
             console.log(`El formulario ${this.formulario_id} no se encuentra listo para su alta.`)
             this.listoParaAlta = false;
-            return false
         }
     }
 }
 
-export class Inmueble{
+abstract class Inmueble {
     private provincia: string;
     private ciudad: string;
     private barrio: string;
@@ -117,7 +125,7 @@ export class Inmueble{
     private camposCompletos: boolean;
     private observaciones: string;
 
-    constructor(provincia: string = "", ciudad: string = "", barrio: string ="", nombreCalle: string = "", altura: number = 0, codigoPostal: number = 0, perteneceBarrioPrivado: boolean =false, conexionSuministroGas:boolean = false, emplazamientoInfraCloacal: boolean = false, camposCompletos: boolean = false, observaciones: string = ""){
+    constructor(provincia: string = "", ciudad: string = "", barrio: string = "", nombreCalle: string = "", altura: number = 0, codigoPostal: number = 0, perteneceBarrioPrivado: boolean = false, conexionSuministroGas: boolean = false, emplazamientoInfraCloacal: boolean = false, camposCompletos: boolean = false, observaciones: string = "") {
         this.provincia = provincia;
         this.ciudad = ciudad;
         this.barrio = barrio;
@@ -131,28 +139,28 @@ export class Inmueble{
         this.observaciones = observaciones;
     }
 
-    public getProvincia(){return this.provincia};
-    public getCiudad(){return this.ciudad};
-    public getBarrio(){return this.barrio};
-    public getNombreCalle(){return this.nombreCalle};
-    public getAltura(){return this.altura};
-    public getCodigoPostal(){return this.codigoPostal};
-    public getPerteneceBarrioPrivado(){return this.perteneceBarrioPrivado};
-    public getConexionSuministroGas(){return this.conexionSuministroGas};
-    public getEmplazamientoInfraCloacal(){return this.emplazamientoInfraCloacal};
-    public getCamposCompletos(){return this.camposCompletos};
+    public getProvincia() { return this.provincia };
+    public getCiudad() { return this.ciudad };
+    public getBarrio() { return this.barrio };
+    public getNombreCalle() { return this.nombreCalle };
+    public getAltura() { return this.altura };
+    public getCodigoPostal() { return this.codigoPostal };
+    public getPerteneceBarrioPrivado() { return this.perteneceBarrioPrivado };
+    public getConexionSuministroGas() { return this.conexionSuministroGas };
+    public getEmplazamientoInfraCloacal() { return this.emplazamientoInfraCloacal };
+    public getCamposCompletos() { return this.camposCompletos };
 
-    public setProvincia(provincia:string){this.provincia = provincia};
-    public setCiudad(ciudad:string){this.ciudad = ciudad};
-    public setBarrio(barrio:string){this.barrio = barrio};
-    public setNombreCalle(nombreCalle:string){this.nombreCalle = nombreCalle};
-    public setAltura(altura:number){this.altura = altura};
-    public setCodigoPostal(codigoPostal:number){this.codigoPostal = codigoPostal};
-    public setPerteneceBarrioPrivado(pertenece:boolean){this.perteneceBarrioPrivado = pertenece};
-    public setConexionSumGas(tieneConexion:boolean){this.conexionSuministroGas = tieneConexion};
-    public setEmplazInfraCloacal(tieneEmplazamiento:boolean){this.emplazamientoInfraCloacal = tieneEmplazamiento};
+    public setProvincia(provincia: string) { this.provincia = provincia };
+    public setCiudad(ciudad: string) { this.ciudad = ciudad };
+    public setBarrio(barrio: string) { this.barrio = barrio };
+    public setNombreCalle(nombreCalle: string) { this.nombreCalle = nombreCalle };
+    public setAltura(altura: number) { this.altura = altura };
+    public setCodigoPostal(codigoPostal: number) { this.codigoPostal = codigoPostal };
+    public setPerteneceBarrioPrivado(pertenece: boolean) { this.perteneceBarrioPrivado = pertenece };
+    public setConexionSumGas(tieneConexion: boolean) { this.conexionSuministroGas = tieneConexion };
+    public setEmplazInfraCloacal(tieneEmplazamiento: boolean) { this.emplazamientoInfraCloacal = tieneEmplazamiento };
 
-    public listoParaAlta(){
+    public listoParaAlta() {
         if (this.cantCamposCompletos === this.cantCampos) {
             this.camposCompletos = true;
         } else {
@@ -161,40 +169,50 @@ export class Inmueble{
     }
 }
 
+abstract class Persona {
+    private _nombre: string;
+    private _apellido: string;
 
-
-export class Contacto{
-    private nombre: string;
-    private apellido: string;
-    private telefono: number;
-    private correo: string;
-    private cantCampos = 4;
-    private cantCamposCompletos = 0;
-    private camposCompletos: boolean;
-    private obvervaciones: string;
-
-    constructor(nombre: string = "", apellido: string = "", telefono: number = 0, correo: string = "", camposCompletos: boolean = false, observaciones: string = ""){
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.telefono = telefono;
-        this.correo = correo;
-        this.camposCompletos = camposCompletos;
-        this.obvervaciones = observaciones;
+    constructor(nombre?: string, apellido?: string);
+    constructor(nombre: string, apellido: string) {
+        this._nombre = nombre;
+        this._apellido = apellido
     }
 
-    public getNombre(){return this.nombre;};
-    public getApellido(){return this.apellido;};
-    public getTelefono(){return this.telefono;};
-    public getCorreo(){return this.correo};
-    public getCamposCompletos(){return this.camposCompletos};
-    public getObservaciones(){return this.obvervaciones};
+    public set nombre(nuevoNombre: string) { this._nombre = nuevoNombre }
+    public set apellido(nuevoApellido: string) { this._apellido = nuevoApellido }
 
-
-    public listoParaAlta(){
-        if (this.cantCamposCompletos === this.cantCampos) {
-            this.camposCompletos = true;
-        } else {
-            return "Campos incompletos.";
-        }
-    }
+    public get nombre(): string { return this._nombre }
+    public get apellido(): string { return this._apellido }
 }
+
+export class Contacto extends Persona {
+
+    private _telefono: number;
+    private _correo: string;
+    private _cantCamposCompletos: boolean;
+
+    constructor(nombre?: string, apellido?: string, telefono?: number, correo?: string, cantCamposCompletos?: boolean);
+    constructor(nombre: string, apellido: string, telefono: number = 0, correo: string = "", cantCamposCompletos = false) {
+        super(nombre, apellido)
+        this._telefono = telefono;
+        this._correo = correo;
+        this._cantCamposCompletos = cantCamposCompletos;
+    }
+
+    public set telefono(nuevoTel: number) { this._telefono = nuevoTel };
+    public set correo(nuevoCorreo: string) { this._correo = nuevoCorreo };
+
+    public get Telefono() { return this._telefono; };
+    public get Correo() { return this._correo };
+
+    public get CamposCompletos() {
+        if (this.nombre && this.correo) {
+            this._cantCamposCompletos = true
+        }
+        return this._cantCamposCompletos
+    };
+}
+
+
+const persona10 = new Contacto('');

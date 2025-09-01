@@ -9,21 +9,20 @@ class RegisterSystem {
         }
         else {
             newArticle.name = newName;
-        }
-        newArticle.productionCost = newProductionCost;
-        if (newSaleCost <= 0 || newWholeCost <= 0) {
-            console.log(`Invalid $${newSaleCost} or $${newWholeCost} amount. The amount must exceed 0.`);
-        }
-        else if (newWholeCost <= (newSaleCost - (newSaleCost * 0.3))) {
-            newArticle.saleCost = newSaleCost;
-            newArticle.wholeCost = newSaleCost - (newSaleCost * 0.15);
-            console.log("entra en el elif " + newArticle.saleCost);
-            console.log("entra en el elif " + newArticle.wholeCost);
-        }
-        else {
-            newArticle.wholeCost = newWholeCost;
-            console.log("NO entra en el elif " + newArticle.saleCost);
-            console.log("NO entra en el elif " + newArticle.wholeCost);
+            newArticle.productionCost = newProductionCost;
+            if (newSaleCost <= 0 || newWholeCost <= 0) {
+                console.log(`Invalid $${newSaleCost} or $${newWholeCost} amount. The amount must exceed 0.`);
+                newArticle.saleCost = undefined;
+            }
+            else if (newWholeCost <= (newSaleCost - (newSaleCost * 0.3))) {
+                newArticle.saleCost = newSaleCost;
+                newArticle.wholeCost = newSaleCost - (newSaleCost * 0.15);
+                console.log(`Whole cost of ${newName} rounded to 15% of the Sale cost`);
+            }
+            else {
+                newArticle.saleCost = newSaleCost;
+                newArticle.wholeCost = newWholeCost;
+            }
         }
         if (newObservation.length > 30) {
             console.log('Invalid observation. The observation must not exceed 30 characters.');
@@ -40,7 +39,7 @@ class RegisterSystem {
     }
     addArticleCreatedToList(list, articleCreated) {
         if (articleCreated.name === '' || articleCreated.saleCost === undefined || articleCreated.observation === '') {
-            console.log(`The article cannot be registered in the list.`);
+            console.log(`The article ${articleCreated.name} cannot be registered in the list.`);
         }
         else {
             list.addArticleToList(articleCreated);

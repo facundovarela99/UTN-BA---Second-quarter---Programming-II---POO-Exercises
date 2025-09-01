@@ -1,18 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const excercise19_20_1 = require("./excercise19-20");
+const dron_1 = require("./guide14/dron");
+const tool_1 = require("./guide14/tool");
 function main() {
-    const RegisterSystemV1 = new excercise19_20_1.RegisterSystem();
-    const dresser1 = new excercise19_20_1.Article();
-    const closet1 = new excercise19_20_1.Article();
-    const nightStand1 = new excercise19_20_1.Article();
-    const table1 = new excercise19_20_1.Article();
-    const WholeSaleList1 = new excercise19_20_1.PriceList();
-    RegisterSystemV1.registerNewArticle(dresser1, 'Dresser', 1000, 1500, 1400, 'Brown');
-    RegisterSystemV1.registerNewList(WholeSaleList1, 'Whole Sale List 1', '2025-12-31', false);
-    RegisterSystemV1.addArticleCreatedToList(WholeSaleList1, dresser1);
-    RegisterSystemV1.showArticlesInList(WholeSaleList1);
-    RegisterSystemV1.showArticlesNumber(WholeSaleList1);
+    const infraredSensor1 = new tool_1.Tool('Infrared sensor', 250, 'Detect high temperatures');
+    const Taser1 = new tool_1.Tool('Taser', 300, 'Electrocute hostiles');
+    const roboticArm1 = new tool_1.Tool('Robotic Arm', 500, 'Grab heavy gear');
+    const dron1 = new dron_1.Dron(100, 100, 0, 0, []);
+    console.log(dron1.getFinalHeight());
+    console.log(dron1.getFinalVelocity());
+    console.log("Total weight: " + dron1.getTotalWeight());
+    dron1.addTool(infraredSensor1);
+    dron1.addTool(Taser1);
+    dron1.addTool(roboticArm1);
+    console.log("Total weight: " + dron1.getTotalWeight());
+    console.log(dron1.getFinalHeight());
+    console.log(dron1.getFinalVelocity());
+    console.log(dron1.getToolAction(Taser1));
 }
 main();
 //# sourceMappingURL=index.js.map
