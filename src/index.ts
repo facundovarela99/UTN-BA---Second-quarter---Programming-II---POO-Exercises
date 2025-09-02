@@ -12,7 +12,7 @@ import { Tool } from "./guide14/tool";
 import { Barco } from "./excercise15";
 import { Vehiculo, Elemento } from "./excercise16";
 import { Scanner, Objeto } from "./excercise17";
-// import { ListaFormularios, Formulario, Inmueble, Contacto } from "./excercise18";
+import { Casa, Departamento, Contacto, Sistema, Formulario } from "./excercise18";
 import { RegisterSystem ,Article, PriceList } from "./excercise19-20";
 // import Client from "./excercise21";
 
@@ -56,14 +56,12 @@ function main(): void {
     // console.log(`Orange weight: ${orange.weight}. its eadible: ${orange.itsEadible()}`);
     
     /* Excercise 7: */
-
     // const Scorpion = new Ninja('Ninjitsu', 'Katana', 100);
     // const SubZero = new Ninja('Shotokan', 'Freeze arms', 100);
     // console.log(Scorpion.hop(5));
     // console.log(Scorpion.attack());
 
     /* Excercise 8-12: */
-
     // const guard1 = new Guard('Facundo', 'Varela');
     // const visitor1 = new Visitor('Gonzalo', 'Varela', 123456789);
     // const visitor2 = new Visitor('Federico', 'Varela', 34562189);
@@ -92,26 +90,26 @@ function main(): void {
 
 
     /* EXCERCISE 14): */
-    const infraredSensor1 = new Tool('Infrared sensor', 250, 'Detect high temperatures');
-    const Taser1 = new Tool('Taser', 300, 'Electrocute hostiles');
-    const roboticArm1 = new Tool('Robotic Arm', 500, 'Grab heavy gear');
+    // const infraredSensor1 = new Tool('Infrared sensor', 250, 'Detect high temperatures');
+    // const Taser1 = new Tool('Taser', 300, 'Electrocute hostiles');
+    // const roboticArm1 = new Tool('Robotic Arm', 500, 'Grab heavy gear');
 
-    const dron1 = new Dron(100, 100, 0, 0, []);
+    // const dron1 = new Dron(100, 100, 0, 0, []);
 
-    console.log(dron1.getFinalHeight());
-    console.log(dron1.getFinalVelocity());
+    // console.log(dron1.getFinalHeight());
+    // console.log(dron1.getFinalVelocity());
 
-    console.log("Total weight: " + dron1.getTotalWeight());
+    // console.log("Total weight: " + dron1.getTotalWeight());
 
-    dron1.addTool(infraredSensor1);
-    dron1.addTool(Taser1);
-    dron1.addTool(roboticArm1);
+    // dron1.addTool(infraredSensor1);
+    // dron1.addTool(Taser1);
+    // dron1.addTool(roboticArm1);
 
-    console.log("Total weight: " + dron1.getTotalWeight());
+    // console.log("Total weight: " + dron1.getTotalWeight());
 
-    console.log(dron1.getFinalHeight());
-    console.log(dron1.getFinalVelocity());
-    console.log(dron1.getToolAction(Taser1));
+    // console.log(dron1.getFinalHeight());
+    // console.log(dron1.getFinalVelocity());
+    // console.log(dron1.getToolAction(Taser1));
 
     /* EXCERCISE 15): */
     // class Acorazado extends Barco{
@@ -398,8 +396,10 @@ function main(): void {
     // listaFormulario.darDeAlta(formulario2);
     // listaFormulario.getFormulariosDeAlta();
     
-    /* EXCERCISE 19): */
+    /* EXCERCISE 18): */
+    //
 
+    /* EXCERCISE 19): */
     // const RegisterSystemV1 = new RegisterSystem();
     // const dresser1 = new Article();
     // const closet1 = new Article();

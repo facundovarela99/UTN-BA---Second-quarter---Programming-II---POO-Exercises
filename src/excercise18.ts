@@ -31,6 +31,10 @@ interface DadorDeAlta {
     darDeAlta(formulario: Formulario): void;
 }
 
+interface Registrable {
+    listoParaAlta(): boolean;
+}
+
 export class Sistema implements DadorDeAlta {
     private _formulariosParaAlta: Array<Formulario>;
     constructor(formulariosDeAlta: []) {
@@ -110,94 +114,87 @@ export class Formulario {
     }
 }
 
-abstract class Inmueble {
-    private provincia: string;
-    private ciudad: string;
-    private barrio: string;
-    private nombreCalle: string;
-    private altura: number;
-    private codigoPostal: number;
-    private perteneceBarrioPrivado: boolean;
-    private conexionSuministroGas: boolean;
-    private emplazamientoInfraCloacal: boolean;
-    private cantCampos = 9;
-    private cantCamposCompletos = 0;
-    private camposCompletos: boolean;
-    private observaciones: string;
+export abstract class Inmueble{
+    private _provincia: string;
+    private _barrio: string;
+    private _nombreCalle: string;
+    private _altura: number;
+    private _codigoPostal: number;
+    private _perteneceBarrioPrivado: boolean;
+    private _conexionSuministroGas: boolean;
+    private _emplazamientoInfraCloacal: boolean;
+    private _observaciones: string;
+    private _camposCompletos: number;
 
-    constructor(provincia: string = "", ciudad: string = "", barrio: string = "", nombreCalle: string = "", altura: number = 0, codigoPostal: number = 0, perteneceBarrioPrivado: boolean = false, conexionSuministroGas: boolean = false, emplazamientoInfraCloacal: boolean = false, camposCompletos: boolean = false, observaciones: string = "") {
-        this.provincia = provincia;
-        this.ciudad = ciudad;
-        this.barrio = barrio;
-        this.nombreCalle = nombreCalle;
-        this.altura = altura;
-        this.codigoPostal = codigoPostal;
-        this.perteneceBarrioPrivado = perteneceBarrioPrivado;
-        this.conexionSuministroGas = conexionSuministroGas;
-        this.emplazamientoInfraCloacal = emplazamientoInfraCloacal;
-        this.camposCompletos = camposCompletos;
-        this.observaciones = observaciones;
+    constructor(provincia: string = "", barrio: string = "", nombreCalle: string = "", altura: number = 0, codigoPostal: number = 0, perteneceBarrioPrivado: boolean = false, conexionSuministroGas: boolean = false, emplazamientoInfraCloacal: boolean = false, observaciones: string = "", camposCompletos: number = 0) {
+        this._provincia = provincia;
+        this._barrio = barrio;
+        this._nombreCalle = nombreCalle;
+        this._altura = altura;
+        this._codigoPostal = codigoPostal;
+        this._perteneceBarrioPrivado = perteneceBarrioPrivado;
+        this._conexionSuministroGas = conexionSuministroGas;
+        this._emplazamientoInfraCloacal = emplazamientoInfraCloacal;
+        this._observaciones = observaciones;
+        this._camposCompletos = camposCompletos;
     }
 
-    public getProvincia() { return this.provincia };
-    public getCiudad() { return this.ciudad };
-    public getBarrio() { return this.barrio };
-    public getNombreCalle() { return this.nombreCalle };
-    public getAltura() { return this.altura };
-    public getCodigoPostal() { return this.codigoPostal };
-    public getPerteneceBarrioPrivado() { return this.perteneceBarrioPrivado };
-    public getConexionSuministroGas() { return this.conexionSuministroGas };
-    public getEmplazamientoInfraCloacal() { return this.emplazamientoInfraCloacal };
-    public getCamposCompletos() { return this.camposCompletos };
+    public get Provincia() { return this._provincia };
+    public get Barrio() { return this._barrio };
+    public get NombreCalle() { return this._nombreCalle };
+    public get Altura() { return this._altura };
+    public get CodigoPostal() { return this._codigoPostal };
+    public get PerteneceBarrioPrivado() { return this._perteneceBarrioPrivado };
+    public get ConexionSuministroGas() { return this._conexionSuministroGas };
+    public get EmplazamientoInfraCloacal() { return this._emplazamientoInfraCloacal };
+    public get camposCompletos() { return this._camposCompletos };
+    public get observaciones() { return this._observaciones };
 
-    public setProvincia(provincia: string) { this.provincia = provincia };
-    public setCiudad(ciudad: string) { this.ciudad = ciudad };
-    public setBarrio(barrio: string) { this.barrio = barrio };
-    public setNombreCalle(nombreCalle: string) { this.nombreCalle = nombreCalle };
-    public setAltura(altura: number) { this.altura = altura };
-    public setCodigoPostal(codigoPostal: number) { this.codigoPostal = codigoPostal };
-    public setPerteneceBarrioPrivado(pertenece: boolean) { this.perteneceBarrioPrivado = pertenece };
-    public setConexionSumGas(tieneConexion: boolean) { this.conexionSuministroGas = tieneConexion };
-    public setEmplazInfraCloacal(tieneEmplazamiento: boolean) { this.emplazamientoInfraCloacal = tieneEmplazamiento };
+    public set Provincia(provincia: string) { this._provincia = provincia; this.completarCampo() };
+    public set Barrio(barrio: string) { this._barrio = barrio; this.completarCampo() };
+    public set NombreCalle(nombreCalle: string) { this._nombreCalle = nombreCalle; this.completarCampo() };
+    public set Altura(altura: number) { this._altura = altura; this.completarCampo() };
+    public set CodigoPostal(codigoPostal: number) { this._codigoPostal = codigoPostal; this.completarCampo() };
+    public set PerteneceBarrioPrivado(pertenece: boolean) { this._perteneceBarrioPrivado = pertenece; this.completarCampo() };
+    public set ConexionSumGas(tieneConexion: boolean) { this._conexionSuministroGas = tieneConexion; this.completarCampo() };
+    public set EmplazInfraCloacal(tieneEmplazamiento: boolean) { this._emplazamientoInfraCloacal = tieneEmplazamiento; this.completarCampo() };
+    public set Observaciones(observaciones: string) { this._observaciones = observaciones; }
 
-    public listoParaAlta() {
-        if (this.cantCamposCompletos === this.cantCampos) {
-            this.camposCompletos = true;
-        } else {
-            return "Campos incompletos.";
-        }
+    public completarCampo() {
+        this._camposCompletos++;
     }
 }
 
 abstract class Persona {
     private _nombre: string;
     private _apellido: string;
+    private _camposCompletos: number;
 
-    constructor(nombre?: string, apellido?: string);
-    constructor(nombre: string, apellido: string) {
+    constructor(nombre?: string, apellido?: string, camposCompletos?: number);
+    constructor(nombre: string, apellido: string, camposCompletos: number = 0) {
         this._nombre = nombre;
-        this._apellido = apellido
+        this._apellido = apellido;
+        this._camposCompletos = camposCompletos
     }
 
-    public set nombre(nuevoNombre: string) { this._nombre = nuevoNombre }
-    public set apellido(nuevoApellido: string) { this._apellido = nuevoApellido }
+    public set nombre(nuevoNombre: string) { this._nombre = nuevoNombre; this._camposCompletos++ }
+    public set apellido(nuevoApellido: string) { this._apellido = nuevoApellido; this._camposCompletos++ }
 
     public get nombre(): string { return this._nombre }
     public get apellido(): string { return this._apellido }
+    public get camposCompletos(): number {return this._camposCompletos}
 }
 
-export class Contacto extends Persona {
+export class Contacto extends Persona implements Registrable{
 
     private _telefono: number;
     private _correo: string;
-    private _cantCamposCompletos: boolean;
 
-    constructor(nombre?: string, apellido?: string, telefono?: number, correo?: string, cantCamposCompletos?: boolean);
-    constructor(nombre: string, apellido: string, telefono: number = 0, correo: string = "", cantCamposCompletos = false) {
+    constructor(nombre?: string, apellido?: string, camposCompletos?: number, telefono?: number, correo?: string);
+    constructor(nombre: string, apellido: string, camposCompletos: number = 0, telefono: number = 0, correo: string = "") {
         super(nombre, apellido)
         this._telefono = telefono;
         this._correo = correo;
-        this._cantCamposCompletos = cantCamposCompletos;
     }
 
     public set telefono(nuevoTel: number) { this._telefono = nuevoTel };
@@ -206,13 +203,63 @@ export class Contacto extends Persona {
     public get Telefono() { return this._telefono; };
     public get Correo() { return this._correo };
 
-    public get CamposCompletos() {
-        if (this.nombre && this.correo) {
-            this._cantCamposCompletos = true
+    public listoParaAlta(): boolean {
+        if (this.camposCompletos>=2) {
+            return true
         }
-        return this._cantCamposCompletos
-    };
+        return false
+    }
 }
 
+export class Departamento extends Inmueble implements Registrable {
+    private _piso: number;
+    private _letra: string;
+    private _admiteMascotas: boolean;
 
-const persona10 = new Contacto('');
+    constructor(provincia?: string, barrio?: string, nombreCalle?: string, altura?: number, codigoPostal?: number, perteneceBarrioPrivado?: boolean, conexionSuministroGas?: boolean, emplazamientoInfraCloacal?: boolean, observaciones?: string, camposCompletos?: number, piso?: number, letra?: string, admiteMascotas?: boolean)
+    constructor(provincia: string, barrio: string, nombreCalle: string, altura: number, codigoPostal: number, perteneceBarrioPrivado: boolean, conexionSuministroGas: boolean, emplazamientoInfraCloacal: boolean, observaciones: string, camposCompletos: number, piso: number, letra: string, admiteMascotas: boolean) {
+        super(provincia, barrio, nombreCalle, altura, codigoPostal, perteneceBarrioPrivado, conexionSuministroGas, emplazamientoInfraCloacal, observaciones)
+        this._piso = piso;
+        this._letra = letra;
+        this._admiteMascotas = admiteMascotas;
+    }
+
+    public get piso(): number { return this._piso }
+    public get letra(): string { return this._letra }
+    public get admiteMascota(): boolean { return this._admiteMascotas }
+
+    public set piso(piso: number) { this._piso = piso; this.completarCampo(); }
+    public set letra(letra: string) { this._letra = letra; this.completarCampo(); }
+    public set admiteMascota(admite: boolean) { this._admiteMascotas = admite; this.completarCampo(); }
+
+    public listoParaAlta() {
+        if (this.camposCompletos === 11) {
+            return true;
+        }
+        return false;
+    }
+
+}
+
+export class Casa extends Inmueble implements Registrable {
+    private _poseeQuincho: boolean;
+    private _poseePileta: boolean;
+
+    constructor(provincia?: string, barrio?: string, nombreCalle?: string, altura?: number, codigoPostal?: number, perteneceBarrioPrivado?: boolean, conexionSuministroGas?: boolean, emplazamientoInfraCloacal?: boolean, observaciones?: string, camposCompletos?: number, poseeQuincho?: boolean, poseePileta?: boolean)
+    constructor(provincia: string, barrio: string, nombreCalle: string, altura: number, codigoPostal: number, perteneceBarrioPrivado: boolean, conexionSuministroGas: boolean, emplazamientoInfraCloacal: boolean, observaciones: string, camposCompletos: number, poseeQuincho: boolean, poseePileta: boolean) {
+        super(provincia, barrio, nombreCalle, altura, codigoPostal, perteneceBarrioPrivado, conexionSuministroGas, emplazamientoInfraCloacal, observaciones, camposCompletos)
+        this._poseeQuincho = poseeQuincho;
+        this._poseePileta = poseePileta;
+    }
+
+    public set quincho(posee: boolean) { this._poseeQuincho = posee; this.completarCampo() }
+    public set pileta(posee: boolean) { this._poseePileta = posee; this.completarCampo() }
+
+    public listoParaAlta() {
+        if (this.camposCompletos === 10) {
+            return true;
+        }
+        return false;
+    }
+
+}
