@@ -37,7 +37,9 @@ interface Registrable {
 
 export class Sistema implements DadorDeAlta {
     private _formulariosParaAlta: Array<Formulario>;
-    constructor(formulariosDeAlta: []) {
+
+    // constructor(formulariosDeAlta?:[]);
+    constructor(formulariosDeAlta?: []) {
         this._formulariosParaAlta = formulariosDeAlta = [];
     }
 

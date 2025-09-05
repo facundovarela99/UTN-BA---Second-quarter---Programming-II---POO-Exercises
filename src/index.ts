@@ -15,6 +15,8 @@ import { Scanner, Objeto } from "./excercise17";
 import { Casa, Departamento, Contacto, Sistema, Formulario } from "./excercise18";
 import { RegisterSystem ,Article, PriceList } from "./excercise19-20";
 // import Client from "./excercise21";
+import { Cuadrado, FiguraGeometrica } from "./herencia";
+
 
 
 function main(): void {
@@ -399,6 +401,13 @@ function main(): void {
     /* EXCERCISE 18): */
     //
 
+    // const sistema1 = new Sistema();
+    // sistema1.getFormulariosDeAlta();
+
+    // const depto1 = new Departamento();
+    // console.log(depto1.camposCompletos);
+
+
     /* EXCERCISE 19): */
     // const RegisterSystemV1 = new RegisterSystem();
     // const dresser1 = new Article();
@@ -420,6 +429,12 @@ function main(): void {
     // RegisterSystemV1.addArticleCreatedToList(WholeSaleList1, table1);
     // RegisterSystemV1.showArticlesInList(WholeSaleList1);
     // RegisterSystemV1.showArticlesNumber(WholeSaleList1);
+    // const pepeElCuadrado = new Cuadrado('Pepe', 'Rojo', 5);
+    // console.log(pepeElCuadrado.getPerimetro());
+
+    // let figura: FiguraGeometrica = pepeElCuadrado
+
+    
 
 }
 
