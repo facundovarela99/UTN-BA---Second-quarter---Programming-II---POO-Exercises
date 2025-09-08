@@ -19,69 +19,76 @@
 // capacidad máxima de carga del auto es de 5 elementos, mientras que para la camioneta
 // es de 10.
 
-export class Vehiculo{
-    private tipo: string;
-    private elementosCargados: number;
-    private listaElementos: Array<Elemento>;
-    private capacidadCarga: number;
+
+
+
+
+
+
+
+// export class Vehiculo{
+//     private tipo: string;
+//     private elementosCargados: number;
+//     private listaElementos: Array<Elemento>;
+//     private capacidadCarga: number;
     
-    constructor(tipo: string, elementosCargados: number = 0, listaElementos: [], capacidadCarga: number){
-        this.tipo = tipo;
-        this.elementosCargados = elementosCargados;
-        this.listaElementos = [];
-        this.capacidadCarga = capacidadCarga;
-    }
+//     constructor(tipo: string, elementosCargados: number = 0, listaElementos: [], capacidadCarga: number){
+//         this.tipo = tipo;
+//         this.elementosCargados = elementosCargados;
+//         this.listaElementos = [];
+//         this.capacidadCarga = capacidadCarga;
+//     }
 
-    public getTipoVehiculo(){
-        return this.tipo;
-    }
+//     public getTipoVehiculo(){
+//         return this.tipo;
+//     }
 
-    public getElementosCargados(){
-        return `Elementos cargados: ${this.elementosCargados}`;
-    }
+//     public getElementosCargados(){
+//         return `Elementos cargados: ${this.elementosCargados}`;
+//     }
 
-    public cargarElemento(elemento: Elemento){
-        this.listaElementos.push(elemento);
-        this.elementosCargados++;
-        this.capacidadCarga--;
-        console.log(`Elemento "${elemento.getTipoElemento()}" cargado`)
-    }
+//     public cargarElemento(elemento: Elemento){
+//         this.listaElementos.push(elemento);
+//         this.elementosCargados++;
+//         this.capacidadCarga--;
+//         console.log(`Elemento "${elemento.getTipoElemento()}" cargado`)
+//     }
 
-    public listarElementos(){
-        for (let i = 0; i < this.listaElementos.length; i++) {
-                console.log(`\nElemento ${i+1}`)
-                console.log(this.listaElementos[i].getID());
-                console.log(this.listaElementos[i].getTipoElemento());
-                console.log(this.listaElementos[i].getDimensiones());
-        }
-    }
+//     public listarElementos(){
+//         for (let i = 0; i < this.listaElementos.length; i++) {
+//                 console.log(`\nElemento ${i+1}`)
+//                 console.log(this.listaElementos[i].getID());
+//                 console.log(this.listaElementos[i].getTipoElemento());
+//                 console.log(this.listaElementos[i].getDimensiones());
+//         }
+//     }
 
-    public getCapacidadCarga(){
-        return `Capacidad de carga del vehículo tipo ${this.tipo}: ${this.capacidadCarga} elementos`;
-    }
+//     public getCapacidadCarga(){
+//         return `Capacidad de carga del vehículo tipo ${this.tipo}: ${this.capacidadCarga} elementos`;
+//     }
 
-}
+// }
 
-export class Elemento{
-    id: number;
-    private descripcion: string;
-    private dimensiones: string;
+// export class Elemento{
+//     id: number;
+//     private descripcion: string;
+//     private dimensiones: string;
     
-    constructor(id: number, descripcion: string, dimensiones: string){
-        this.id = id;
-        this.descripcion = descripcion;
-        this.dimensiones = dimensiones;
-    }
+//     constructor(id: number, descripcion: string, dimensiones: string){
+//         this.id = id;
+//         this.descripcion = descripcion;
+//         this.dimensiones = dimensiones;
+//     }
 
-    public getID(){
-        return `ID: ${this.id}`;
-    }
+//     public getID(){
+//         return `ID: ${this.id}`;
+//     }
 
-    public getTipoElemento(){
-        return this.descripcion;
-    }
+//     public getTipoElemento(){
+//         return this.descripcion;
+//     }
 
-    public getDimensiones(){
-        return `Dimensiones ${this.dimensiones}`;
-    }
-}
+//     public getDimensiones(){
+//         return `Dimensiones ${this.dimensiones}`;
+//     }
+// }

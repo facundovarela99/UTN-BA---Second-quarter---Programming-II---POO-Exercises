@@ -5,19 +5,19 @@ import { Cinema } from "./excercise4";
 import { Fruit } from "./excercise6";
 import { Ninja } from "./excercise7";
 import { Person, Guard, Visitor } from "./excercise8-12";
-import { Robot, TractionSystem } from "./excercise13";
+// import { Robot, TractionSystem } from "./excercise13";
 import { Dron } from "./guide14/dron";
 import { Tool } from "./guide14/tool";
 // import { Dron, Tool } from "./guide14/tool";
-import { Barco } from "./excercise15";
-import { Vehiculo, Elemento } from "./excercise16";
+import { EquipoLancha, Acorazado, Destructor, BarcoHospital, Lancha } from "./excercise15";
+// import { Vehiculo, Elemento } from "./excercise16";
 import { Scanner, Objeto } from "./excercise17";
 import { Casa, Departamento, Contacto, Sistema, Formulario } from "./excercise18";
 import { RegisterSystem ,Article, PriceList } from "./excercise19-20";
 // import Client from "./excercise21";
 import { Cuadrado, FiguraGeometrica } from "./herencia";
-
-
+// import {Cadete, Operador, Administrativo, Gerente, BonoPresentismoA, BonoPresentismoB, BonoResultado}  from "./herencia2";
+import { Robot, Oruga, RuedaDeCaucho } from "./excercise13";
 
 function main(): void {
 
@@ -88,9 +88,6 @@ function main(): void {
     // console.log(robot2.typeTraction.name);
     // console.log(`Base power traction: ${robot2.basePowerTraction}. ${robot2.advance(robot1.typeTraction.HpUse(robot2.typeTraction.name))}`)
     
-
-
-
     /* EXCERCISE 14): */
     // const infraredSensor1 = new Tool('Infrared sensor', 250, 'Detect high temperatures');
     // const Taser1 = new Tool('Taser', 300, 'Electrocute hostiles');
@@ -113,96 +110,21 @@ function main(): void {
     // console.log(dron1.getFinalVelocity());
     // console.log(dron1.getToolAction(Taser1));
 
-    /* EXCERCISE 15): */
-    // class Acorazado extends Barco{
-    //     private solidez: string;
-    //     private blindaje: string;
-    
-    //     constructor(flotabilidad: string, solidez: string, establilidad: string, blindaje: string, tipo_navio: string, nombre: string, velocidad: number, capacidad_carga: string){
-    //         super(tipo_navio, nombre, velocidad, capacidad_carga, flotabilidad, establilidad);
-    //         this.solidez = solidez;
-    //         this.blindaje = blindaje;
-    //     }
+    /* EXCERCISE 15): */    
+    // const acorazado1 = new Acorazado('Acorazado Uno', 100, 80, 150, 40, 100, 200, 60);
+    // const destructor1 = new Destructor('Destructor Uno', 80, 60, 180, 40, 50, 250);
+    // const barcoHospital1 = new BarcoHospital('Sibelancia', 90, 90, 180, 30);
+    // const equipoLancha1 = new EquipoLancha('Motor fuera de borda');
+    // const equipoLancha2 = new EquipoLancha('Grúa');
+    // const lancha1 = new Lancha('La Gaucha', 50, 30, 170, 30, [equipoLancha1, equipoLancha2]);
+    // const lancha2 = new Lancha('El Gaucho',  50, 30, 170, 30, [equipoLancha1, equipoLancha2]);
 
-    //     public getSolidez(){
-    //         return this.solidez;
-    //     }
+    // console.log(barcoHospital1.capacidadDeCarga);
 
-    //     public getBlindaje(){
-    //         return this.blindaje;
-    //     }
-    // }
+    // lancha1.getEquipamiento();
 
-    // class Destructor extends Barco{
-    //     private potenciaDeFuego: string;
-    //     private maniobrabilidad: string;
-    //     private solidez: string;
-
-    //     constructor(potencia_fuego: string, maniobrabilidad: string, solidez: string, flotabilidad: string, establilidad: string, tipo_navio: string, nombre: string, velocidad: number, capacidad_carga: string){
-    //         super(tipo_navio, nombre, velocidad, capacidad_carga, flotabilidad, establilidad);
-    //         this.potenciaDeFuego = potencia_fuego;
-    //         this.maniobrabilidad = maniobrabilidad;
-    //         this.solidez = solidez;
-    //     }
-
-    //     public getPotenciaDeFuego(){
-    //         return this.potenciaDeFuego;
-    //     }
-
-    //     public getManiobrabilidad(){
-    //         return this.maniobrabilidad;
-    //     }
-
-    //     public getSolidez(){
-    //         return this.solidez;
-    //     }
-    // }
-
-    // class Lancha extends Barco{
-    //     private motor: string;
-    //     private maniobrabilidad: string;
-    //     private poseeGrua: boolean;
-
-    //     constructor(motor: string, maniobrabilidad: string, poseeGrua: boolean, tipo_navio: string, nombre: string, velocidad: number, capacidad_carga: string, flotabilidad: string, estabilidad: string){
-    //         super(tipo_navio, nombre, velocidad, capacidad_carga, flotabilidad, estabilidad);
-    //         this.motor = motor;
-    //         this.maniobrabilidad =  maniobrabilidad;
-    //         this.poseeGrua = poseeGrua;
-    //     }
-
-    //     public getMotor(){
-    //         return this.motor;
-    //     }
-
-    //     public getManiobrabilidad(){
-    //         return this.maniobrabilidad;
-    //     }
-
-    //     public getGrua(){
-    //         return this.poseeGrua;
-    //     }
-    // }
-    
-    // const acorazado1 =  new Acorazado('Alta', 'Muy alta', 'Media', 'Muy pesado', 'Acorazado', 'El Escudo', 300, '30 pasajeros');
-    // const acorazado2 = new Acorazado('Muy alta', 'Muy alta', 'Alta', 'Muy pesado', 'Acorazado', 'Caparazón', 230, '25 pasajeros');
-
-    // const destructor1 = new Destructor('Alta', 'Alta', 'Media/baja', 'Alta', 'Alta', 'Destructor', 'Destructor Uno', 350, '20 pasajeros');
-    // const destructor2 = new Destructor('Muy alta', 'Muy alta', 'Baja', 'Media', 'Media', 'Destructor', 'Destructor Dos', 400, '15 pasajeros');
-
-    // const barcoHospital = new Barco('Hospital', 'Sibelancia', 350, '70 pasajeros', 'Muy alta', 'Alta');
-
-    // const laGaucha = new Lancha('Fuera de borda', 'Alta', true, 'Lancha', 'La Gaucha', 200, '8 pasajeros', 'Alta', 'Media/baja');
-    // const elGaucho = new Lancha('Fuera de borda', 'Alta', true, 'Lancha', 'El Gaucho', 200, '8 pasajeros', 'Alta', 'Media/baja');
-
-    // console.log('ACORAZADO 1: \n')
-    // console.log(acorazado1.getNombre());
-    // console.log(acorazado1.getBlindaje());
-    // console.log(acorazado1.getCapacidadCarga());
-    // console.log(acorazado1.getEstabilidad());
-    // console.log(acorazado1.getFlotabilidad());
-    // console.log(acorazado1.getSolidez());
-    // console.log(acorazado1.getTipoNavio());
-    // console.log(acorazado1.getVelocidad());
+    // console.log(`Potencia de fuego del ${acorazado1.nombre}:  ${acorazado1.getPotenciaDeFuego()}`);
+    // console.log(`Potencia de fuego del ${destructor1.nombre}:  ${destructor1.getPotenciaDeFuego()}`);
 
     /* EXCERCISE 16): */
     // class Comoda extends Elemento{
@@ -434,7 +356,22 @@ function main(): void {
 
     // let figura: FiguraGeometrica = pepeElCuadrado
 
-    
+    /* HERENCIA 2*/
+    // const bonoPresentA = new BonoPresentismoA();
+    // const bonoPresentB = new BonoPresentismoB();
+    // const bonoResultado = new BonoResultado();
+    // const cadete1 = new Cadete('Facundo Varela', 1000, 10, 85);
+    // const Operador1 = new Operador('Pedro Gonzalez', 10500, 5, 99);
+    // cadete1.calcularSueldo(cadete1.sueldoNeto, bonoPresentA.asignarBono(cadete1.ausencias), bonoPresentB.asignarBono(), bonoResultado.asignarBono(cadete1.nivelObjetivo, cadete1.sueldoNeto));
+    // Operador1.calcularSueldo(Operador1.sueldoNeto, bonoPresentA.asignarBono(Operador1.ausencias), bonoPresentB.asignarBono(), bonoResultado.asignarBono(Operador1.nivelObjetivo, Operador1.sueldoNeto));
+
+    const oruga1 = new Oruga();
+    const ruedaCaucho1 = new RuedaDeCaucho();
+    const robot1 = new Robot();
+    console.log(robot1.poseeSistemaTraccion);
+    // robot1.setTraccion(oruga1);
+    robot1.setTraccion(ruedaCaucho1);
+    robot1.mostrarDatos();
 
 }
 

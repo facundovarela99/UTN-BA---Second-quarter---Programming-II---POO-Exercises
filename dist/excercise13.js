@@ -1,64 +1,80 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TractionSystem = exports.Robot = void 0;
+exports.Oruga = exports.RuedaDeCaucho = exports.Robot = void 0;
 class Robot {
-    _serialNumber;
-    _basePowerTraction;
-    _finalPowerTraction;
-    _tractionSystem;
-    constructor(serialNumber, powerTraction, traction) {
-        this._serialNumber = serialNumber;
-        this._basePowerTraction = powerTraction;
-        this._tractionSystem = traction;
+    _numeroSerie;
+    _potenciaTraccionBase;
+    _traccion;
+    constructor(numeroSerie = "KT-2020-P", potenciaTraccionBase = 10, traccion) {
+        this._numeroSerie = numeroSerie;
+        this._potenciaTraccionBase = potenciaTraccionBase;
+        this._traccion = traccion;
     }
-    get serialNumber() {
-        return this._serialNumber;
-    }
-    get basePowerTraction() {
-        return this._basePowerTraction;
-    }
-    get typeTraction() {
-        return this._tractionSystem;
-    }
-    advance(hpUsed) {
-        if (this._tractionSystem.name === 'Rubber Wheel') {
-            console.log('It can advance until 100km before beign replaced');
-            this._finalPowerTraction = this._basePowerTraction - hpUsed;
-            return `Final traction power: ${this._finalPowerTraction}`;
+    get numeroSerie() { return this._numeroSerie; }
+    ;
+    get potenciaTraccionBase() { return this._potenciaTraccionBase; }
+    ;
+    setTraccion(sistemaDeTraccion) { this._traccion = sistemaDeTraccion; }
+    ;
+    getTraccion() { return this._traccion?.nombre; }
+    ;
+    mostrarDatos() {
+        console.log("Datos del robot KT-2020:\n");
+        console.log(`N° de serie: ${this._numeroSerie}.\nPotencia Traccion base: ${this._potenciaTraccionBase}.\n`);
+        if (this._traccion) {
+            console.log(`Sistema de tracción: ${this._traccion?.nombre} .Datos del sistema de traccion:\n${this.getTraccion()}`);
         }
-        else if (this._tractionSystem.name === 'Catterpillar') {
-            console.log('It can advance until 400km before beign replaced');
-            this._finalPowerTraction = this._basePowerTraction - hpUsed;
-            return `Final traction power: ${this._finalPowerTraction}`;
-        }
+        console.log('El robot no cuenta actualmente con un sistema de traccion.');
     }
 }
 exports.Robot = Robot;
-class TractionSystem {
-    _name;
-    _sensors;
-    constructor(name, sensors = false, hp) {
-        this._name = name;
-        this._sensors = sensors;
+class SistemaTraccion {
+    _nombre;
+    _rodado;
+    _sensores;
+    constructor(nombre, rodado, sensores) {
+        this._nombre = nombre;
+        this._rodado = rodado;
+        this._sensores = sensores;
     }
-    get name() {
-        return this._name;
+    get nombre() {
+        return this._nombre;
     }
-    get sensors() {
-        if (this._sensors) {
-            return this._sensors;
-        }
-        return undefined;
+    get rodado() {
+        return this._rodado;
     }
-    HpUse(name) {
-        if (name.toLowerCase() === 'Rubber Wheel'.toLowerCase()) {
-            return 1;
-        }
-        else if (name.toLowerCase() === 'Catterpillar'.toLowerCase()) {
-            return 3;
-        }
-        return 0;
+    poseeSensores() {
+        return this._sensores;
     }
 }
-exports.TractionSystem = TractionSystem;
+class RuedaDeCaucho extends SistemaTraccion {
+    constructor(nombre = 'Rueda de caucho', rodado = 100, sensores = false) {
+        super(nombre, rodado, sensores);
+    }
+    calculoPotenciaTraccionFinal(potenciaTraccionBaseRobot) {
+        return potenciaTraccionBaseRobot - 1;
+    }
+    mostrarDatos() {
+        return `Nombre: ${this.nombre}.\n
+        Rodado: ${this.rodado}.\n
+        Sensores: ${this.poseeSensores()}.\n
+        Potencia de tracción final: ${this.calculoPotenciaTraccionFinal}`;
+    }
+}
+exports.RuedaDeCaucho = RuedaDeCaucho;
+class Oruga extends SistemaTraccion {
+    constructor(nombre = "Oruga", rodado = 400, sensores = true) {
+        super(nombre, rodado, sensores);
+    }
+    calculoPotenciaTraccionFinal(potenciaTraccionBaseRobot) {
+        return potenciaTraccionBaseRobot - 3;
+    }
+    mostrarDatos() {
+        return `Nombre: ${this.nombre}.\n
+                Rodado: ${this.rodado}.\n 
+                Sensores: ${this.poseeSensores()}.\n
+                Potencia de tracción final: ${this.calculoPotenciaTraccionFinal} restados al PTB`;
+    }
+}
+exports.Oruga = Oruga;
 //# sourceMappingURL=excercise13.js.map
