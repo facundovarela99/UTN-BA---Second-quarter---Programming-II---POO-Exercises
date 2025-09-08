@@ -43,12 +43,8 @@ export class Robot {
     public mostrarDatos() {
         console.log("Datos del robot KT-2020:\n");
         console.log(`N° de serie: ${this._numeroSerie}.\nPotencia Traccion base: ${this.potenciaTraccionBase}.`)
-        if (this.poseeSistemaTraccion === true) {
-            console.log(`\nSistema de tracción: ${this._traccion?.nombre}.`)
-            console.log(`Rodado: ${this._traccion?.rodado}`)
-            console.log(`Posee sensores Meke-40: ${this._traccion?.poseeSensores()}`)
-            console.log(`Potencia tracción final: ${this._traccion?.calculoPotenciaTraccionFinal(this._potenciaTraccionBase)}`)
-            console.log(`Info adicional: ${this._traccion?.mostrarDatos()}`)
+        if (this.poseeSistemaTraccion) {
+            console.log(`\nSistema de tracción: ${this._traccion?.nombre}. Datos del sistema de tracción: ${this._traccion?.mostrarDatos(this._potenciaTraccionBase)}`)
         } else{
             console.log('El robot no cuenta actualmente con un sistema de traccion.');
         }
@@ -78,7 +74,7 @@ abstract class SistemaTraccion {
     }
 
     public abstract calculoPotenciaTraccionFinal(potenciaTraccionBaseRobot: number): number;
-    public abstract mostrarDatos(): string;
+    public abstract mostrarDatos(ptb: number): string;
 }
 
 
@@ -91,8 +87,13 @@ export class RuedaDeCaucho extends SistemaTraccion {
         return potenciaTraccionBaseRobot - 1;
     }
 
-    public mostrarDatos(): string {
-        return "Puede avanzar hasta 100km hasta su reemplazo."
+    public mostrarDatos(ptb: number): string {
+        return  `
+    Rodado: ${this.rodado}\n
+    Posee sensores Meke-40: ${this.poseeSensores()}\n
+    Potencia tracción final: ${this.calculoPotenciaTraccionFinal(ptb)}\n
+    Info adicional: Puede avanzar hasta 100km hasta su reemplazo.
+        `;
     }
 }
 
@@ -105,8 +106,13 @@ export class Oruga extends SistemaTraccion {
         return potenciaTraccionBaseRobot - 3;
     }
 
-    public mostrarDatos(): string {
-        return "Puede avanzar hasta 400km antes de su reemplazo."
+    public mostrarDatos(ptb: number): string {
+        return  `
+    Rodado: ${this.rodado}\n
+    Posee sensores Meke-40: ${this.poseeSensores()}\n
+    Potencia tracción final: ${this.calculoPotenciaTraccionFinal(ptb)}\n
+    Info adicional: Puede avanzar hasta 400km hasta su reemplazo.
+        `;
     }
 }
 

@@ -20,10 +20,105 @@
 // es de 10.
 
 
+abstract class Vehiculo{
+    protected _capacidadDeCarga: number;
+    protected _elementosCargados: Array<Elemento>
+    constructor(capacidadCarga: number = 0, carga: Array<Elemento> = []){
+        this._capacidadDeCarga = capacidadCarga ;
+        this._elementosCargados = carga;
+    }
 
+    public get Carga(){return this._elementosCargados};
 
+    public get capacidadCarga(){return this._capacidadDeCarga}
 
+    public abstract cargar(elemento: Elemento): void;
 
+    public abstract listarItems(): void;
+}
+
+export class Camioneta extends Vehiculo{
+    constructor(capacidadCarga: number = 10, carga: Array<Elemento> = []){
+        super(capacidadCarga, carga)
+    }
+
+    public cargar(elemento: Elemento){
+        if (this.capacidadCarga<10) {   
+            this.Carga.push(elemento)
+            this._capacidadDeCarga--;
+            console.log(`Elemento ${elemento.descripcion} cargado.`)
+            console.log(`Capacidad de carga restante ${this.capacidadCarga}`)
+        } else {
+            console.log("El vehículo no tiene mas capacidad de carga.")
+        }
+    }
+
+    public listarItems(): void {
+        for (const element of this._elementosCargados) {
+            console.log(element.descripcion)
+        }
+    }
+}
+
+export class Auto extends Vehiculo{
+    constructor(capacidadCarga: number = 5, carga: Array<Elemento> = []){
+        super(capacidadCarga, carga)
+    }
+
+    public cargar(elemento: Elemento){
+        if (this.capacidadCarga<5) {   
+            this.Carga.push(elemento)
+            this._capacidadDeCarga--;
+            console.log(`Elemento ${elemento.descripcion} cargado.`)
+            console.log(`Capacidad de carga restante ${this.capacidadCarga}`)
+        } else {
+            console.log("El vehículo no tiene mas capacidad de carga.")
+        }
+    }
+
+    public listarItems(): void {
+        for (const element of this._elementosCargados) {
+            console.log(element.descripcion)
+        }
+    }
+}
+
+abstract class Elemento{
+    protected _identificadorUnico: number;
+    protected _descripcion: string;
+    protected _dimensiones: string | number;
+
+    constructor(ID: number, descripcion: string, dimensiones: string | number){
+        this._identificadorUnico = ID;
+        this._descripcion = descripcion;
+        this._dimensiones = dimensiones 
+    }
+
+    public get descripcion(){return this._descripcion}
+
+    public abstract Info(): string;
+}
+
+export class Comoda extends Elemento{
+    private _superficie: string;
+    private _cantidadCajones: number;
+    constructor(superficie: string, cantidadCajones: number, ID: number, descripcion: string, dimensiones: string | number){
+        super(ID, descripcion, dimensiones)
+        this._superficie = superficie;
+        this._cantidadCajones = cantidadCajones;
+    }
+
+    public Info(): string {
+        return `
+        ID: ${this._identificadorUnico}\n
+        Descripcion: ${this._descripcion}\n
+        Dimensiones: ${this._dimensiones}\n
+        Superficie: ${this._superficie}\n
+        Cantidad de cajones: ${this._cantidadCajones}\n
+        `;
+    }
+
+}
 
 
 // export class Vehiculo{

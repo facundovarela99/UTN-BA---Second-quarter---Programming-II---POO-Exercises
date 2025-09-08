@@ -5,26 +5,33 @@ class Robot {
     _numeroSerie;
     _potenciaTraccionBase;
     _traccion;
-    constructor(numeroSerie = "KT-2020-P", potenciaTraccionBase = 10, traccion) {
+    _poseeSistemaTraccion = false;
+    constructor(numeroSerie = "KT-2020-P", potenciaTraccionBase = 10, traccion, poseeSistemaTraccion = false) {
         this._numeroSerie = numeroSerie;
         this._potenciaTraccionBase = potenciaTraccionBase;
         this._traccion = traccion;
+        this._poseeSistemaTraccion = poseeSistemaTraccion;
     }
     get numeroSerie() { return this._numeroSerie; }
     ;
     get potenciaTraccionBase() { return this._potenciaTraccionBase; }
     ;
-    setTraccion(sistemaDeTraccion) { this._traccion = sistemaDeTraccion; }
+    get poseeSistemaTraccion() { return this._poseeSistemaTraccion; }
     ;
-    getTraccion() { return this._traccion?.nombre; }
+    setTraccion(sistemaDeTraccion) {
+        this._traccion = sistemaDeTraccion;
+        this._poseeSistemaTraccion = true;
+    }
     ;
     mostrarDatos() {
         console.log("Datos del robot KT-2020:\n");
-        console.log(`N° de serie: ${this._numeroSerie}.\nPotencia Traccion base: ${this._potenciaTraccionBase}.\n`);
-        if (this._traccion) {
-            console.log(`Sistema de tracción: ${this._traccion?.nombre} .Datos del sistema de traccion:\n${this.getTraccion()}`);
+        console.log(`N° de serie: ${this._numeroSerie}.\nPotencia Traccion base: ${this.potenciaTraccionBase}.`);
+        if (this.poseeSistemaTraccion) {
+            console.log(`\nDatos del sistema de tracción: ${this._traccion?.mostrarDatos(this._potenciaTraccionBase)}.`);
         }
-        console.log('El robot no cuenta actualmente con un sistema de traccion.');
+        else {
+            console.log('El robot no cuenta actualmente con un sistema de traccion.');
+        }
     }
 }
 exports.Robot = Robot;
@@ -54,11 +61,13 @@ class RuedaDeCaucho extends SistemaTraccion {
     calculoPotenciaTraccionFinal(potenciaTraccionBaseRobot) {
         return potenciaTraccionBaseRobot - 1;
     }
-    mostrarDatos() {
-        return `Nombre: ${this.nombre}.\n
-        Rodado: ${this.rodado}.\n
-        Sensores: ${this.poseeSensores()}.\n
-        Potencia de tracción final: ${this.calculoPotenciaTraccionFinal}`;
+    mostrarDatos(ptb) {
+        return `
+            Rodado: ${this.rodado}\n
+            Posee sensores Meke-40: ${this.poseeSensores()}\n
+            Potencia tracción final: ${this.calculoPotenciaTraccionFinal(ptb)}
+            Info adicional: Puede avanzar hasta 100km hasta su reemplazo.
+        `;
     }
 }
 exports.RuedaDeCaucho = RuedaDeCaucho;
@@ -69,11 +78,13 @@ class Oruga extends SistemaTraccion {
     calculoPotenciaTraccionFinal(potenciaTraccionBaseRobot) {
         return potenciaTraccionBaseRobot - 3;
     }
-    mostrarDatos() {
-        return `Nombre: ${this.nombre}.\n
-                Rodado: ${this.rodado}.\n 
-                Sensores: ${this.poseeSensores()}.\n
-                Potencia de tracción final: ${this.calculoPotenciaTraccionFinal} restados al PTB`;
+    mostrarDatos(ptb) {
+        return `
+            Rodado: ${this.rodado}\n
+            Posee sensores Meke-40: ${this.poseeSensores()}\n
+            Potencia tracción final: ${this.calculoPotenciaTraccionFinal(ptb)}
+            Info adicional: Puede avanzar hasta 400km hasta su reemplazo.
+        `;
     }
 }
 exports.Oruga = Oruga;
