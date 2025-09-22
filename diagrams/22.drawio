@@ -1,0 +1,168 @@
+<mxfile host="65bd71144e">
+    <diagram id="RQzgwH1Tm7AY2RTxLyVx" name="Page-1">
+        <mxGraphModel dx="1454" dy="1663" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px; white-space-collapse: preserve;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// 22. Un sistema de gestión automatizada necesita ser capaz de analizar documentos digitales de &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// distintos organismos nacionales; su objetivo es aceptarlos o rechazarlos, según cumplan con las &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// condiciones descritas más abajo. &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// Cada cierto tiempo el sistema en cuestión recupera los datos mediante comunicación directa con &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// cada uno de los subsistemas, modelando los valores en clases que presentan la estructura que &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// los del origen. &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(204, 204, 204);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// Desarrollar una solución que permita normalizar los objetos y analizar los siguientes datos: &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// - id (numérico): es el número de legajo, folio o expediente a analizar&lt;/span&gt;&lt;span style=&quot;background-color: light-dark(rgb(31, 31, 31), rgb(210, 210, 210));&quot;&gt;.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// - issueDate (date): es la fecha de emisión, lanzamiento o erogación. &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// - body (String): se trata del cuerpo, contenido, desarrollo o caso. &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// - responsible (String): nombre, autor o firmante, del documento. &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(204, 204, 204);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// La solución debe poder contar con una función que reciba por parámetro una lista de Document &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// con los atributos a priori mencionados y mostrar por pantalla &quot;aprobado&quot; en caso de estar &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// aprobado y &quot;rechazado&quot; en caso contrario; el criterio de aprobación es que estén todos los datos &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// completos y que el cuerpo contenga al menos 100 caracteres y la fecha no sea mayor a la de hoy. &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(204, 204, 204);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// Considerar que el sistema tiene las siguientes clases y atributos: &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// Escrito &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// &amp;nbsp; &amp;nbsp; - legajo &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// &amp;nbsp; &amp;nbsp; - erogación &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// &amp;nbsp; &amp;nbsp; - cuerpo &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// &amp;nbsp; &amp;nbsp; - autor&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt; &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// Documento &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// &amp;nbsp; &amp;nbsp; - expediente &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// &amp;nbsp; &amp;nbsp; - lanzamiento &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// &amp;nbsp; &amp;nbsp; - contenido &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// &amp;nbsp; &amp;nbsp; - nombre &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(204, 204, 204);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// Ley &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// &amp;nbsp; &amp;nbsp; - folio &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// &amp;nbsp; &amp;nbsp; - emisión &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// &amp;nbsp; &amp;nbsp; - desarrollo &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// &amp;nbsp; &amp;nbsp; - firmante &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(204, 204, 204);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(204, 204, 204);&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// Desarrollar una solución que permita adecuar estos documentos al formato de Document, incluyendo &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(106, 153, 85);&quot;&gt;// diagramas, etc.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="60" width="790" height="770" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" style="edgeStyle=none;html=1;" parent="1" source="4" target="65" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="class SistemaGestion" style="swimlane;" parent="1" vertex="1">
+                    <mxGeometry x="1125" y="1123" width="350" height="175" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="private _nombre: string;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="4" vertex="1">
+                    <mxGeometry y="30" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="public validarDocumentos(listaDocumentos: ListaDocumentos);" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="4" vertex="1">
+                    <mxGeometry x="-10" y="125" width="360" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="" style="endArrow=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="4" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint y="80" as="sourcePoint"/>
+                        <mxPoint x="350" y="80" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="63" value="public recuperarDatos(documento: Doc)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="4" vertex="1">
+                    <mxGeometry x="-10" y="95" width="240" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="private _version: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="4">
+                    <mxGeometry y="55" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="&lt;i&gt;interface IDocumentable&amp;nbsp;&lt;/i&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="960" y="350" width="300" height="210" as="geometry">
+                        <mxRectangle x="1160" y="180" width="410" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="23" value="public abstract&amp;nbsp; getID();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="12" vertex="1">
+                    <mxGeometry x="22.5" y="60" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="public abstract getIssueDate();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="12" vertex="1">
+                    <mxGeometry x="20" y="90" width="190" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="public abtract getBody();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="12" vertex="1">
+                    <mxGeometry x="22.5" y="120" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="public abtract getResponsible();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="12" vertex="1">
+                    <mxGeometry x="22.5" y="150" width="190" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" style="edgeStyle=none;html=1;" parent="1" source="14" target="51" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="#SistemaGesion&lt;div&gt;public validarDocumento(documento: Documento): void{&lt;/div&gt;&lt;div&gt;if (documento.camposCompletos === 4){&lt;/div&gt;&lt;div&gt;return new ListaDocument(documento.id, documento.date, documento.body, documento.responsible)&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="1520" y="1110" width="560" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="#SistemaGestion&lt;div&gt;public leerDocumentosAceptados(): void{&lt;/div&gt;&lt;div&gt;for (const documento of this._documentosAceptados){&lt;/div&gt;&lt;div&gt;&amp;nbsp;console.log(`ID: ${documento.id}`)&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;console.log(`Date: ${documento.issueDate}`)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;console.log(`Body: ${documento.body}`)&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;console.log(`Responsible: ${documento.responsible}`)&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="1640" y="1235" width="310" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="#IDocumentable&lt;div&gt;set... (){&lt;/div&gt;&lt;div&gt;...&lt;/div&gt;&lt;div&gt;this._camposCompletos++;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="930" y="-60" width="170" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" style="edgeStyle=none;html=1;endArrow=block;endFill=0;" parent="1" source="31" target="12" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" style="edgeStyle=none;html=1;endArrow=block;endFill=0;" parent="1" source="31" target="65" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="class Escrito" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="960" y="600" width="200" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="private _legajo: number" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="31" vertex="1">
+                    <mxGeometry y="38" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="private _erogación: number" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="31" vertex="1">
+                    <mxGeometry y="60" width="170" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="private _cuerpo: string;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="31" vertex="1">
+                    <mxGeometry y="90" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="private _autor: string" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="31" vertex="1">
+                    <mxGeometry y="120" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" style="edgeStyle=none;html=1;endArrow=block;endFill=0;" parent="1" source="33" target="12" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" style="edgeStyle=none;html=1;endArrow=block;endFill=0;" parent="1" source="33" target="65" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="class Documento" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1187.5" y="600" width="200" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="private _expediente: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="33" vertex="1">
+                    <mxGeometry y="38" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="private _lanzamiento: number" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="33" vertex="1">
+                    <mxGeometry y="60" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="private _contenido: string;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="33" vertex="1">
+                    <mxGeometry y="80" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="private _nombre: string;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="33" vertex="1">
+                    <mxGeometry y="110" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" style="edgeStyle=none;html=1;endArrow=block;endFill=0;" parent="1" source="34" target="12" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" style="edgeStyle=none;html=1;endArrow=block;endFill=0;" parent="1" source="34" target="65" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="class Documento" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1430" y="600" width="200" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="private _folio: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="34" vertex="1">
+                    <mxGeometry x="10" y="38" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="private _emision: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="34" vertex="1">
+                    <mxGeometry x="10" y="65" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="private _desarrollo: string;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="34" vertex="1">
+                    <mxGeometry x="10" y="88" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="private _firmante: string;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="34" vertex="1">
+                    <mxGeometry x="10" y="118" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="class ListaDocument" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="2230" y="1070" width="200" height="175" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="private _ID: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="51" vertex="1">
+                    <mxGeometry y="45" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="private _issueDate: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="51" vertex="1">
+                    <mxGeometry x="-2.5" y="73" width="170" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="private _body: string;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="51" vertex="1">
+                    <mxGeometry y="103" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="private _responsible: string;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="51" vertex="1">
+                    <mxGeometry y="133" width="170" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Retorna una insancia de ListaDocument&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="1960" y="1120" width="270" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Recupera los datos de&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="1105" y="975" width="200" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="&lt;i&gt;abstract class Doc&lt;/i&gt;" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1200" y="850" width="200" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="private _catosCompletos: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="65">
+                    <mxGeometry x="-10" y="28" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="public get camposCompletos();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="65">
+                    <mxGeometry x="-2.5" y="58" width="190" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="" style="endArrow=none;html=1;exitX=0.05;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="65" source="75">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="150" y="108" as="sourcePoint"/>
+                        <mxPoint x="200" y="58" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="74" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Implementan&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="1260" y="425" width="160" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -1,0 +1,49 @@
+<mxfile host="65bd71144e">
+    <diagram id="Z-ciiug507c_4vXZ9-Bu" name="Page-1">
+        <mxGraphModel dx="1380" dy="1726" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px; white-space-collapse: preserve;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// 21. El banco Kokumo Bank inaugura una nueva sucursal en el reino de Caballito. &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// Como parte de la estrategia para captar &amp;nbsp;clientes, decide lanzar un nuevo plan de préstamos &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// personales. &lt;/span&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// De las personas se necesita conocer el dni, el sueldo bruto y la antigüedad del empleo actual. &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// Cuando el sistema recibe dichos datos, inmediatamente después realiza una consulta al servicio &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// web del Ministerio del interior para validar el dni; a los efectos se debe instanciar un objeto &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// PersonIdentity e invocar a la función getInfo() pasándole el dni. &lt;/span&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// El servicio devolverá un objeto Person, con los siguientes atributos: name (String), lastname &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// (String), birthDate (Date). &lt;/span&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// Si la persona no llega a los 21 años, debe mostrarse un mensaje que indique que no es posible &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// extender el préstamo por no reunir la edad mínima; caso contrario, el criterio de préstamo es el &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// siguiente: &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// &amp;nbsp;- Salario entre 30000 y 40000: 80000 con un 30% de interés.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// &amp;nbsp;- Salario hasta los 60000: 120000 con un 35% de interés.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// &amp;nbsp;- Salario hasta los 80000: 140000 con un 39% de interés.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// &amp;nbsp;- No se extiende créditos para salarios mayores a 80000. &lt;/span&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// Asumir la existencia de la clase PersonIdentity; eventualmente, para permitir la compilación del &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// código, implementarla. &lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="45" y="-82" width="790" height="430" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="class Persona" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="920" y="-82" width="250" height="257" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="-private dni: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="47">
+                    <mxGeometry y="47" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="-private sueldoBruto: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="47">
+                    <mxGeometry y="77" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="-private antiguedadEmpleoActual: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="47">
+                    <mxGeometry y="117" width="250" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="+public get dni();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="47">
+                    <mxGeometry y="167" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="+public get sueldoBruto();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="47">
+                    <mxGeometry y="197" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="+public get antiguedadEmpleoActual();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="47">
+                    <mxGeometry y="227" width="230" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="" style="endArrow=none;html=1;exitX=0;exitY=0.926;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="47" source="50">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="200" y="197" as="sourcePoint"/>
+                        <mxPoint x="250" y="147" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="56" value="class Person" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="920" y="210" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="-private _name: string;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="56">
+                    <mxGeometry y="38" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="-private _lastName: string;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="56">
+                    <mxGeometry y="68" width="160" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

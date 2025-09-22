@@ -1,0 +1,175 @@
+<mxfile host="65bd71144e">
+    <diagram id="zCJzCJdqDsHCJ9_B2jmk" name="Page-1">
+        <mxGraphModel dx="2070" dy="1663" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px; white-space-collapse: preserve;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// 19. Una empresa que se dedica a la venta de muebles necesita un sistema que le permita controlar&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// los gastos y las ventas de los distintos artículos que gestionan.&lt;/span&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// Debido a que pretenden informatizarse de a poco, por el momento se conforman con una&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// solución que les permita dar de alta los artículos, asignarle un costo de producción y un precio&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// de venta.&lt;/span&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// Sin embargo, como venden al por mayor y al por menor, es fundamental que puedan manejar al&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// menos dos listas de precio.&lt;/span&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// ● De los artículos simplemente se necesita saber el nombre, el costo, aunque a veces es&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// importante contar con la posibilidad de agregar una observación.&lt;/span&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// ● Una lista de precio siempre es identificada por un nombre, la fecha tope de vigencia, un&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// marcador que identifica si es mayorista o minorista, y el detalle de los artículos con su precio.&lt;/span&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// Se pide analizar el problema, modelar las entidades involucradas, realizar el diagrama, e&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// implementar la solución.&lt;/span&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// Crear un conjunto acotado de artículos y mostrar los detalles por pantalla; adicionalmente crear&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// una lista de cada tipo y también mostrar por pantalla el resultado.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-270" y="-1090" width="790" height="410" as="geometry"/>
+                </mxCell>
+                <mxCell id="79" value="abstract class ListaPrecios" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="330" width="290" height="370" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="-private nombreLista: string;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="79" vertex="1">
+                    <mxGeometry y="30" width="170" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="81" value="-private fechaTopeVigencia: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="79" vertex="1">
+                    <mxGeometry y="60" width="220" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="83" value="-private articulos: array&amp;lt;Articulo&amp;gt;;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="79" vertex="1">
+                    <mxGeometry y="120" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="-private mayoristaMinorista: boolean;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="79" vertex="1">
+                    <mxGeometry y="90" width="220" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="101" value="+public abstract agregarAlListado(articulo: Articulo);" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="79" vertex="1">
+                    <mxGeometry x="-10" y="320" width="300" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="102" value="+public get listadoDetalle();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="79" vertex="1">
+                    <mxGeometry y="270" width="170" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="126" value="+public get nombreLista();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="79" vertex="1">
+                    <mxGeometry x="5" y="170" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="127" value="+public get fechaTopeVigencia();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="79" vertex="1">
+                    <mxGeometry y="205" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="129" value="+public get mayoristaMinorista();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="79" vertex="1">
+                    <mxGeometry y="235" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" style="edgeStyle=none;html=1;" parent="1" source="84" target="79" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" value="class ListaMayorista" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="872" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="100" style="edgeStyle=none;html=1;" parent="1" source="85" target="79" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" value="class ListaMinorista" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="590" y="872" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="109" style="edgeStyle=none;html=1;" parent="1" source="90" target="104" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" value="class articulo" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-20" y="560" width="210" height="430" as="geometry"/>
+                </mxCell>
+                <mxCell id="92" value="-private nombre: string;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="90" vertex="1">
+                    <mxGeometry y="40" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="95" value="-private costoProduccion: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="90" vertex="1">
+                    <mxGeometry y="70" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="96" value="-private observacion: string = &quot; &quot;;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="90" vertex="1">
+                    <mxGeometry x="5" y="130" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="97" value="+public get nombre();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="90" vertex="1">
+                    <mxGeometry x="5" y="168" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="98" value="+public get costoProduccion();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="90" vertex="1">
+                    <mxGeometry x="5" y="198" width="190" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="99" value="+public get observacion();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="90" vertex="1">
+                    <mxGeometry x="10" y="270" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="115" value="-private costoVenta: number = 0;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="90" vertex="1">
+                    <mxGeometry y="100" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="118" value="+public setCostoProduccion();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="90" vertex="1">
+                    <mxGeometry x="5" y="300" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="123" value="+public setCostoVenta();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="90" vertex="1">
+                    <mxGeometry x="10" y="330" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="124" value="+public get costoVenta();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="90" vertex="1">
+                    <mxGeometry x="5" y="228" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="128" value="+public setObservacion();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="90" vertex="1">
+                    <mxGeometry x="10" y="368" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="111" style="edgeStyle=none;html=1;" parent="1" source="104" target="79" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="113" style="edgeStyle=none;html=1;" parent="1" source="104" target="106" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="136" style="edgeStyle=none;html=1;" parent="1" source="104" target="133" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="104" value="class Sistema" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-60" y="300" width="305" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="105" value="+public darDeAltaArticulo();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="104" vertex="1">
+                    <mxGeometry y="70" width="170" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="125" value="private _listasDePrecios: Array&amp;lt;ListaPrecios&amp;gt; = [];" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="104" vertex="1">
+                    <mxGeometry x="7.5" y="30" width="290" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="138" value="+public darDeAltaListado" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="104" vertex="1">
+                    <mxGeometry y="100" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="141" value="+public mostrarListas();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="104" vertex="1">
+                    <mxGeometry y="130" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="134" style="edgeStyle=none;html=1;" parent="1" source="106" target="132" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="106" value="interfaz IdableDeAltaArticulo{&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;valoresCorrectos = 0&lt;br&gt;&lt;/font&gt;&lt;div&gt;darDeAltaArticulo(lista, articulo, nombre,precioProduccion, precioVenta, observaciones){&lt;/div&gt;&lt;div&gt;si el la longitud nombre es mayor a 15 caracteres: error&lt;/div&gt;&lt;div&gt;si el precio de venta es igual-menor a 0: error&lt;/div&gt;&lt;div&gt;si la longitud de la obvsercación es mayor a 30: error&amp;nbsp;&lt;/div&gt;&lt;div&gt;si la diferencia entre precioProduccion y precioVenta es mayor al 30%, el precio mas bajo debe aumentarse&lt;/div&gt;&lt;div&gt;si valoresCorrectos = 3 -&amp;gt; se puede dar de alta&lt;/div&gt;&lt;div&gt;};&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-365" y="140" width="600" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="110" value="ES DADO DE ALTA POR" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="510" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="112" value="AGREGA EL ARTICULO A LA LISTA" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="480" width="220" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="114" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;#hereda de la interfaz y utiliza el metodo de la lista para agregar el articulo&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-530" y="330" width="420" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="116" value="#agregarAlListado debería asignarle a los artículos un costo de venta mayorista y minorista" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="700" y="390" width="510" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="121" value="mayoristaMinorista: true" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="840" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="122" value="mayoristaMinorista: false" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="650" y="842" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="131" style="edgeStyle=none;html=1;" parent="1" source="130" target="101" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="130" value="#if (!this._articulos.cinludes(articulo)){&lt;div&gt;this._articulos.push(articulo)&lt;/div&gt;&lt;div&gt;} else {&lt;/div&gt;&lt;div&gt;el articulo &quot;articulo&quot; ya se encuentra en la lista&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;}&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="775" y="630" width="270" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="132" value="#Recibe la lista, el articulo, un precio de producción, de venta y observación, y da de alta el artículo en la lista recibida por parametro" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-650" y="90" width="730" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="133" value="interfaz IdableDeAltaLista{&lt;div&gt;darDeAltaListado(lista)&lt;/div&gt;&lt;div&gt;};&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="180" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="135" value="#recibe la lista para ser dada de alta" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="190" y="150" width="220" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="137" style="edgeStyle=none;html=1;" parent="1" source="105" target="114" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="139" value="#hereda de la interfaz y da de alta la lista recibida" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-490" y="378" width="290" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="140" style="edgeStyle=none;html=1;" parent="1" source="138" target="139" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="142" value="#recorrer las listas del sistema mostrando sus datos y mostrando el detalle del listado de cada una" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-730" y="430" width="550" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="143" style="edgeStyle=none;html=1;" parent="1" source="141" target="142" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="144" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px; white-space-collapse: preserve;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;/*20*/&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// Habiendo implementado con éxito la primera parte del sistema, deciden ir un paso más allá e&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// incluir un conjunto de mejoras.&lt;/span&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// La empresa necesita que se implemente un mecanismo de validación que controle -al momento&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// de dar de alta un artículo- que el nombre no supere los 15 caracteres y que el costo sea mayor a&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// cero; la observación es opcional pero, si se incluye, que no supere los 30 caracteres.&lt;/span&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// Cuando un artículo no cumple con las especificaciones, debe mostrarse en pantalla qué&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// concepto falló.&lt;/span&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// También quieren que la diferencia entre el precio más alto y el más bajo no supere el 30%, de&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// modo tal que el sistema debe aumentar el precio más bajo para respetar ese límite (aplica a&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// todas las listas de precio).&lt;/span&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// Se pide analizar el problema, modelar las entidades involucradas, realizar el diagrama, e&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// implementar la solución.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// Crear un conjunto acotado de artículos, algunos con errores y mostrar el resultado por pantalla;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// adicionalmente crear una lista de cada tipo y también mostrar por pantalla el resultado con los&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #6a9955;&quot;&gt;// ajustes. &lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-320" y="-410" width="790" height="390" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
