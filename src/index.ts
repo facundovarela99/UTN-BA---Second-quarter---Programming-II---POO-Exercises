@@ -1,23 +1,35 @@
 // import { Person } from "./excercise1";
-import { Vehicle } from "./excercise2";
+// import { Vehicle } from "./excercise2";
 // import { Article } from "./excercise3";
-import { Cinema } from "./excercise4";
-import { Fruit } from "./excercise6";
-import { Ninja } from "./excercise7";
-import { Person, Guard, Visitor } from "./excercise8-12";
-// import { Robot, TractionSystem } from "./excercise13";
-import { Dron } from "./guide14/dron";
-import { Tool } from "./guide14/tool";
-// import { Dron, Tool } from "./guide14/tool";
-import { EquipoLancha, Acorazado, Destructor, BarcoHospital, Lancha } from "./excercise15";
-// import { Vehiculo, Elemento } from "./excercise16";
-import { Scanner, Objeto } from "./excercise17";
-import { Casa, Departamento, Contacto, Sistema, Formulario } from "./excercise18";
-import { RegisterSystem ,Article, PriceList } from "./excercise19-20";
-// import Client from "./excercise21";
-import { Cuadrado, FiguraGeometrica } from "./herencia";
-// import {Cadete, Operador, Administrativo, Gerente, BonoPresentismoA, BonoPresentismoB, BonoResultado}  from "./herencia2";
-import { Robot, Oruga, RuedaDeCaucho } from "./excercise13";
+// import { Cinema } from "./excercise4";
+// import { Fruit } from "./excercise6";
+// import { Ninja } from "./excercise7";
+// import { Person, Guard, Visitor } from "./excercise8-12";
+// // import { Robot, TractionSystem } from "./excercise13";
+// import { Dron } from "./guide14/dron";
+// import { Tool } from "./guide14/tool";
+// // import { Dron, Tool } from "./guide14/tool";
+// import { EquipoLancha, Acorazado, Destructor, BarcoHospital, Lancha } from "./excercise15";
+// import { Vehiculo, Auto, Camioneta, Heladera, Televisor, Comoda, Lavarropas, Bicicleta } from "./excercise16";
+// import { Scanner, Objeto } from "./excercise17";
+// import { Casa, Departamento, Contacto, Sistema, Formulario } from "./excercise18";
+// import { RegisterSystem ,Article, PriceList } from "./excercise19-20";
+// // import Client from "./excercise21";
+// import { Cuadrado, FiguraGeometrica } from "./herencia";
+// // import {Cadete, Operador, Administrativo, Gerente, BonoPresentismoA, BonoPresentismoB, BonoResultado}  from "./herencia2";
+// import { Robot, Oruga, RuedaDeCaucho } from "./excercise13";
+// import Articulo from "./19-20/articulo";
+// import { ListaMayorista, ListaMinorista, SistemaDeGestion } from "./19-20/index19-20";
+// import { ListaDocument, Escrito, Documento, Ley, sistemaGestion } from "./22/index22";
+// function generarBody(value: string){
+//     for (let i = 0; i < 100; i++) {
+//         value+='a'
+//     }
+//     return value;
+// }
+
+import { Persona, MotoG25, Iphone } from "./cellphones/index-cellphones";
+
 
 function main(): void {
 
@@ -56,7 +68,7 @@ function main(): void {
 
     // orange.weight = 250;
     // console.log(`Orange weight: ${orange.weight}. its eadible: ${orange.itsEadible()}`);
-    
+
     /* Excercise 7: */
     // const Scorpion = new Ninja('Ninjitsu', 'Katana', 100);
     // const SubZero = new Ninja('Shotokan', 'Freeze arms', 100);
@@ -87,7 +99,7 @@ function main(): void {
     // console.log(robot2.serialNumber+"\n");
     // console.log(robot2.typeTraction.name);
     // console.log(`Base power traction: ${robot2.basePowerTraction}. ${robot2.advance(robot1.typeTraction.HpUse(robot2.typeTraction.name))}`)
-    
+
     /* EXCERCISE 14): */
     // const infraredSensor1 = new Tool('Infrared sensor', 250, 'Detect high temperatures');
     // const Taser1 = new Tool('Taser', 300, 'Electrocute hostiles');
@@ -110,7 +122,7 @@ function main(): void {
     // console.log(dron1.getFinalVelocity());
     // console.log(dron1.getToolAction(Taser1));
 
-    /* EXCERCISE 15): */    
+    /* EXCERCISE 15): */
     // const acorazado1 = new Acorazado('Acorazado Uno', 100, 80, 150, 40, 100, 200, 60);
     // const destructor1 = new Destructor('Destructor Uno', 80, 60, 180, 40, 50, 250);
     // const barcoHospital1 = new BarcoHospital('Sibelancia', 90, 90, 180, 30);
@@ -130,7 +142,7 @@ function main(): void {
     // class Comoda extends Elemento{
     //     private superficie: string;
     //     private cantidadCajones: number;
-        
+
     //     constructor(superficie: string, cantidadCajones: number, descripcion: string, dimensiones: string, id: number){
     //         super(id, descripcion, dimensiones);
     //         this.superficie = superficie;
@@ -193,7 +205,7 @@ function main(): void {
     //     private voltaje: number;
     //     private tipo: string;
     //     private esSmart: boolean;
-        
+
     //     constructor(voltaje: number, tipo: string, esSmart: boolean, descripcion: string, dimensiones: string, id: number){
     //         super(id, descripcion, dimensiones);
     //         this.voltaje = voltaje;
@@ -299,9 +311,9 @@ function main(): void {
     //         this.poseePileta = poseePileta;
     //     }
     // }
-    
+
     // const listaFormulario = new ListaFormularios([]);
-    
+
     // const departamento1 = new Departamento(2, 'B', false, 'Buenos Aires', 'Caba', 'Recoleta', 'Laprida', 1234, 7500, false, true, true, true);
     // const contacto1 = new Contacto('Facundo', 'Varela', 12345678, 'facundo@example.com', true, "");
 
@@ -319,7 +331,7 @@ function main(): void {
     // listaFormulario.getFormulariosDeAlta();
     // listaFormulario.darDeAlta(formulario2);
     // listaFormulario.getFormulariosDeAlta();
-    
+
     /* EXCERCISE 18): */
     //
 
@@ -365,13 +377,67 @@ function main(): void {
     // cadete1.calcularSueldo(cadete1.sueldoNeto, bonoPresentA.asignarBono(cadete1.ausencias), bonoPresentB.asignarBono(), bonoResultado.asignarBono(cadete1.nivelObjetivo, cadete1.sueldoNeto));
     // Operador1.calcularSueldo(Operador1.sueldoNeto, bonoPresentA.asignarBono(Operador1.ausencias), bonoPresentB.asignarBono(), bonoResultado.asignarBono(Operador1.nivelObjetivo, Operador1.sueldoNeto));
 
-    const oruga1 = new Oruga();
-    const ruedaCaucho1 = new RuedaDeCaucho();
-    const robot1 = new Robot();
-    console.log(robot1.poseeSistemaTraccion);
-    // robot1.setTraccion(oruga1);
-    robot1.setTraccion(ruedaCaucho1);
-    robot1.mostrarDatos();
+    // const oruga1 = new Oruga();
+    // const ruedaCaucho1 = new RuedaDeCaucho();
+    // const robot1 = new Robot();
+    // console.log(robot1.poseeSistemaTraccion);
+    // // robot1.setTraccion(oruga1);
+    // robot1.setTraccion(ruedaCaucho1);
+    // robot1.mostrarDatos();
+
+    /* excercise 19-20 */
+    // const sistemaV1 = new SistemaDeGestion();
+    // const tv1 = new Articulo();
+    // const cafetera1 = new Articulo();
+    // const cafetera2 = new Articulo();
+    // const cpu1 = new Articulo();
+    // const cpu2 = new Articulo();
+    // const cpu3 = new Articulo();
+    // const cpu4 = new Articulo();
+    // const Lavarropas1 = new Articulo();
+    // const lista1mayorista = new ListaMayorista('Lista mayorista 1', 20251231);
+    // const lista1minorista = new ListaMinorista('Lista minorista 1', 202251124);
+
+    // sistemaV1.darDeAltaArticulo(lista1mayorista, tv1, 'Televisor 1', 0, 2500, 'Televisor marca Phillips');
+    // sistemaV1.darDeAltaArticulo(lista1mayorista, cafetera1, 'Cafetera 1', 500, 1000, 'Cafetera marca Phillips');
+    // sistemaV1.darDeAltaArticulo(lista1mayorista, cafetera2, 'Cafetera 2', 100, 300, 'Cafetera marca FECA');
+    // sistemaV1.darDeAltaArticulo(lista1minorista, cpu1, 'CPU 1', 15000, 30000, 'CPU Bangho I3 4GB RAM');
+    // sistemaV1.darDeAltaArticulo(lista1minorista, cpu2, 'CPU 2', 15000, 20000, 'CPU Lenovo I5 8GB RAM');
+    // sistemaV1.darDeAltaArticulo(lista1minorista, cpu3, 'CPU 3', 15000, 25000, 'CPU Coradir I5 12GB RAM');
+    // sistemaV1.darDeAltaArticulo(lista1minorista, cpu4, 'CPU 4', 15000,35000, 'CPU Asus I7 16GB RAM');
+    // sistemaV1.darDeAltaArticulo(lista1minorista, Lavarropas1, 'Lavarropas 1', 10000, 25000, 'Lavarropas marca Aguas Turbias');
+    // sistemaV1.darDeAltaListado(lista1mayorista);
+    // sistemaV1.darDeAltaListado(lista1minorista);
+    // sistemaV1.mostrarListas();
+
+    /* excercise 22 */
+    // const sistemaGestionV1 = new sistemaGestion('Sistema Gestor de Documentos S.G.D', 1);
+    // const documento1 = new Documento('Documento', 13, 2025921, 'laskdlñadsklñsalñdadskñlsadklñaskdlñas', 'Documento 1 2025921 - Secretario de la Nación', 4);
+    // const escrito1 = new Escrito('Escrito', 7, 20252820, generarBody('body'), 'El Presidente', 4);
+    // const ley1 = new Ley('Ley', 8, 20230924, 'Esta ley salió el 24 de Septiembre del año 2023', 'El Vice Presidente', 4);
+    // const nuevoDocumento1 = sistemaGestionV1.recuperarDatos(documento1);
+    // const nuevoDocumento2 = sistemaGestionV1.recuperarDatos(escrito1);
+    // const nuevoDocumento3 = sistemaGestionV1.recuperarDatos(ley1);
+    // sistemaGestionV1.validarDocumentos(nuevoDocumento1!);
+    // sistemaGestionV1.validarDocumentos(nuevoDocumento3!);
+    // sistemaGestionV1.leerDocumentos();
+
+    /* excercise 22 */
+    
+    /* cellphones */
+    const celularMotorola1 = new MotoG25('Moto G25', 100, true);
+    const celularIphone1 = new Iphone('Iphone 15', 100, true);
+
+    const Juliana  = new Persona('Juliana', celularMotorola1);
+    const Catalina = new Persona('Catalina', celularIphone1);
+
+    Juliana.llamarA(Catalina, 10);
+    Juliana.llamarA(Catalina, 7);
+    Catalina.llamarA(Juliana, 20);
+    Catalina.llamarA(Catalina, 15);
+    Juliana.llamarA(Catalina, 60);
+
+
 
 }
 
