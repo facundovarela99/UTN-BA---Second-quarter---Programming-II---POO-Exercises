@@ -1,0 +1,208 @@
+<mxfile host="65bd71144e">
+    <diagram id="M7MGz19tFflpK_Xd4jR1" name="Page-1">
+        <mxGraphModel dx="1572" dy="1693" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="&lt;i&gt;abstract class Persona&lt;/i&gt;" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-290" y="5" width="200" height="195" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="-private _nombre: string;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="2" vertex="1">
+                    <mxGeometry y="38" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="-private _apellido: string;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="2" vertex="1">
+                    <mxGeometry y="68" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="+public get apellido();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="2" vertex="1">
+                    <mxGeometry y="115" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="+public get dni();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="2" vertex="1">
+                    <mxGeometry y="145" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="endArrow=none;html=1;exitX=0.001;exitY=1.018;exitDx=0;exitDy=0;exitPerimeter=0;" parent="2" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="0.13999999999987267" y="105.53999999999996" as="sourcePoint"/>
+                        <mxPoint x="200" y="105" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=none;html=1;endArrow=block;endFill=0;" parent="1" source="9" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="class Empleado" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="10" width="260" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="-private _esJefe: boolean;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="9" vertex="1">
+                    <mxGeometry x="-5" y="50" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="-private _jefe: Empleado;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="9" vertex="1">
+                    <mxGeometry x="-5" y="80" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="-private _legajo: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="9" vertex="1">
+                    <mxGeometry x="-5" y="28" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="+public get legajo();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="9" vertex="1">
+                    <mxGeometry x="-5" y="118" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="+public get esJefe();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="9" vertex="1">
+                    <mxGeometry y="148" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="+public get jefe();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="9" vertex="1">
+                    <mxGeometry y="178" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;+public abstract subirAlMicro(micro: Micro)&lt;/span&gt;&lt;span style=&quot;font-family: monospace; font-size: 0px; text-align: start;&quot;&gt;3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22%2Bpublic%20subirAlMicro(micro%3A%20Micro)%22%20style%3D%22text%3Bhtml%3D1%3Balign%3Dcenter%3BverticalAlign%3Dmiddle%3Bresizable%3D0%3Bpoints%3D%5B%5D%3Bautosize%3D1%3BstrokeColor%3Dnone%3BfillColor%3Dnone%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22-510%22%20y%3D%22500%22%20width%3D%22200%22%20height%3D%2230%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="9" vertex="1">
+                    <mxGeometry x="5" y="208" width="250" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=none;html=1;" parent="1" source="13" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="97" style="edgeStyle=none;html=1;" parent="1" source="13" target="44" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="class empresa" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="420" width="230" height="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="-private razonSocial: string;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="13" vertex="1">
+                    <mxGeometry y="43" width="170" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="-private empleados: Array&amp;lt;Empleado&amp;gt;;&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="13" vertex="1">
+                    <mxGeometry y="73" width="230" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="+public get razonSocial();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="13" vertex="1">
+                    <mxGeometry x="5" y="150" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="+public get empleados();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="13" vertex="1">
+                    <mxGeometry y="180" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="-private micros: Array&amp;lt;Micros&amp;gt;;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="13" vertex="1">
+                    <mxGeometry x="5" y="110" width="190" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="+public get micros();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="13" vertex="1">
+                    <mxGeometry x="5" y="210" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="105" value="+public preguntarPorJefe();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="13">
+                    <mxGeometry x="5" y="240" width="170" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Posee&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="60" width="70" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" style="edgeStyle=none;html=1;endArrow=block;endFill=0;" parent="1" source="22" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="class Clautrofobico" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-330" y="440" width="200" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" style="edgeStyle=none;html=1;endArrow=block;endFill=0;" parent="1" source="23" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="class Fiaca" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" parent="1" vertex="1">
+                    <mxGeometry x="25" y="440" width="200" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" style="edgeStyle=none;html=1;endArrow=block;endFill=0;" parent="1" source="24" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="class Moderado" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="330" y="440" width="200" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" style="edgeStyle=none;html=1;endArrow=block;endFill=0;" parent="1" source="29" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="class Obsecuente" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="685" y="440" width="200" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" style="edgeStyle=none;html=1;endArrow=block;endFill=0;" parent="1" source="30" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="class Apurado" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-690" y="455" width="200" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="class Micro" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="920" y="-135" width="280" height="575" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="-private _nroMicro: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="44" vertex="1">
+                    <mxGeometry x="2.5" y="38" width="170" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="-private _volumen: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="44" vertex="1">
+                    <mxGeometry x="10" y="80" width="170" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="-private _hayLugar: boolean;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="44" vertex="1">
+                    <mxGeometry x="5" y="110" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="-private _asientosOcupados: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="44" vertex="1">
+                    <mxGeometry x="12.5" y="210" width="220" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="-private _barrasOcupadas: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="44" vertex="1">
+                    <mxGeometry x="10" y="270" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="+public subirPasajero(empleado: Empleado);" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="44" vertex="1">
+                    <mxGeometry x="7.5" y="410" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="-private _pasajeros: Array&amp;lt;Empleados&amp;gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="44" vertex="1">
+                    <mxGeometry x="10" y="300" width="230" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="+getters y setters" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="44" vertex="1">
+                    <mxGeometry x="10" y="380" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="-private lugaresLibres: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="44" vertex="1">
+                    <mxGeometry x="12.5" y="150" width="190" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" value="-private _pasajerosParados: Array&amp;lt;Pasajeros&amp;gt;;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="44" vertex="1">
+                    <mxGeometry x="-2.5" y="328" width="280" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" value="-private _pasajerosSentados: Array&amp;lt;Pasajeros&amp;gt;;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="44" vertex="1">
+                    <mxGeometry y="358" width="280" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="81" value="-private _cantAsientos: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="44" vertex="1">
+                    <mxGeometry x="12.5" y="180" width="190" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" value="-private _cantBarras: number;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="44" vertex="1">
+                    <mxGeometry x="17.5" y="240" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="99" value="+public obtenerTotalPasajeros();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="44">
+                    <mxGeometry x="2.5" y="440" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="101" value="+public totalPasajerosSentados();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="44">
+                    <mxGeometry x="2.5" y="460" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="102" value="+public totalPasajerosParados();" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="44">
+                    <mxGeometry x="2.5" y="490" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="108" value="+public bajarPersona(persona: Empleado);" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="44">
+                    <mxGeometry x="7.5" y="523" width="250" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;#class Micro&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;pre&gt;&lt;div&gt;&lt;b&gt;  public subirPasajero(empleado: Empleado) {&lt;br&gt;    if (hayLugar === true) {&lt;br&gt;      if (!this.pasajeros.includes(empleado)) {&lt;br&gt;        if (empleado.subirAlMicro(this)){&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;console.log(`El empleado ${empleado.nombre} ${empleado.apellido} subió al micro.`)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;this.lugaresLibres--;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;}&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;(this.lugaresLibres === 0) &amp;amp;&amp;amp; this.hayLugar = false; &lt;br&gt;      }&lt;br&gt;    } else {&lt;br&gt;      console.log(`Ya no hay lugar en el micro ${this.nroMicro}`);&lt;br&gt;    }&lt;br&gt;  }&lt;br&gt;}&lt;/b&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="1250" y="-290" width="560" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="&lt;pre&gt;&lt;b&gt;#class Apurado {&lt;br&gt;  subirAlMicro(micro: Micro): boolean {&lt;br&gt;    if (micro.lugaresLibres &amp;gt; 0) {&lt;br&gt;      if (micro.asientosOcupados &amp;lt; micro.cantAsientos) {&lt;br&gt;        micro.pasajerosSentados.push(this);&lt;/b&gt;&lt;/pre&gt;&lt;pre&gt;&lt;b&gt;micro.pasajeros.push(this);&lt;/b&gt;&lt;/pre&gt;&lt;pre&gt;&lt;b&gt;micro._asientosOcupados++;&lt;br&gt;        return true;&lt;br&gt;      } else if (micro.barrasOcupadas &amp;lt; micro.cantBarras) {&lt;br&gt;        micro.pasajerosParados.push(this);&lt;/b&gt;&lt;/pre&gt;&lt;pre&gt;&lt;pre style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;micro.pasajeros.push(this);&lt;/b&gt;&lt;/pre&gt;&lt;/pre&gt;&lt;pre&gt;&lt;b style=&quot;color: rgb(63, 63, 63); background-color: transparent; font-family: Helvetica; white-space: normal;&quot;&gt;micro._barrasOcupadas++;&lt;/b&gt;&lt;/pre&gt;&lt;pre&gt;&lt;b&gt;        return true;   &lt;br&gt;    } else {&lt;br&gt;      return false;&lt;br&gt;    }&lt;br&gt;  }&lt;br&gt;}&lt;/b&gt;&lt;/pre&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-800" y="670" width="320" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="&lt;pre&gt;&lt;b&gt;#class Claustrofobico {&lt;br&gt;  subirAlMicro(micro: Micro): boolean {&lt;br&gt;    if (micro.volumen &amp;gt; 120) {&lt;br&gt;      if (micro.lugaresLibres &amp;gt; 0) {&lt;br&gt;        if (micro.asientosOcupados &amp;lt; micro.cantAsientos) {&lt;br&gt;          micro.pasajerosSentados.push(this);&lt;/b&gt;&lt;/pre&gt;&lt;pre&gt;&lt;pre style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;micro.pasajeros.push(this);&lt;/b&gt;&lt;/pre&gt;&lt;/pre&gt;&lt;pre&gt;&lt;b&gt;micro.asientosOcupados++;&lt;br&gt;          return true;&lt;br&gt;        } else if (micro.barrasOcupadas &amp;lt; micro.cantBarras) {&lt;br&gt;          micro.barrasOcupadas.push(this);&lt;/b&gt;&lt;/pre&gt;&lt;pre&gt;&lt;pre style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;micro.pasajeros.push(this);&lt;/b&gt;&lt;/pre&gt;&lt;/pre&gt;&lt;pre&gt;&lt;b&gt;micro.barrasOcupadas++;&lt;br&gt;          return true;&lt;br&gt;        } else {&lt;br&gt;          return false;&lt;br&gt;        }&lt;br&gt;      } else {&lt;br&gt;        return false;&lt;br&gt;      }&lt;br&gt;    }&lt;br&gt;}&lt;/b&gt;&lt;/pre&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-470" y="560" width="430" height="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" value="&lt;div&gt;&lt;div&gt;&lt;b&gt;#class Fiaca {&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&amp;nbsp; subirAlMicro(micro: Micro): boolean {&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&amp;nbsp; &amp;nbsp; if (micro.lugaresLibres &amp;gt; 0) {&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; if (micro.asientosOcupados &amp;lt; micro.cantAsientos) {&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; micro.asientosOcupados++;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;micro.pasajerosSentados.push(this)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;pre style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;micro.pasajeros.push(this);&lt;/b&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; return true;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; } else {&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; return false;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&amp;nbsp; &amp;nbsp; }&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&amp;nbsp; &amp;nbsp; return false;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&amp;nbsp; }&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;}&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-50" y="565" width="340" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="&lt;pre&gt;&lt;b&gt;#class Moderado {&lt;br&gt;  subirAlMicro(micro: Micro): boolean {&lt;br&gt;    if (micro.LugaresLibres &amp;gt; 5) {&lt;br&gt;      if (micro.barrasOcupadas &amp;lt; micro.cantBarras) {&lt;br&gt; micro.barrasOcupadas++;&lt;br&gt;&lt;/b&gt;&lt;/pre&gt;&lt;pre&gt;&lt;b style=&quot;color: rgb(63, 63, 63); background-color: transparent; font-family: Helvetica; white-space-collapse: collapse;&quot;&gt;micro.pasajerosParados.push(this);&amp;nbsp;&amp;nbsp;&lt;/b&gt;&lt;/pre&gt;&lt;pre&gt;&lt;b style=&quot;color: rgb(63, 63, 63); background-color: transparent; font-family: Helvetica; white-space-collapse: collapse;&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); background-color: transparent; scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;micro.pasajeros.push(this);&lt;/b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/b&gt;&lt;/pre&gt;&lt;pre&gt;&lt;b&gt;return true;&lt;br&gt;      } else if (micro.asientosOcupados &amp;lt; micro.cantAsientos) {&lt;br&gt;        micro.pasajerosSentados.push(this);&lt;/b&gt;&lt;/pre&gt;&lt;pre&gt;&lt;pre style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;micro.pasajeros.push(this);&lt;/b&gt;&lt;/pre&gt;&lt;/pre&gt;&lt;pre&gt;&lt;b&gt;micro.asientosOcupados++:&lt;br&gt;        return true;&lt;br&gt;      }&lt;br&gt;    }&lt;br&gt;    return false;&lt;br&gt;  }&lt;br&gt;}&lt;/b&gt;&lt;/pre&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="540" width="440" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="&lt;b&gt;#class Obsecuente&lt;/b&gt;&lt;div&gt;&lt;b&gt;subirAlMicro(micro: Micro):&amp;nbsp; boolean{&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;if (micro.pasajerosSentados.includes(this.jefe)){&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;if (micro.asientosOcupados &amp;lt; micro.cantAsientos){&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;micro.pasajerosSentados.push(this)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;pre style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;micro.pasajeros.push(this);&lt;/b&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;micro.asientosOcupados++;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;return true;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;}&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;} else if (micro.pasajerosParados.includes(this.jefe)){&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;if (micro.barrasOcupadas &amp;lt; micro.cantBarras){&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;micro.pasajerosParados.push(this)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;pre style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;micro.pasajeros.push(this);&lt;/b&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;micro._barrasOcupadas++;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;return true&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;}&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;} else{&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;return false;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;}&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;}&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="650" y="570" width="330" height="350" as="geometry"/>
+                </mxCell>
+                <mxCell id="98" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Posee&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="105" width="70" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="100" value="&lt;font style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 14px;&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;#class Micro&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;pre style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;  public obtenerTotalPasajeros(){&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;console.log(`Cantidad total de pasajeros a bordo: ${this._pasajeros.length`)&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;}&lt;/b&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="1280" y="-10" width="520" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="103" value="&lt;font style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 14px;&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;#class Micro&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;pre style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;  public totalPasajerosParados(){&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;console.log(`Cantidad total de pasajeros parados: ${this._pasajerosParados.length`)&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;}&lt;/b&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="1255" y="195" width="570" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="104" value="&lt;font style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 14px;&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;#class Micro&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;pre style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;  public obtenerTotalSentados(){&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;console.log(`Cantidad total de pasajeros sentados: ${this._pasajerosSentados.length`)&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;}&lt;/b&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="1250" y="90" width="580" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="107" value="&lt;font style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 14px;&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;#class Micro&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;pre style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;  public bajarPersona(persona: Empleado){&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;let array = persona.filter(pax=&amp;gt; pax.nombre !== persona.nombre)&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;this.pasajeros&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;}&lt;/b&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="1325" y="290" width="440" height="110" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
