@@ -71,6 +71,12 @@ export class Micro {
         return this._pasajeros;
     }
 
+    public leerPasajeros(array: Array<Empleado>){
+        for (const pax of array) {
+            console.log(`Nombre: ${pax.nombre} - Apellido: ${pax.apellido} - Jefe: ${pax.jefe?.nombre}`)
+        }
+    }
+
     public get pasajerosParados() {
         return this._pasajerosParados;
     }
@@ -87,31 +93,38 @@ export class Micro {
                     console.log(`El empleado ${empleado.nombre} ${empleado.apellido} subió al micro.`)
                     this.lugaresLibres -= 1;
                     (this.lugaresLibres === 0) && (this._hayLugar = false);
+                } else {
+                    console.log(`El pasajero ${empleado.nombre} no quiso subirse al micro ${this.numeroMicro} por x motivo.`)
                 }
+            } else {
+                console.log(`El pasajero ${empleado.nombre} ya se encuentra en el colectivo ${this.numeroMicro}.`)
             }
         } else {
-            console.log(`Ya no hay lugar en el micro ${this.numeroMicro}`)
+            console.log(`\nYa no hay lugar en el micro ${this.numeroMicro}.`)
         }
     }
 
     public obtenerTotalPasajeros() {
-        console.log(`Cantidad total de pasajeros a bordo: ${this._pasajeros.length}`);
+        console.log(`\nCantidad total de pasajeros a bordo: ${this._pasajeros.length}`);
+        this.leerPasajeros(this._pasajeros);
     }
 
-    public obtenerTotalSentados(){
-        console.log(`Cantidad total de pasajeros sentados: ${this._pasajerosSentados.length}`);
+    public obtenerTotalSentados() {
+        console.log(`\nCantidad total de pasajeros sentados: ${this._pasajerosSentados.length}`);
+        this.leerPasajeros(this._pasajerosSentados);
     }
 
-    public obtenerTotalParados(){
-        console.log(`Cantidad total de pasajeros parados: ${this._pasajerosParados.length}`);
+    public obtenerTotalParados() {
+        console.log(`\nCantidad total de pasajeros parados: ${this._pasajerosParados.length}`);
+        this.leerPasajeros(this._pasajerosParados);
     }
 
-    public bajarPersona(persona: Empleado){
-        if (this.pasajeros.length > 0) {            
+    public bajarPersona(persona: Empleado) {
+        if (this.pasajeros.length > 0) {
             let array = this.pasajeros.filter(pax => pax.nombre !== persona.nombre);
             this._pasajeros = array;
             console.log(`Se bajó al pasajero ${persona.nombre}`)
-        } 
+        }
         return new Error('No hay pasajeros a bordo. ERROR! ERROR! ERROR!');
     }
 

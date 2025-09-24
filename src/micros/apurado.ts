@@ -5,17 +5,7 @@ export class Apurado extends Empleado{
 
     public subirAlMicro(micro: Micro): boolean {
         if (micro.lugaresLibres > 0) {
-            if (micro.asientosOcupados < micro.cantidadAsientos) {
-                micro.pasajerosSentados.push(this);
-                micro.pasajeros.push(this);
-                micro.asientosOcupados++;
-                return true
-            } else if (micro.barrasOcupadas < micro.cantidadBarras){
-                micro.pasajerosParados.push(this);
-                micro.pasajeros.push(this);
-                micro.barrasOcupadas++;
-                return true
-            }
+           return this.comprobarLugarDisponible(micro);
         } return false
     }
 
