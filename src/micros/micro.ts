@@ -110,6 +110,7 @@ export class Micro {
         if (this.pasajeros.length > 0) {            
             let array = this.pasajeros.filter(pax => pax.nombre !== persona.nombre);
             this._pasajeros = array;
+            console.log(`Se bajó al pasajero ${persona.nombre}`)
         } 
         return new Error('No hay pasajeros a bordo. ERROR! ERROR! ERROR!');
     }
