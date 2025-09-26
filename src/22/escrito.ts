@@ -2,12 +2,12 @@ import { Doc } from "./doc";
 import { IDocumentable } from "./interface-IDocumentable";
 
 export class Escrito extends Doc implements IDocumentable{
-    private _legajo: number;
-    private _erogacion: number;
-    private _cuerpo: string;
-    private _autor: string;
+    private _legajo: number = 0;
+    private _erogacion: number = 0;
+    private _cuerpo: string = "";
+    private _autor: string = "";
 
-    constructor(legajo: number, erogacion: number, cuerpo: string, autor: string, camposCompletos?: number){
+    constructor(legajo: number = 0, erogacion: number = 0, cuerpo: string = "", autor: string = "", camposCompletos?: number){
         super()
         this._legajo = legajo;
         this._erogacion = erogacion;
@@ -52,6 +52,7 @@ export class Escrito extends Doc implements IDocumentable{
     }
 
     public validarCamposCompletos(){
+        this.camposCompletos = 0;
         (this._legajo) && this.camposCompletos++;
         (this._erogacion) && this.camposCompletos++;
         (this._cuerpo) && this.camposCompletos++;

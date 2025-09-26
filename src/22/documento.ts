@@ -2,12 +2,12 @@ import { Doc } from "./doc";
 import { IDocumentable } from "./interface-IDocumentable";
 
 export class Documento extends Doc implements IDocumentable {
-    private _expediente: number;
-    private _lanzamiento: number;
-    private _contenido: string;
-    private _nombre: string;
+    private _expediente: number = 0;
+    private _lanzamiento: number = 0;
+    private _contenido: string= "";
+    private _nombre: string = "";
 
-    constructor(expte: number, launch: number, contenido: string, nombre: string, camposCompletos?: number) {
+    constructor(expte: number = 0, launch: number = 0, contenido: string= "", nombre: string= "", camposCompletos?: number) {
         super()
         this._expediente = expte;
         this._lanzamiento = launch;
@@ -52,6 +52,7 @@ export class Documento extends Doc implements IDocumentable {
     }
 
     public validarCamposCompletos() {
+        this.camposCompletos = 0;
         (this._expediente) && this.camposCompletos++;
         (this._lanzamiento) && this.camposCompletos++;
         (this._contenido) && this.camposCompletos++;

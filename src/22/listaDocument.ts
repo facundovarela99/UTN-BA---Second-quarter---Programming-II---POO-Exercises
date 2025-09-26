@@ -11,6 +11,7 @@ export class ListaDocument{
         this._responsible = responsible;
     }
 
+    
     public getInfo(){
         return `-ID: ${this._id}\n-IssueDate: ${this._issueDate}\n-Body: ${this._body}\n-Responsible: ${this._responsible}`;
     }

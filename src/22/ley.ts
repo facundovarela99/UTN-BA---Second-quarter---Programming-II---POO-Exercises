@@ -2,12 +2,12 @@ import { Doc } from "./doc";
 import { IDocumentable } from "./interface-IDocumentable";
 
 export class Ley extends Doc implements IDocumentable {
-    private _folio: number;
-    private _emision: number;
-    private _desarrollo: string;
-    private _firmante: string;
+    private _folio: number = 0;
+    private _emision: number = 0;
+    private _desarrollo: string = "";
+    private _firmante: string = "";
 
-    constructor(folio: number, emision: number, desarrollo: string, firmante: string, camposCompletos?: number) {
+    constructor(folio: number = 0, emision: number = 0, desarrollo: string = "", firmante: string = "", camposCompletos?: number) {
         super()
         this._folio = folio;
         this._emision = emision;
@@ -52,6 +52,7 @@ export class Ley extends Doc implements IDocumentable {
     }
 
     public validarCamposCompletos() {
+        this.camposCompletos = 0;
         (this._folio) && this.camposCompletos++;
         (this._emision) && this.camposCompletos++;
         (this._desarrollo) && this.camposCompletos++;
